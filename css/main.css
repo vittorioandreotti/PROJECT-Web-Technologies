@@ -62,7 +62,7 @@ html, body{
   margin-left: 50px;
   margin-right: 50px;
   margin-bottom: 10px;
-  border: 1px solid red;
+  border: 1px solid black;
   background: #eee;
 }
 .mySlides{
@@ -71,15 +71,17 @@ html, body{
   margin-right: auto;
   max-width: 90%;
 }
-
+hr.space {
+  width: 0%;
+}
 /*--------
-  CARDS
+  CARDS (3 IMMAGINI)
 --------*/
 .cards{
   margin-top: 50px;
 }
 .card{
-    width: 30%;
+    width: 30.3%;
     margin: 0 1.5%;
     background: #ffffff;
     float:left;
@@ -94,6 +96,38 @@ html, body{
     width: 100%;
     width: 400px;
     height: 260px;
+}
+.card:hover{
+  font-weight: 700;
+  background: #EBF5FB;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+
+/*--------
+  AGGIUSTA LE IMMAGINI PER I TABLET O SCHERMO A META'
+--------*/
+@media (max-width:1500px){
+  .card{
+      width: 97%;
+      background: #ffffff;
+      float:left;
+      margin: 10px;
+      border: 1px solid black;
+      border-radius: 5px;
+  }
+  .card_copy{
+      padding: 10px;
+  }
+  .card_image{
+      width: 100%;
+      width: 400px;
+      height: 260px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+  }
 }
 
 
