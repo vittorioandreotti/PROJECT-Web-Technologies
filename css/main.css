@@ -44,6 +44,16 @@ html, body{
   color: #F0F3F4;
 }
 
+.log{
+  float: right;
+  margin-right: 30px;
+}
+.log a:hover{
+  font-weight: 700;
+  background: #eee ;
+  color: #E90D0D;
+}
+
 /*-----------
     CORPO
 ------------*/
