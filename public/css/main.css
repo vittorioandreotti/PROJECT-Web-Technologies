@@ -1,0 +1,240 @@
+html, body{
+  margin: 0;
+  padding: 0;
+}
+a{
+  text-decoration: none;
+  color: #000;
+}
+/*-----------
+    HEADER
+------------*/
+#header{
+  border-bottom: 1px solid #555;
+  background: #393e46;
+  height: 9em;
+}
+.headerLogo{
+  float:left;
+  margin: 9px;
+  margin-right: 40px;
+}
+#logo{
+  display: block;
+  width:8em;
+  height: 8em;
+}
+
+.menuContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 9em;
+    margin: 0;
+}
+
+#subMenu {
+    display:none;
+}
+
+#login{
+    width: 17em;
+    text-align: center;
+    padding: 1em 1em;
+    border-radius: 0.5em;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+#login a{
+    text-decoration: none;
+    color: white;
+    padding: 1em 1em;
+    text-transform: uppercase;
+    margin: 0;
+}
+#login a:first-child {
+    border-right: 2px solid white;
+}
+#login a:hover{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.headerMenu{
+  float:middle;
+  margin: 0;
+  padding: 0;
+}
+.headerMenuItem{
+  display: inline-block;
+}
+.headerMenuItem a{
+  display: block;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: white;
+  text-decoration: none;
+  width: 7em;
+  padding: 1em 0.5em;
+  text-align: center;
+  border-radius: 0.5em;
+}
+.headerMenuItem a:hover{
+  font-weight: bold;
+  color:black;
+  font-size: 18px;
+  background-color: #fca905;
+  transition: 0.5s;
+}
+
+.headerMenu li:hover #subMenu {
+    display: block;
+    position:absolute;
+    background-color: #393e46;
+    transition: 1s;
+    width: 9.5em;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    z-index: 1;
+}
+
+.headerMenu li:hover #subMenu li{
+   list-style-type: none;
+   margin-bottom: 0.5em;
+}
+
+.headerMenu li:hover #subMenu a{
+   margin-left: -2em;
+}
+
+
+.log{
+  float: right;
+  margin-right: 30px;
+}
+.log a:hover{
+  font-weight: 700;
+  background: #eee ;
+  color: #E90D0D;
+}
+
+/*-----------
+    CORPO
+------------*/
+.container{
+  margin-top: 0.25em;
+  margin-left: 0;
+  margin-right: 0;
+  background: #eee;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+#slideshow{
+    height: 40em;
+}
+
+/*@keyframes fade {
+    0%,100% {opacity: 0;}
+    30%,80% {opacity: 1;}
+}*/
+
+.mySlides{
+  /* Questi 2 attributi centrano l'immagine */
+  border-radius: 0.25em;
+  margin: 0.25em auto;
+  height: 100%;
+  max-width: 960px;
+  display:flex;
+  /*animation-delay: 1s;
+  animation: fade 9s infinite;*/
+  z-index: -9999;
+}
+
+/*--------
+  CARDS (3 IMMAGINI)
+--------*/
+.cards{
+  margin-top: 0.5em;
+  display: flex;
+  justify-content: space-around;
+}
+.card{
+    background: #ffffff;
+    margin: 0.25em;
+}
+.card_copy{
+    padding: 0.25em;
+    text-align: center;
+}
+.card_copy h3{
+    margin: 0;
+    padding: 0.5em 0;
+}
+.card_image{
+    width: 100%;
+    height: 25em;
+}
+
+/*-----------
+    FOOTER
+------------*/
+
+#footer{
+  clear: both;
+    background: #393e46;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+#footer a{
+    text-decoration: none;
+    color:white;
+    padding: 0.25em 0.5em;
+}
+
+#footer a:hover{
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+/*--------
+  AGGIUSTA LE IMMAGINI PER I TABLET O SCHERMO A META'
+--------*/
+@media (max-width:1500px){
+  .card{
+      width: 97%;
+      background: #ffffff;
+      float:left;
+      margin: 10px;
+      border: 1px solid black;
+      border-radius: 5px;
+  }
+  .card_copy{
+      padding: 10px;
+  }
+  .card_image{
+      width: 100%;
+      width: 400px;
+      height: 260px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+  }
+}
+
