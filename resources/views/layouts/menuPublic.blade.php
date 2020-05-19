@@ -15,6 +15,6 @@
                   </ul>
               </div>
           </li>
-          <li class="headerMenuItem"><a href="">Contattaci</a></li>
+          <li class="headerMenuItem"><a href="{{route('contact')}}">Contattaci</a></li>
         </ul>
     </div>

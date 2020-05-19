@@ -2,7 +2,8 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}" > 
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" > 
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
         <title>@yield('title', 'Home')</title> <!-- -->
         <!--<script type="text/javascript" src="{{ asset('js/slider.js') }}"></script>-->
     </head>
