@@ -314,7 +314,6 @@ CONTATTACI
 .infocontainer {
     margin: auto;
     width: 80%;
-    align
 }
 
 .infobox {
@@ -327,7 +326,10 @@ CONTATTACI
 .infobox1 {
     width: 230px;
     height: 230px;
-    margin: 
+}
+
+.infobox1 img {
+    max-height: 100%;
 }
 
 .infobox2 {

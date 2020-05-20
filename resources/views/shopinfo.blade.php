@@ -20,7 +20,7 @@
         </section>
         <section class="infobox">
             <h3>SPEDITO DA</h3>
-            <div class="infoBox1">
+            <div class="infobox1">
                 <img src="{{asset('images/courier/BRT.png')}}">
                 <img src="{{asset('images/courier/Posteitaliane.png')}}">
                 <img src="{{asset('images/courier/gls.png')}}">
