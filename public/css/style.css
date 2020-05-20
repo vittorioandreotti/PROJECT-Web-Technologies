@@ -264,6 +264,13 @@ CONTATTACI
     justify-content: center;
 }
 
+.emailContainer:hover{
+  color:black;
+  font-size: 16.5px;
+  background-color: #fca905;
+  transition: 0.5s;
+}
+
 .phoneContainer {
     text-align: center;
     height: 100%;
@@ -278,6 +285,62 @@ CONTATTACI
     justify-content: center;
 }
 
+.phoneContainer:hover{
+  color:black;
+  font-size: 16.5px;
+  background-color: #fca905;
+  transition: 0.5s;
+}
+
+/*--------------
+    INFORMAZIONI
+---------------*/
+.infohead{
+    text-align: center;
+}
+.infotext {
+    margin: 2em;
+    font-size: 18px;
+}
+
+.infotext a{
+    color: #0066c0;
+}
+
+.infotext a:hover {
+    color: #f90;
+    text-decoration: underline;
+}
+.infocontainer {
+    margin: auto;
+    width: 80%;
+    align
+}
+
+.infobox {
+    display: inline-block;
+    width: 28%;
+    height: auto;
+    margin: 2%;
+}
+
+.infobox1 {
+    width: 230px;
+    height: 230px;
+    margin: 
+}
+
+.infobox2 {
+    width: 20%;
+    height: 20%;
+    display: inline-block;
+}
+.infobox2 img {
+    max-height: 100%;
+    max-width: 100%;
+    margin: 20px;
+    
+}
 
 /*--------------
 MODALITA DI ACQUISTO
