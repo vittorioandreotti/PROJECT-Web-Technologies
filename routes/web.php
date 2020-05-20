@@ -19,8 +19,8 @@ Route::view('/contact', 'contact')
 
 Route::view('/where', 'where')
         ->name('where');
+Route::view('/who', 'who')
+        ->name('who');
 
 Route::view('/shopinfo', 'shopinfo')
         ->name('shopinfo');
-Route::view('/who', 'who')
-        ->name('who');
