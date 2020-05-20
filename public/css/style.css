@@ -10,7 +10,6 @@ a{
     HEADER
 ------------*/
 #header{
-  border-bottom: 1px solid #555;
   background: #393e46;
   height: 9em;
 }
@@ -152,7 +151,7 @@ a{
 .mySlides{
   /* Questi 2 attributi centrano l'immagine */
   border-radius: 0.25em;
-  margin: 0.25em auto;
+  margin: 0 auto;
   height: 100%;
   max-width: 960px;
   display:flex;

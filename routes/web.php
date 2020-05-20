@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'PublicController@showHome')
+        ->name('home');
 
 Route::view('/contact', 'contact')
         ->name('contact');

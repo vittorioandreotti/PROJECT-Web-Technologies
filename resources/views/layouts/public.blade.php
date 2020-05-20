@@ -9,10 +9,10 @@
     </head>
     <body>
         <header id="header">
-            <a href="" class="headerLogo"><img src="{{asset('images/logoApp.png')}}" id="logo"></a>
+            <a href="{{route('home')}}" class="headerLogo"><img src="{{asset('images/logoApp.png')}}" id="logo"></a>
              <div id="menu">@include('layouts/menuPublic')</div>
         </header>
-        <div>
+        <div style="margin: 0">
             @yield('content')
         </div>
         <footer id="footer">

@@ -11,7 +11,7 @@
                 <span>Scrivici, ti risponderemo al più presto.</span>
         </div>
         <div class="phoneContainer">
-                <h3>Telefona</h3>
+                <h3>Telefono</h3>
                 <span>LUNEDÍ-VENERDÍ 8:00 - 19:00 <br> SABATO 9:00 - 17:00</span>
                 <h4>CHIAMACI</h4>
                 <span>Al numero 0294455500</span>
