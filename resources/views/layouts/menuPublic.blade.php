@@ -5,7 +5,7 @@
         </div>
         <ul class="headerMenu">
           <li class="headerMenuItem"><a href="">Catalogo</a></li>
-          <li class="headerMenuItem"><a href="">Chi siamo</a></li>
+          <li class="headerMenuItem"><a href="{{ route('who') }}">Chi siamo</a></li>
           <li class="headerMenuItem"><a href="{{ route('where') }}">Dove Siamo</a></li>
           <li class="headerMenuItem">
               <a href="">Informazioni</a>

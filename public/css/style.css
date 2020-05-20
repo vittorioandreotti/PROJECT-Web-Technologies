@@ -185,6 +185,15 @@ a{
     height: 25em;
 }
 
+/*--------
+  CHI SIAMO
+--------*/
+
+.whoWrapper{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
 /*-----------
     FOOTER
 ------------*/
