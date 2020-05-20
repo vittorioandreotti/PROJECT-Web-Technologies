@@ -22,5 +22,8 @@ Route::view('/where', 'where')
 Route::view('/who', 'who')
         ->name('who');
 
-Route::view('/shopinfo', 'shopinfo')
+Route::view('/howToBuy', 'shopinfo')
         ->name('shopinfo');
+
+Route::view('/privacyPolicy', 'privacyPolicy')
+        ->name('privacyPolicy');

@@ -19,7 +19,7 @@
   <h3>OGGI</h3>
   <hr>
   <p>iPrice è la prima catena di distribuzione non alimentare italiana; i punti vendita sono 116, collocati prevalentemente nei principali centri commerciali con una superficie media di vendita di 2.500 mq. Una leadership conquistata mantenendo inalterati nel tempo i principi di multicanalità, innovazione di valore e global community.</p>
-  <p>La<b>strategia</b> si basa, oggi, su un’offerta ampia e aggiornata con le nuove tecnologie, prezzo, location, format flessibile e in grado di soddisfare le esigenze del consumatore, servizio, comunicazione, benessere organizzativo. Il tutto in un'ottica omnicanale. Vale a dire la capacità di vendere e di creare le condizioni di relazione con il cliente in qualsiasi ambito attraverso diversi punti di contatto o touch point.</p>
+  <p>La <b>strategia</b> si basa, oggi, su un’offerta ampia e aggiornata con le nuove tecnologie, prezzo, location, format flessibile e in grado di soddisfare le esigenze del consumatore, servizio, comunicazione, benessere organizzativo. Il tutto in un'ottica omnicanale. Vale a dire la capacità di vendere e di creare le condizioni di relazione con il cliente in qualsiasi ambito attraverso diversi punti di contatto o touch point.</p>
   <br>
   <h2>I fondatori</h2>
   <section class="cards">

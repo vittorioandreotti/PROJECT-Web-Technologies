@@ -16,8 +16,8 @@
             @yield('content')
         </div>
         <footer id="footer">
-            <a href="">
-                 <p>Copyright: Iaco's Enterprise</p>
+            <a href="{{route('privacyPolicy')}}">
+                 Privacy Policy
             </a>
             <a href="">
                 <p>Vieni a trovarci!</p>
