@@ -16,3 +16,6 @@ Route::get('/', 'PublicController@showHome')
 
 Route::view('/contact', 'contact')
         ->name('contact');
+
+Route::view('/where', 'where')
+        ->name('where');
