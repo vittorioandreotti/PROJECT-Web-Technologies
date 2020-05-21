@@ -14,8 +14,16 @@ class CreateProdottoTable extends Migration
     public function up()
     {
         Schema::create('prodotto', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+            $table->bigIncrements('codProd');
+            $table->string('Nome',40);
+            $table->bigIncrements('codCat')->unsigned()->index();
+            $table->foreign('catCat')->references('codCat')->on('Categoria');
+            $table->string('descCorta',40);
+            $table->string('descLunga',80);
+            $table->float('Prezzo');
+            $table->integer('PercSconto');
+            $table->tinyInteger('Sconto');
+            $table->text('Immagine')->nullable();
         });
     }
 
