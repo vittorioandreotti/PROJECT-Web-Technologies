@@ -15,11 +15,11 @@ class CreateProdottoTable extends Migration
     {
         Schema::create('prodotto', function (Blueprint $table) {
             $table->bigIncrements('codProd');
-            $table->string('nome',40);
+            $table->string('nome',60);
             $table->bigInteger('codCat')->unsigned()->index();
             $table->foreign('codCat')->references('codCat')->on('categoria');
             $table->string('descCorta',40);
-            $table->string('descLunga',2500);
+            $table->string('descLunga',5000);
             $table->float('prezzo');
             $table->integer('percSconto');
             $table->tinyInteger('sconto');
