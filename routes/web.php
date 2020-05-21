@@ -28,3 +28,7 @@ Route::view('/howToBuy', 'shopinfo')
 
 Route::view('/privacyPolicy', 'privacyPolicy')
         ->name('privacyPolicy');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
