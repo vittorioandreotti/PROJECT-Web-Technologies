@@ -13,7 +13,7 @@ class CreateTableCategoria extends Migration
      */
     public function up()
     {
-        Schema::create('Categoria', function (Blueprint $table) {
+        Schema::create('categoria', function (Blueprint $table) {
             $table->bigIncrements('codCat')->unsigned()->index();
             $table->string('name',25);
             $table->integer('codPar');
