@@ -29,6 +29,9 @@ Route::view('/howToBuy', 'shopinfo')
 Route::view('/privacyPolicy', 'privacyPolicy')
         ->name('privacyPolicy');
 
+Route::get('/catalog', 'PublicController@showCatalog1')
+        ->name('catalog1');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('homeUser');

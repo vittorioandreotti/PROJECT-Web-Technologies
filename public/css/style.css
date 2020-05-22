@@ -369,6 +369,13 @@ PRIVACY POLICY
     margin-right: 1em;
 }
 
+/*------------
+CATALOGO
+------------*/
+.sideMenuCatalog {
+    background-color: red;
+}
+
 
 /*--------
   AGGIUSTA LE IMMAGINI PER I TABLET O SCHERMO A META'

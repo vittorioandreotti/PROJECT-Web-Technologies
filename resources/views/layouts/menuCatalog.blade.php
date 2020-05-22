@@ -1,4 +1,4 @@
- <ul id="menuCatalogo">
+ <ul class="sideMenuCatalog">
           <li ><a href="">Componenenti PC</a>
            <ul>
                       <li> <a href="">RAM</a></li>
@@ -16,6 +16,5 @@
           <li ><a href="">Fotografia</a> <ul>
                       <li> <a href="">Reflex</a></li>
                       <li> <a href="">Videocamere</a></li>
-                  </ul></li>
-          
-        </ul>
+                  </ul></li>       
+</ul>

@@ -6,7 +6,7 @@ use App\Models\Resources\Category;
 use App\Models\Resources\Product;
 
 
-class Catalog extends Model
+class Catalog
 {
     /*Metodo per prelevare tutte le macrocategorie*/
      public function getTopCategories() {

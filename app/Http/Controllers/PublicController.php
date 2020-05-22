@@ -39,7 +39,7 @@ class PublicController extends Controller
         $subCategories = $this->catalog->getSubCategories([$topCodCat]);
                         
         //Prodotti in sconto della categoria Top selezionata, ordinati per sconto decrescente 
-        $products = $this->catalogModel->getProducts([$topCodCat], 4, 'asc');
+        $products = $this->catalog->getProducts([$topCodCat], 4, 'asc');
 
         return view('catalog')
                         ->with('topCategories', $topCategories)
@@ -54,7 +54,7 @@ class PublicController extends Controller
         $topCategories = $this->catalog->getTopCategories();
 
         //Categoria Top selezionata
-        $selectedTopCategories = $topCats->where('codCat', $topCodCat);
+        $selectedTopCategories = $topCategories->where('codCat', $topCodCat);
 
         // Sottocategorie
         $subCategories = $this->catalog->getSubCategories([$topCodCat]);
