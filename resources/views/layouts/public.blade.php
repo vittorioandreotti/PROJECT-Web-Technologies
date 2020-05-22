@@ -19,7 +19,7 @@
             <a href="{{route('privacyPolicy')}}">
                  Privacy Policy
             </a>
-            <a href="">
+            <a href="{{ route('where') }}">
                 <p>Vieni a trovarci!</p>
             </a>
         </footer>
