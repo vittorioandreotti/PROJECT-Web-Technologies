@@ -32,6 +32,10 @@ Route::view('/privacyPolicy', 'privacyPolicy')
 Route::get('/catalog', 'PublicController@showCatalog1')
         ->name('catalog1');
 
+Route::view('/howToRegister', 'reginfo')
+        ->name('reginfo');
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('homeUser');
