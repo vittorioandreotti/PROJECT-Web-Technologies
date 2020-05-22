@@ -12,7 +12,7 @@
               <div id="subMenu">
                   <ul>
                       <li> <a href="{{route('shopinfo')}}">Modalità d'acquisto</a></li>
-                      <li> <a href="">Modalità di registrazione</a></li>
+                      <li> <a href="{{ route('reginfo') }}">Modalità di registrazione</a></li>
                   </ul>
               </div>
           </li>
