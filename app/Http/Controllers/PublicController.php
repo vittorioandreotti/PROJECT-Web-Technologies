@@ -47,4 +47,25 @@ class PublicController extends Controller
                         ->with('subCategories', $subCategories)
                         ->with('products', $products);
     }
+    
+    public function showCatalog3($topCodCat, $codCat) {
+
+        //Categorie Top
+        $topCategories = $this->catalog->getTopCategories();
+
+        //Categoria Top selezionata
+        $selectedTopCategories = $topCats->where('codCat', $topCodCat);
+
+        // Sottocategorie
+        $subCategories = $this->catalog->getSubCategories([$topCodCat]);
+
+        // Prodotti della categoria selezionata
+       $products = $this->catalog->getProducts([$codCat]);
+
+        return view('catalog')
+                        ->with('topCategories', $topCategories)
+                        ->with('selectedTopCategories', $selectedTopCategories)
+                        ->with('subCategories', $subCategories)
+                        ->with('products', $products);
+    }
 }
