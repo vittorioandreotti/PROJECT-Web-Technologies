@@ -1,5 +1,5 @@
 @extends ('layouts.public')
-@section ('title', 'Modalità dacquisto')
+@section ('title', 'Modalità di registrazione')
 
 @section('content')
 <div class="whoWrapper">
