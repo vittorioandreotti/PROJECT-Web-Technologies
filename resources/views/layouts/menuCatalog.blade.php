@@ -1,5 +1,5 @@
  <ul class="sideMenuCatalog">
-          <li ><a href="">Componenenti PC</a>
+          <li><a href="">Componenenti PC</a>
            <ul>
                       <li> <a href="">RAM</a></li>
                       <li> <a href="">Schede Video</a></li>
