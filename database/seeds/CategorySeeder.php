@@ -24,9 +24,7 @@ class CategorySeeder extends Seeder
             ['codCat' => 10, 'name' => 'AirPods', 'codPar' => 2, 'desc' => 'Descrizione delle AirPods'],
             ['codCat' => 11, 'name' => 'Registratori', 'codPar' => 2, 'desc' => 'Descrizione dei Registratori'],
             ['codCat' => 12, 'name' => 'Reflex', 'codPar' => 3, 'desc' => 'Descrizione delle Reflex'],
-            ['codCat' => 13, 'name' => 'Istantanee', 'codPar' => 3, 'desc' => 'Descrizione delle Istantanee'],
-            ['codCat' => 14, 'name' => 'Action Cam', 'codPar' => 3, 'desc' => 'Descrizione delle Action CAm'],
-            ['codCat' => 15, 'name' => 'Telescopi', 'codPar' => 3, 'desc' => 'Descrizione dei Telescopi'],
+            ['codCat' => 13, 'name' => 'Videocamere', 'codPar' => 3, 'desc' => 'Descrizione delle Videocamere']
         ]);
     }
 }
