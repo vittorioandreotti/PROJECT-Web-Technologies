@@ -8,10 +8,10 @@
         <ul>
             <li><h3>Cliccando direttamente sul tasto REGISTRATI posizionato in alto a destra</h3></li>
             <hr>
-            <img class="card_image" style="border: solid black 1px" src="{{asset('images/regist1.jpg')}}" alt="image">
+            <img class="card_image border"  src="{{asset('images/regist1.jpg')}}" alt="image">
             <li><h3>Cliccando sul pulsante registrati nella finestra di accesso</h3></li>
             <hr>
-            <img class="card_image" style="border: solid black 1px" src="{{asset('images/fondatore.jpg')}}" alt="image">
+            <img class="card_image border"  src="{{asset('images/fondatore.jpg')}}" alt="image">
             <li><h3>Oppure puoi cliccare direttamente <a style="color: red" href="">QUI</a> </h3></li>
             <hr>
         </ul>

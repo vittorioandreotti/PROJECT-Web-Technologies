@@ -464,3 +464,10 @@ CATALOGO
       margin-right: auto;
   }
 }
+
+/*----------
+    VARIE
+----------*/
+.border{
+    border: solid black 1px
+}
