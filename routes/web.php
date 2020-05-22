@@ -39,3 +39,4 @@ Route::view('/howToRegister', 'reginfo')
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('homeUser');
+

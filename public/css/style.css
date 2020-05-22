@@ -20,7 +20,7 @@ a{
 }
 #logo{
   display: block;
-  width:8em;
+  width: 8em;
   height: 8em;
 }
 
@@ -372,10 +372,32 @@ PRIVACY POLICY
 /*------------
 CATALOGO
 ------------*/
+#catalogoContainer {
+   width: 100%
+}
 .sideMenuCatalog {
-    background-color: red;
+    width: 20%;
+    float: left;
+    height: 100%;
 }
 
+.catalogoProdotti {
+    margin-left: 21%;
+    width: 80%;
+    margin-right: 2em;
+}
+
+.containerProdotto {
+    float: left;
+    width: 40%;
+}
+
+.containerProdotto img {
+    width: 100px;
+    height:100px;
+    display: flex;
+    align-items: center;
+}
 
 /*--------
   AGGIUSTA LE IMMAGINI PER I TABLET O SCHERMO A META'
@@ -401,4 +423,3 @@ CATALOGO
       margin-right: auto;
   }
 }
-
