@@ -372,31 +372,72 @@ PRIVACY POLICY
 /*------------
 CATALOGO
 ------------*/
-#catalogoContainer {
-   width: 100%
-}
-.sideMenuCatalog {
-    width: 20%;
+#menuCatalogo {
+    width: 14em;
     float: left;
     height: 100%;
 }
 
-.catalogoProdotti {
-    margin-left: 21%;
-    width: 80%;
-    margin-right: 2em;
+#menuCatalogo ul {
+    list-style-type: none;
+    padding-left: 0.5em;
 }
 
-.containerProdotto {
-    float: left;
-    width: 40%;
-}
-
-.containerProdotto img {
-    width: 100px;
-    height:100px;
+#menuCatalogo li {
+    padding: 0 2em;
+    margin: 0.5em 0;
+    width: 9em;
+    border-bottom: 1px solid black;
     display: flex;
-    align-items: center;
+    justify-content: center;
+}
+
+#menuCatalogo li:last-child {
+    border:none;
+}
+
+#menuCatalogo li a {
+    padding: 0.75em 1em;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#menuCatalogo h3 {
+    text-align: center;
+    padding: 0.5em;
+    margin: 0 0.5em;
+    border: 1px solid dodgerblue;
+    border-radius: 0.5em;
+    background-color: dodgerblue;
+    color: white;
+}
+
+#contentCatalogo {
+    margin-left: 14em;
+    margin-right: 2em;
+    padding-left: 1em;
+}
+
+#containerProdotti {
+    width: 100%;
+}
+
+#containerProdotto {
+    float: left;
+    width: 500px;
+    height: 400px;
+    padding: 0 1em;
+}
+
+#containerProdotto img {
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+    height:70%;
+}
+
+#containerProdotto .price {
+    font-size: 20px;
 }
 
 /*--------
