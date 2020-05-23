@@ -7,9 +7,8 @@
         @include('layouts/menuCatalog')
     </div>
     <div id='contentCatalogo'>
-        <h2>RAM</h2>
-        <p id='totaleProdotti'>Totale prodotti: {{count($products)}}</p>
-        <span>Benvenuto nella sezione *Ram* di iPrice.<br> Scegli tra tantissimi prodotti in offerta e con consegna rapida.<br> Scopri la nostra ampia proposta, consulta i prezzi e acquista comodamente online.</span>
+        <h2>Tutti i prodotti</h2>
+        <p id='totaleProdotti'>Totale prodotti: {{$products->total()}}</p>
         <div id='cerca'>
             <input type="text" placeholder="Cerca">
         </div>
@@ -24,6 +23,7 @@
             </div>
             @endforeach
         </div>
+        @include('pagination.paginator',['paginator' => $products])
     </div>
 </div>
 @endsection
