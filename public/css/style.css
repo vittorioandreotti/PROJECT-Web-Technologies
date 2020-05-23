@@ -1,6 +1,8 @@
 html, body{
   margin: 0;
   padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
 }
 a{
   text-decoration: none;
@@ -86,7 +88,6 @@ a{
 .headerMenuItem a:hover{
   font-weight: bold;
   color:black;
-  font-size: 18px;
   background-color: #fca905;
   transition: 0.5s;
 }
@@ -418,15 +419,28 @@ CATALOGO
     padding-left: 1em;
 }
 
+#contentCatalogo #totaleProdotti {
+    color:#9b9b9b;
+}
+
+#contentCatalogo #cerca input {
+    padding: 0.4em 0;
+    width: 60%;
+    border-radius: 0.5em;
+}
+
 #containerProdotti {
     width: 100%;
 }
 
 #containerProdotto {
     float: left;
-    width: 500px;
+    width: 45%;
     height: 400px;
     padding: 0 1em;
+    border: 1px solid lightgray;
+    border-radius: 0.5em;
+    margin: 0.5em;
 }
 
 #containerProdotto img {
@@ -438,6 +452,27 @@ CATALOGO
 
 #containerProdotto .price {
     font-size: 20px;
+}
+
+/*----------
+BARRA PAGINAZIONE
+----------*/
+#pagination {
+    clear: both;
+    margin: 2em 0;
+}
+
+.paginaCorrente {
+    float: right;
+    color: #9b9b9b;
+}
+
+.barraPaginazione {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    padding-top: 1em;
 }
 
 /*--------

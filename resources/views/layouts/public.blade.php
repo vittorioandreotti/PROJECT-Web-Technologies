@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" > 
-        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
         <title>@yield('title', 'Home')</title> <!-- -->
         <!--<script type="text/javascript" src="{{ asset('js/slider.js') }}"></script>-->
     </head>
