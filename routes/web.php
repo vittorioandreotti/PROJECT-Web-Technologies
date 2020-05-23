@@ -43,3 +43,10 @@ Route::post('login', 'Auth\LoginController@login');
 
 Route::post('logout', 'Auth\LoginController@logout')
         ->name('logout');
+
+//Roote per la registrazione
+
+Route::get('signin', 'Auth\RegisterController@showRegistrationForm')
+        ->name('register');
+
+Route::post('signin', 'Auth\RegisterController@register');
