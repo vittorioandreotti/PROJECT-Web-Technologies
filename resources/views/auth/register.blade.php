@@ -4,7 +4,7 @@
 @section('content')
 
 <div>
-    <h3>Resitrazione</h3>
+    <h3>Registrazione</h3>
     
     <div>
         {{Form::open(array('route' => 'register'))}}
@@ -13,6 +13,12 @@
             {{Form::label('name', 'Nome')}}
             {{Form::text('name', ''), ['id' => 'name']}}
             @if ($errors->first('name'))
+            <ul class="errors">
+                @foreach ($errors->get('name') as $message)
+                <li>{{ $message }}</li>
+                @endforeach
+            </ul>
+            @endif
             
         </div>
             <div  class="wrap-input">

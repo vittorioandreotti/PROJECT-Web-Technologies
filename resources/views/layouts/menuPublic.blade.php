@@ -1,9 +1,7 @@
   <div class="menuContainer">
         <div id="login" >
-            <a href="">Accedi</a>
-            <a href="{{route('signin')}}">Registrati</a>
             <a href="{{route('login')}}">Accedi</a>
-            <a href="">Registrati</a>
+            <a href="{{route('register')}}">Registrati</a>
         </div>
         <ul class="headerMenu">
           <li class="headerMenuItem"><a href="{{route('catalog1')}}">Catalogo</a></li>

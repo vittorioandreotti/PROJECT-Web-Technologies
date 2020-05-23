@@ -24,7 +24,8 @@ class PublicController extends Controller
 
         return view('catalog')
                         ->with('topCategories', $topCategories)
-                        ->with('products', $products);
+                        ->with('products', $products)
+                        ->with('selectedTopCategories', 'Tutti i prodotti');
     }
     
     public function showCatalog2($topCodCat) {

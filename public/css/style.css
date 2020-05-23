@@ -452,7 +452,13 @@ CATALOGO
 
 #containerProdotto .price {
     font-size: 20px;
+    margin-bottom: 0.5em;
 }
+
+#containerProdotto .info {
+    margin-bottom: 0;
+}
+
 
 /*----------
 BARRA PAGINAZIONE
