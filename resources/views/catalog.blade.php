@@ -8,7 +8,7 @@
     </div>
     <div id='contentCatalogo'>
         @isset($selectedTopCategories)
-        <h2>{{$selectedTopCategories}}</h2>
+        <h2>{{$selectedTopCategories->name}}</h2>
         @endisset()
         <p id='totaleProdotti'>Totale prodotti: {{$products->total()}}</p>
         <div id='cerca'>
