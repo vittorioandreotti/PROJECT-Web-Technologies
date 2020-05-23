@@ -35,8 +35,11 @@ Route::get('/catalog', 'PublicController@showCatalog1')
 Route::view('/howToRegister', 'reginfo')
         ->name('reginfo');
 
+// Rotte per il login
+Route::get('login', 'Auth\LoginController@showLoginForm')
+        ->name('login');
 
-Auth::routes();
+Route::post('login', 'Auth\LoginController@login');
 
-Route::get('/home', 'HomeController@index')->name('homeUser');
-
+Route::post('logout', 'Auth\LoginController@logout')
+        ->name('logout');
