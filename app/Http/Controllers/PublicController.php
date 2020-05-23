@@ -24,8 +24,8 @@ class PublicController extends Controller
 
         return view('catalog')
                         ->with('topCategories', $topCategories)
-                        ->with('products', $products)
-                        ->with('selectedTopCategories', 'Tutti i prodotti');
+                        ->with('products', $products);
+                        
     }
     
     public function showCatalog2($topCodCat) {
@@ -34,7 +34,7 @@ class PublicController extends Controller
         $topCategories = $this->catalog->getTopCategories();
 
         //Categoria Top selezionata
-        $selectedTopCategories = $topCategories->where('codCat', $topCodCat);
+        $selectedTopCategories = $topCategories->where('codCat', $topCodCat)->first();
 
         // Sottocategorie
         $subCategories = $this->catalog->getSubCategories([$topCodCat]);

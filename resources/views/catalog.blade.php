@@ -7,7 +7,9 @@
         @include('layouts/menuCatalog')
     </div>
     <div id='contentCatalogo'>
+        @isset($selectedTopCategories)
         <h2>{{$selectedTopCategories}}</h2>
+        @endisset()
         <p id='totaleProdotti'>Totale prodotti: {{$products->total()}}</p>
         <div id='cerca'>
             <input type="text" placeholder="Cerca">

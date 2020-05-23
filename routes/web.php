@@ -32,6 +32,9 @@ Route::view('/privacyPolicy', 'privacyPolicy')
 Route::get('/catalog', 'PublicController@showCatalog1')
         ->name('catalog1');
 
+Route::get('/selTopCat/{topCat}', 'PublicController@showCatalog2')
+        ->name('catalog2');
+
 Route::view('/howToRegister', 'reginfo')
         ->name('reginfo');
 
