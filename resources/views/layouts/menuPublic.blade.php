@@ -1,6 +1,6 @@
   <div class="menuContainer">
         <div id="login" >
-            <a href="">Accedi</a>
+            <a href="{{route('login')}}">Accedi</a>
             <a href="">Registrati</a>
         </div>
         <ul class="headerMenu">
