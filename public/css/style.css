@@ -394,29 +394,33 @@ CATALOGO
     padding: 0.5em 2em;
     margin: 0.5em 0;
     width: 9em;
-    border-bottom: 1px solid black;
+    border: 1px solid black;
+    border: 1px solid black;
+    border-radius: 0.5em;
 }
-#menuCatalogo .topCategories li {
-    padding: 0.5em 1em;
-    margin: 0.5em 0;
+#menuCatalogo ul ul li {
+    padding: 0.3em 1em;
+    margin: 0.5em auto;
     width: 7em;
-    border-bottom: 1px solid black;
 }
 
-#menuCatalogo .topCategories:last-child {
-    border:none;
-}
+/*#menuCatalogo .topCategories:last-child {
+    border-bottom:none;
+}*/
 
-#menuCatalogo .topCategories li:last-child {
+#menuCatalogo ul ul li:last-child {
     border:none;
 }
 
 #menuCatalogo .topCategories a {
     margin: 1em auto;
     text-align: center;
+    text-transform: uppercase;
+    color: dodgerblue;
+    font-weight: bold;
 }
 
-#menuCatalogo .topCategories li a {
+#menuCatalogo ul ul li a {
     text-align: center;
 }
 

@@ -35,6 +35,9 @@ Route::get('/catalog', 'PublicController@showCatalog1')
 Route::get('/selTopCat/{topCat}', 'PublicController@showCatalog2')
         ->name('catalog2');
 
+Route::get('/selTopCat/{topCat}/selCat/{subCat}', 'PublicController@showCatalog3')
+        ->name('catalog3');
+
 Route::view('/howToRegister', 'reginfo')
         ->name('reginfo');
 

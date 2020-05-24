@@ -34,7 +34,7 @@ class PublicController extends Controller
         $topCategories = $this->catalog->getTopCategories();
 
         //Categoria Top selezionata
-        $selectedTopCategories = $topCategories->where('codCat', $topCodCat)->first();
+        $selectedTopCategory = $topCategories->where('codCat', $topCodCat)->first();
 
         // Sottocategorie
         $subCategories = $this->catalog->getSubCategories([$topCodCat]);
@@ -44,7 +44,7 @@ class PublicController extends Controller
 
         return view('catalog')
                         ->with('topCategories', $topCategories)
-                        ->with('selectedTopCategories', $selectedTopCategories)
+                        ->with('selectedTopCategory', $selectedTopCategory)
                         ->with('subCategories', $subCategories)
                         ->with('products', $products);
     }
@@ -55,18 +55,21 @@ class PublicController extends Controller
         $topCategories = $this->catalog->getTopCategories();
 
         //Categoria Top selezionata
-        $selectedTopCategories = $topCategories->where('codCat', $topCodCat);
+        $selectedTopCategory = $topCategories->where('codCat', $topCodCat)->first();
 
         // Sottocategorie
         $subCategories = $this->catalog->getSubCategories([$topCodCat]);
+        
+        $selectedSubCategory=$subCategories->where('codCat',$codCat)->first();
 
         // Prodotti della categoria selezionata
-       $products = $this->catalog->getProducts([$codCat]);
+       $products = $this->catalog->getProducts([$codCat],4,'asc');
 
         return view('catalog')
                         ->with('topCategories', $topCategories)
-                        ->with('selectedTopCategories', $selectedTopCategories)
+                        ->with('selectedTopCategory', $selectedTopCategory)
                         ->with('subCategories', $subCategories)
-                        ->with('products', $products);
+                        ->with('products', $products)
+                        ->with('selectedSubCategory', $selectedSubCategory);
     }
 }

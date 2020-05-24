@@ -1,20 +1,19 @@
 <h3>CATEGORIE</h3> 
 <ul>
      @foreach($topCategories as $category)
-     <li class="topCategories"><a href="{{route('catalog2',[$category->codCat])}}">{{$category->name}}</a>
-         @isset($selectedTopCategories)
+     <li class="topCategories"><a href="{{route('catalog2',[$category->codCat])}}">{{$category->name}}</a> </li>
+         @isset($selectedTopCategory)
          @isset($subCategories)
-         @if($category->codCat==$selectedTopCategories->codCat)
+         @if($category->codCat==$selectedTopCategory->codCat)
          <ul>
              
-            @foreach($subCategories as $subcategory) 
-            <li><a href="">{{$subcategory->name}}</a> </li>
+            @foreach($subCategories as $subCategory) 
+            <li><a href="{{route('catalog3',[$selectedTopCategory->codCat,$subCategory->codCat])}}">{{$subCategory->name}}</a> </li>
             @endforeach
            
          </ul>
          @endif
          @endisset()
          @endisset()
-     </li>
      @endforeach
 </ul>
