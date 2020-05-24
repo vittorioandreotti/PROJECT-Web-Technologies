@@ -294,73 +294,22 @@ CONTATTACI
 }
 
 /*--------------
-    INFORMAZIONI
----------------*/
-.infohead{
-    text-align: center;
-}
-.infotext {
-    margin: 2em;
-    font-size: 18px;
-}
-
-.infotext a{
-    color: #0066c0;
-}
-
-.infotext a:hover {
-    color: #f90;
-    text-decoration: underline;
-}
-.infocontainer {
-    margin: auto;
-    width: 80%;
-}
-
-.infobox {
-    display: inline-block;
-    width: 28%;
-    height: auto;
-    margin: 2%;
-}
-
-.infobox1 {
-    width: 230px;
-    height: 230px;
-}
-
-.infobox1 img {
-    max-height: 100%;
-}
-
-.infobox2 {
-    width: 20%;
-    height: 20%;
-    display: inline-block;
-}
-.infobox2 img {
-    max-height: 100%;
-    max-width: 100%;
-    margin: 20px;
-    
-}
-
-/*--------------
 MODALITA DI ACQUISTO
 --------------*/
 #containerInfoShop {
-    width: 100%;
-    height: 100%;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
+    margin: 0;
+    padding-left: 1em;
 }
 
 #containerInfoShop h1 {
     text-align: center;
 }
 
-#containerInfoShop .infoBox1 img {
-    width: 15%;
+#containerInfoShop .contentInfoShop p{
+    margin-bottom: 3em;
+}
+#containerInfoShop .contentInfoShop h3{
+    margin-left: 1.5em;
 }
 /*--------------
 PRIVACY POLICY
@@ -403,10 +352,6 @@ CATALOGO
     margin: 0.5em auto;
     width: 7em;
 }
-
-/*#menuCatalogo .topCategories:last-child {
-    border-bottom:none;
-}*/
 
 #menuCatalogo ul ul li:last-child {
     border:none;
