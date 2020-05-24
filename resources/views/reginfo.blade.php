@@ -11,8 +11,8 @@
             <img class="card_image border"  src="{{asset('images/regist1.jpg')}}" alt="image">
             <li><h3>Cliccando sul pulsante registrati nella finestra di accesso</h3></li>
             <hr>
-            <img class="card_image border"  src="{{asset('images/fondatore.jpg')}}" alt="image">
-            <li><h3>Oppure puoi cliccare direttamente <a style="color: red" href="">QUI</a> </h3></li>
+            <img class="card_image border"  src="{{asset('images/regist2.jpg')}}" alt="image">
+            <li><h3>Oppure puoi cliccare direttamente <a style="color: red" href="{{route('register')}}">QUI</a> </h3></li>
             <hr>
         </ul>
     
