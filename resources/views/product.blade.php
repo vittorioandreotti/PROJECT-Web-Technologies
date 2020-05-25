@@ -6,16 +6,14 @@
         @include('layouts/menuCatalog')
     </div>
 <div id="product">
-    <img src="{{asset('images/products/asus_tuf.jpg')}}">
+    <img src="{{asset('images/products/'. $selectedProduct->image)}}">
     <div class="infoWrapper">
-        <div id="nome">{{$selectedProduct->nome}}</div>
-        <div id="categoria">{{$selectedTopCategory->name}}</div>
-        <div id="sottocategoria">{{$selectedSubCategory->name}}</div>
-        <div id="prezzo">{{$selectedProduct->prezzo}}</div>
-        <div id="prezzoScontato">{{$selectedProduct->getPrice()}}</div>
-        <div id="Sconto">{{$selectedProduct->percSconto}}%</div>
+        <div id="nome"><h1>{{$selectedProduct->nome}}</h1></div>
+        <div id="categoria">Categoria: <b>{{$selectedTopCategory->name}}</b></div>
+        <div id="sottocategoria">Sottocategoria: <b>{{$selectedSubCategory->name}}</b></div>
+        <div id="prezzo"> @include('helpers/productPrice')</div>
     </div>
-    <p id="descBreve">{{$selectedProduct->descCorta}}</p>
-    <p id="descEstesa">{{$selectedProduct->descLunga}}</p>
+    <p id="descBreve"><h3>Descrizione breve</h3>{{$selectedProduct->descCorta}}</p>
+    <p id="descEstesa"><h3>Descrizione estesa</h3>{{$selectedProduct->descLunga}}</p>
 </div>
 @endsection
