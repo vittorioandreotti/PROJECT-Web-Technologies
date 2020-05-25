@@ -27,8 +27,13 @@
             <div id="containerProdotto">
                 <img src="{{ asset('images/products/' . $product->image) }}">
                 <div class="info">
-                    <a href="{{route('product')}}"><h2 class="title">Prodotto: {{ $product->nome }}</h2></a>
+                   @if(@isset($selectedTopCategory))
+                    <a href="{{route('product',[$selectedTopCategory->codCat,$product->codCat,$product->codProd])}}"><h2 class="title">Prodotto: {{ $product->nome }}</h2></a>
+                    @else
+                    <h2 class="title">Prodotto: {{ $product->nome }}</h2>
+                    @endif
                     <p class="price"> Prezzo: {{ number_format($product->prezzo,2,'.',',') }} € </p>
+                    
                 </div>
             </div>
             @endforeach

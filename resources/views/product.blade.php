@@ -2,17 +2,20 @@
 @section('title', 'Prodotto')
 
 @section('content')
+    <div id="menuCatalogo">
+        @include('layouts/menuCatalog')
+    </div>
 <div id="product">
     <img src="{{asset('images/products/asus_tuf.jpg')}}">
     <div class="infoWrapper">
-        <div id="nome">sdfdf</div>
-        <div id="categoria">sdfdsf</div>
-        <div id="sottocategoria">fdsf</div>
-        <div id="prezzo">fdsf</div>
-        <div id="prezzoScontato">fdsfds</div>
-        <div id="Sconto">dsfdsfdfd</div>
+        <div id="nome">{{$selectedProduct->nome}}</div>
+        <div id="categoria">{{$selectedTopCategory->name}}</div>
+        <div id="sottocategoria">{{$selectedSubCategory->name}}</div>
+        <div id="prezzo">{{$selectedProduct->prezzo}}</div>
+        <div id="prezzoScontato">{{$selectedProduct->getPrice()}}</div>
+        <div id="Sconto">{{$selectedProduct->percSconto}}%</div>
     </div>
-    <p id="descBreve">sdfsdfdsfds</p>
-    <p id="descEstesa">sdfdsfsdfsd</p>
+    <p id="descBreve">{{$selectedProduct->descCorta}}</p>
+    <p id="descEstesa">{{$selectedProduct->descLunga}}</p>
 </div>
 @endsection
