@@ -27,11 +27,7 @@
             <div id="containerProdotto">
                 <img src="{{ asset('images/products/' . $product->image) }}">
                 <div class="info">
-                   @if(@isset($selectedTopCategory))
-                    <a href="{{route('product',[$selectedTopCategory->codCat,$product->codCat,$product->codProd])}}"><h2 class="title">Prodotto: {{ $product->nome }}</h2></a>
-                    @else
-                    <h2 class="title">Prodotto: {{ $product->nome }}</h2>
-                    @endif
+                    <a href="{{route('product',[$product->prodCat->codPar,$product->codCat,$product->codProd])}}"><h2 class="title">Prodotto: {{ $product->nome }}</h2></a>
                     <p class="price"> Prezzo: {{ number_format($product->prezzo,2,'.',',') }} € </p>
                     
                 </div>

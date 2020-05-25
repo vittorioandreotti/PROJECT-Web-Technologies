@@ -17,8 +17,7 @@ class Catalog
      */
     public function getSubCategories($codPar) {
         return Category::whereIn('codPar', $codPar)->get();
-    }
-    
+    }   
     
     /*Metodo per estrarre i prodotti della macrocategoria o sottocategoria*/
     public function getProducts($codCat, $paged, $order=null) {

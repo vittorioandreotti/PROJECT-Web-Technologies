@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Catalog;
+use Illuminate\Support\Facades\Log;
 
 class PublicController extends Controller
 {
@@ -21,7 +22,6 @@ class PublicController extends Controller
         $topCategories = $this->catalog->getTopCategories();
 
         $products = $this->catalog->getProducts($topCategories->map->only(['codCat']), 4, 'asc');
-
         return view('catalog')
                         ->with('topCategories', $topCategories)
                         ->with('products', $products);

@@ -24,6 +24,7 @@ class Product extends Model
     }
     
     // Realazione One-To-One con Categoria
+    /*Permette di ricavare la tupla della tabella 'categoria' dal codCat di un certo prodotto*/
     public function prodCat() {
         return $this->hasOne(Category::class, 'codCat', 'codCat');
     }
