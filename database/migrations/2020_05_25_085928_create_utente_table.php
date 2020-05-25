@@ -22,7 +22,7 @@ class CreateUtenteTable extends Migration
             $table->string('email');
             $table->string('ruolo',10)->default('user');
             $table->string('residenza');
-            $table->string('dataNascita');
+            $table->date('dataNascita');
             $table->string('occupazione');
         });
     }
