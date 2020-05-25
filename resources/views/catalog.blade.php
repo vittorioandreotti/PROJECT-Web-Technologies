@@ -27,7 +27,7 @@
             <div id="containerProdotto">
                 <img src="{{ asset('images/products/' . $product->image) }}">
                 <div class="info">
-                    <h2 class="title">Prodotto: {{ $product->nome }}</h2>
+                    <a href="{{route('product')}}"><h2 class="title">Prodotto: {{ $product->nome }}</h2></a>
                     <p class="price"> Prezzo: {{ number_format($product->prezzo,2,'.',',') }} € </p>
                 </div>
             </div>

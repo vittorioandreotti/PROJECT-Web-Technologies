@@ -449,6 +449,34 @@ BARRA PAGINAZIONE
     padding-top: 1em;
 }
 
+/*---------
+PAGINA PRODOTTO
+---------*/
+#product {
+    padding-left: 2em;
+}
+
+#product img {
+    display: block;
+    float: left;
+    width: 20em;
+    height: 20em;
+}
+#product .infoWrapper {
+    margin: 1em;
+}
+
+#product #prezzo, #product #prezzoScontato {
+    float:left;
+    padding-right: 1em;
+}
+
+
+
+#product #descBreve {
+    clear: both;
+}
+
 /*--------
   AGGIUSTA LE IMMAGINI PER I TABLET O SCHERMO A META'
 --------*/
