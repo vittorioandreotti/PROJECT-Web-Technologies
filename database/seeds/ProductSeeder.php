@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class ProductSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,22 +11,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('categoria')->insert([
-            ['codCat' => 1, 'name' => 'Componenti PC', 'codPar' => 0, 'desc' => 'Ram, Scheda Video, Schede Madri,CPU'],
-            ['codCat' => 2, 'name' => 'Audio', 'codPar' => 0, 'desc' => 'Cuffie Bluetooth, Console da DJ,AirPods,Registratori '],
-            ['codCat' => 3, 'name' => 'Fotografia', 'codPar' => 0, 'desc' => 'Reflex,Istantanee,Action Cam,Telescopi'],
-            ['codCat' => 4, 'name' => 'Ram', 'codPar' => 1, 'desc' => 'Descrizione delle Ram'],
-            ['codCat' => 5, 'name' => 'Schede Video', 'codPar' => 1, 'desc' => 'Descrizione delle Schede Video'],
-            ['codCat' => 6, 'name' => 'Schede Madri', 'codPar' => 1, 'desc' => 'Descrizione dei Dischi Rigidi'],
-            ['codCat' => 7, 'name' => 'CPU', 'codPar' => 1, 'desc' => 'Descrizione delle CPU'],
-            ['codCat' => 8, 'name' => 'Cuffie Bluetooth', 'codPar' => 2, 'desc' => 'Descrizione delle Cuffie Bluetooth'],
-            ['codCat' => 9, 'name' => 'Console da DJ', 'codPar' => 2, 'desc' => 'Descrizione delle Console da DJ'],
-            ['codCat' => 10, 'name' => 'AirPods', 'codPar' => 2, 'desc' => 'Descrizione delle AirPods'],
-            ['codCat' => 11, 'name' => 'Registratori', 'codPar' => 2, 'desc' => 'Descrizione dei Registratori'],
-            ['codCat' => 12, 'name' => 'Reflex', 'codPar' => 3, 'desc' => 'Descrizione delle Reflex'],
-            ['codCat' => 13, 'name' => 'Videocamere', 'codPar' => 3, 'desc' => 'Descrizione delle Videocamere']
-        ]);
-        
         DB::table('prodotto')->insert ([
            ['nome'=> 'CORSAIR Memoria Dimm Vengeance LPX 16GB',
             'codCat'=>4,
@@ -157,109 +141,5 @@ class DatabaseSeeder extends Seeder
             'sconto'=>1,
             'image'=>'rtx2080.jpg']
        ]);
-        
-        DB::table('utente')->insert ([
-            ['nome'=>'Mario',
-             'cognome'=>'Rossi',
-             'username'=>'MarioRossi',
-             'password'=>'mario_rossi',
-             'email'=>'mariorossi@prova.com',
-             'ruolo'=>'user',
-             'residenza'=>'Milano',
-             'dataNascita'=>'1958-01-10',
-             'occupazione'=>'Insegnante'],
-            ['nome'=>'Luca',
-             'cognome'=>'Biachi',
-             'username'=>'LucaBianchi',
-             'password'=>'luca_bianchi',
-             'email'=>'lucabianchi@prova.com',
-             'ruolo'=>'user',
-             'residenza'=>'Palermo',
-             'dataNascita'=>'1987-03-26',
-             'occupazione'=>'Metalmeccanico'],
-            ['nome'=>'Antonio',
-             'cognome'=>'Verdi',
-             'username'=>'AntonioVerdi',
-             'password'=>'antonio_verdi',
-             'email'=>'antonioverdi@prova.com',
-             'ruolo'=>'user',
-             'residenza'=>'Palo Alto',
-             'dataNascita'=>'2000-10-12',
-             'occupazione'=>'Militare'],
-            ['nome'=>'Federica',
-             'cognome'=>'Perlati',
-             'username'=>'FedericaPerlati',
-             'password'=>'federica_perlati',
-             'email'=>'federicaperlati@prova.com',
-             'ruolo'=>'user',
-             'residenza'=>'Brescia',
-             'dataNascita'=>'1976-08-29',
-             'occupazione'=>'Operaia'],
-            ['nome'=>'Francesca',
-             'cognome'=>'Pedretti',
-             'username'=>'FrancescaPedretti',
-             'password'=>'francesca_pedretti',
-             'email'=>'francescapedretti@prova.com',
-             'ruolo'=>'user',
-             'residenza'=>'Brindisi',
-             'dataNascita'=>'1991-06-14',
-             'occupazione'=>'Dirigente'],
-            ['nome'=>'Paolo',
-             'cognome'=>'Caneva',
-             'username'=>'PaoloCaneva',
-             'password'=>'paolo_caneva',
-             'email'=>'paolocaneva@prova.com',
-             'ruolo'=>'user',
-             'residenza'=>'Ancona',
-             'dataNascita'=>'1983-05-02',
-             'occupazione'=>'Commercialista'],
-            ['nome'=>'Alessandro',
-             'cognome'=>'Piacentini',
-             'username'=>'AlessandroPiacentini',
-             'password'=>'alessandro_piacentini',
-             'email'=>'alessandropiacentini@prova.com',
-             'ruolo'=>'user',
-             'residenza'=>'Trieste',
-             'dataNascita'=>'1979-11-16',
-             'occupazione'=>'Operaio'],
-            ['nome'=>'Lucia',
-             'cognome'=>'Moccia',
-             'username'=>'LuciaMoccia',
-             'password'=>'lucia_moccia',
-             'email'=>'luciamoccia@prova.com',
-             'ruolo'=>'user',
-             'residenza'=>'Bergamo',
-             'dataNascita'=>'1984-06-18',
-             'occupazione'=>'SocialMedia Manager'],
-             
-            //utenti User, Staff, Admin
-            ['nome'=>'User',
-             'cognome'=>'User',
-             'username'=>'useruser',
-             'password'=>'useruser',
-             'email'=>'useruser@tweb.com',
-             'ruolo'=>'user',
-             'residenza'=>'Pavia',
-             'dataNascita'=>'1993-02-19',
-             'occupazione'=>'User'],
-            ['nome'=>'Staff',
-             'cognome'=>'Staff',
-             'username'=>'staffstaff',
-             'password'=>'staffstaff',
-             'email'=>'staffstaff@tweb.com',
-             'ruolo'=>'staff',
-             'residenza'=>'Bologna',
-             'dataNascita'=>'1984-04-21',
-             'occupazione'=>'Staff'],
-            ['nome'=>'Admin',
-             'cognome'=>'Admin',
-             'username'=>'adminadmin',
-             'password'=>'adminadmin',
-             'email'=>'adminadmin@tweb.com',
-             'ruolo'=>'admin',
-             'residenza'=>'Lugano',
-             'dataNascita'=>'1989-10-23',
-             'occupazione'=>'Admin'],
-        ]);
     }
 }
