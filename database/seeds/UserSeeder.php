@@ -11,7 +11,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('utente')->insert ([
+        DB::table('users')->insert ([
             ['nome'=>'Mario',
              'cognome'=>'Rossi',
              'username'=>'MarioRossi',

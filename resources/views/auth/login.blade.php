@@ -35,9 +35,14 @@
                 {{ Form::submit('Login', ['class' => 'form-btn1']) }}
             
             
-                <p> Se non hai già un account <a  href="{{route('register')}}">Registrati</a></p>   
+                <p> Se non hai già un account <a  href="{{route('register')}}">Registrati</a></p>             
             {{ Form::close() }}
     </div>
-
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 </div>
 @endsection
