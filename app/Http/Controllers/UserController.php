@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Log;
 
 class UserController extends Controller
 {
@@ -10,6 +10,7 @@ class UserController extends Controller
     }
 
     public function index() {
+        Log::info('arrivato in userController');
         return view('user');
     }
 }
