@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Log;
 class UserController extends Controller
 {
     public function __construct() {
-        $this->middleware('auth');
+        $this->middleware('can:isUser');
     }
 
     public function index() {
