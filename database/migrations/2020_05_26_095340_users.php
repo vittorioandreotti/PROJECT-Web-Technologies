@@ -20,7 +20,7 @@ class Users extends Migration
             $table->string('username')->unique();
             $table->string('password');
             $table->string('email');
-            $table->string('ruolo',10)->default('user');
+            $table->string('role',10)->default('user');
             $table->string('residenza');
             $table->date('dataNascita');
             $table->string('occupazione');

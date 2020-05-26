@@ -44,6 +44,16 @@ Route::get('/selTopCat/{topCat}/selCat/{subCat}/product/{id}','PublicController@
 Route::view('/howToRegister', 'reginfo')
         ->name('reginfo');
 
+//Rotte ADMIN
+Route::get('/admin/newproduct', 'AdminController@addProduct')
+        ->name('newproduct');
+
+Route::post('/admin/newproduct', 'AdminController@storeProduct')
+        ->name('newproduct.store');
+
+Route::get('/admin', 'AdminController@index')
+        ->name('admin');
+
 // Rotte per il login
 Route::get('login', 'Auth\LoginController@showLoginForm')
         ->name('login');
