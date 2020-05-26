@@ -1,8 +1,13 @@
   <div class="menuContainer">
+      @can('isUser')
+      <p style="color:white">Benvenuto,User</p>
+      @endcan
+      @guest
         <div id="login" >
             <a href="{{route('login')}}">Accedi</a>
             <a href="{{route('register')}}">Registrati</a>
         </div>  
+      @endguest
         <ul class="headerMenu">
           <li class="headerMenuItem"><a href="{{route('catalog1')}}">Catalogo</a></li>
           <li class="headerMenuItem"><a href="{{ route('who') }}">Chi siamo</a></li>

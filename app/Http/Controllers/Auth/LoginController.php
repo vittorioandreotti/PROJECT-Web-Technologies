@@ -38,7 +38,7 @@ class LoginController extends Controller
             case 'staff': return '/staff';
                 break;
             case 'user': {  Log::info('arrivato user');
-                            return '/user';
+                            return '/';
             }
                 break;
             default: return '/';

@@ -71,4 +71,4 @@ Route::get('signin', 'Auth\RegisterController@showRegistrationForm')
 Route::post('signin', 'Auth\RegisterController@register');
 
 Route::get('/user', 'UserController@index')
-        ->name('user')->middleware('can:isUser');
+        ->name('user');
