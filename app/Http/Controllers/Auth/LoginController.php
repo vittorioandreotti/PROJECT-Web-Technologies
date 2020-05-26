@@ -31,15 +31,11 @@ class LoginController extends Controller
         $role = auth()->user()->role;
         Log::info($role);
         switch ($role) {
-            case 'admin':{Log::info('arrivato admin'); 
-                return '/admin';
-            }
+            case 'admin': return '/admin';
                 break;
             case 'staff': return '/staff';
                 break;
-            case 'user': {  Log::info('arrivato user');
-                            return '/';
-            }
+            case 'user':  return '/';
                 break;
             default: return '/';
         };

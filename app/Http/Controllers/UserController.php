@@ -7,7 +7,7 @@ class UserController extends Controller
 {
     
     public function __construct() {
-        $this->middleware('can:isUser');
+        $this->middleware('auth');
         Log::info('arrivato in userController');
     }
 

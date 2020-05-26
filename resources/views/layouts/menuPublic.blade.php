@@ -1,6 +1,6 @@
   <div class="menuContainer">
       @can('isUser')
-      <p style="color:white">Benvenuto,User</p>
+        @include('layouts/menuUser')
       @endcan
       @guest
         <div id="login" >

@@ -513,6 +513,67 @@ PAGINA PRODOTTO
   }
 }
 
+/*---------
+USER
+---------*/
+#welcomeUser {
+    margin-top: 1em;
+    margin-right: 0.5em;
+    width: 20em;
+    text-align: center;
+    padding: 1em 1em;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#welcomeUser li{
+   list-style-type: none;
+}
+
+#welcomeUser div a {
+    color: white;
+    font-weight: bold
+}
+
+#welcomeUser div  {
+    padding-right: 1em;
+}
+
+
+
+#welcomeUser li a{
+    text-decoration: none;
+    color: white;
+    padding: 1em 1em;
+    text-transform: uppercase;
+    margin: 0;
+    border-left: 2px solid white;
+}
+#welcomeUser a:hover{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/*-------
+PRODUCT PRICE
+--------*/
+.containerPriceCatalog{
+    display: flex;
+    margin-top: -1.5em;
+}
+
+.containerPriceCatalog .priceCatalog {
+    font-size: 22px;
+}
+
+.containerPriceCatalog .realPriceCatalog {
+    margin-left: 1em;
+    font-size: 12px;
+    margin-top: 0.5em;
+    color: red;
+}
+
+
 /*----------
     VARIE
 ----------*/
