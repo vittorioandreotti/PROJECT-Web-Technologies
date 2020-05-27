@@ -44,7 +44,7 @@ Route::get('/selTopCat/{topCat}/selCat/{subCat}/product/{id}','PublicController@
 Route::view('/howToRegister', 'reginfo')
         ->name('reginfo');
 
-//Rotte ADMIN
+// Rotte ADMIN
 Route::get('/admin', 'AdminController@index')
         ->name('admin');
 Route::get('/admin/newproduct', 'AdminController@addProduct')
@@ -52,6 +52,10 @@ Route::get('/admin/newproduct', 'AdminController@addProduct')
 
 Route::post('/admin/newproduct', 'AdminController@storeProduct')
         ->name('newproduct.store');
+
+// Rotte per lo STAFF
+Route::get('/staff', 'StaffController@index')
+        ->name('staff');
 
 // Rotte per il login
 Route::get('login', 'Auth\LoginController@showLoginForm')

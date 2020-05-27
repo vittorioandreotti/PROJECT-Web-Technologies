@@ -1,7 +1,9 @@
   <div class="menuContainer">
-      @can('isUser')
-        @include('layouts/menuUser')
-      @endcan
+      @auth
+        <div id="welcomeUser">
+          <div style="color:white">Benvenuto, <a href="">{{ Auth::user()->username }}</a>!</div>
+        </div>
+      @endauth
       @guest
         <div id="login" >
             <a href="{{route('login')}}">Accedi</a>
@@ -11,6 +13,9 @@
         <ul class="headerMenu">
           @can('isAdmin')
           <li class="headerMenuItem"><a href="{{ route('admin') }}" title="Home Admin">Home Admin</a></li>
+          @endcan
+          @can('isStaff')
+          <li class="headerMenuItem"><a href="{{ route('staff') }}" title="Home Staff">Home Staff</a></li>
           @endcan
           <li class="headerMenuItem"><a href="{{route('catalog1')}}">Catalogo</a></li>
           <li class="headerMenuItem"><a href="{{ route('who') }}">Chi siamo</a></li>
