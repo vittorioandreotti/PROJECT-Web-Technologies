@@ -391,10 +391,21 @@ CATALOGO
     color:#9b9b9b;
 }
 
-#contentCatalogo #cerca input {
-    padding: 0.4em 0;
+#contentCatalogo input {
+    padding: 0.4em 0.25em;
     width: 60%;
     border-radius: 0.5em;
+}
+#contentCatalogo button {
+    padding: 0.4em 0.25em;
+    width: 15%;
+    border-radius: 0.5em;
+    color: white;
+    background: dodgerblue;
+    cursor: pointer;
+}
+#contentCatalogo button:hover {
+    font-weight: bold;
 }
 
 #containerProdotti {
