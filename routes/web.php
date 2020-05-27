@@ -47,15 +47,17 @@ Route::view('/howToRegister', 'reginfo')
 // Rotte ADMIN
 Route::get('/admin', 'AdminController@index')
         ->name('admin');
-Route::get('/admin/newproduct', 'AdminController@addProduct')
-        ->name('newproduct');
 
-Route::post('/admin/newproduct', 'AdminController@storeProduct')
-        ->name('newproduct.store');
 
 // Rotte per lo STAFF
 Route::get('/staff', 'StaffController@index')
         ->name('staff');
+
+Route::get('/staff/newproduct', 'StaffController@addProduct')
+        ->name('newproduct');
+
+Route::post('/staff/newproduct', 'StaffController@storeProduct')
+        ->name('newproduct.store');
 
 // Rotte per il login
 Route::get('login', 'Auth\LoginController@showLoginForm')
@@ -85,7 +87,7 @@ Route::get('/editProfile','UserController@editProfile')
         ->name('editProfile')->middleware('can:isUser');
 
 Route::post('/editProfile', 'UserController@storeProfile')
-        ->name('editProfile.store');
+        ->name('editProfile.store')->middleware('can:isUser');
 
 Route::get('/editPassword', 'UserController@editPassword')
         ->name('editPassword')->middleware('can:isUser');

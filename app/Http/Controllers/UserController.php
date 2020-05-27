@@ -42,6 +42,6 @@ class UserController extends Controller
     }
     
     public function storePassword(EditProfile){
-        
+
     }
 }
