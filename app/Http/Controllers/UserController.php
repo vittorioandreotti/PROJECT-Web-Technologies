@@ -8,11 +8,9 @@ class UserController extends Controller
     
     public function __construct() {
         $this->middleware('auth');
-        Log::info('arrivato in userController');
     }
 
     public function index() {
-        Log::info('arrivato in index');
-        return view('user');
+        return view('home');
     }
 }
