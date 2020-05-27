@@ -8,8 +8,8 @@
         <title>@yield('title', 'Home Admin')</title>
     </head>
     <body>
-        <header id="header">
-             <div id="menu">@include('layouts/_navadmin')</div>
+        <header id="headerAdmin">
+             <div id="menu">@include('layouts/menuAdmin')</div>
         </header>
 
         <div style="margin: 0">

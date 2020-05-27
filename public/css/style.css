@@ -553,7 +553,30 @@ USER
     font-weight: bold;
     text-decoration: underline;
 }
+/*---------
+   ADMIN
+---------*/
 
+#headerAdmin{
+  background: #393e46;
+  height: 3.5em;
+  padding-left: 8%;
+  padding-right: 8%;
+}
+#logout{
+    float: right;
+}
+#logout a{
+    color: red;
+}
+
+.adminContainer{
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    min-height: 700px;
+}
 /*-------
 PRODUCT PRICE
 --------*/

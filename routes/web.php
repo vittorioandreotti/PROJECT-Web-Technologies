@@ -45,7 +45,8 @@ Route::view('/howToRegister', 'reginfo')
         ->name('reginfo');
 
 //Rotte ADMIN
-
+Route::get('/admin', 'AdminController@index')
+        ->name('admin');
 
 // Rotte per il login
 Route::get('login', 'Auth\LoginController@showLoginForm')
