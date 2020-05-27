@@ -3,10 +3,18 @@
 
 
 @section('content')
+    @if ($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+    @endif
 
 
-
-<form class="contact-form" id="addproduct" name="addproduct"  method="post" action="{{ route('newproduct.store')  }}">
+<form class="contact-form" id="editProfile" name="editProfile"  method="post" action="{{route('editProfile.store')}}">
                 @csrf
                 <div  class="wrap-input  rs1-wrap-input">
                     <label class="label-input" for="name">Nome </label>
@@ -67,17 +75,24 @@
                     <label class="label-input" for="job">Occupazione</label>
                     <select class="input" name="job" id="job">
                         @foreach($jobs as $job)
-                        <option value="">{{ $job }}</option>
+                        <option value="{{$job}}">{{ $job }}</option>
                         @endforeach
                     </select>
                 </div>
                 <div class="container-form-btn">                
                     <input type="submit" class="form-btn1" value="Salva">
                 </div>
+</form>
 <!--{{ Form::open(array('route' => 'newproduct.store', 'id' => 'editProfile', 'files' => false, 'class' => 'contact-form')) }}
             <div>
                 {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}
-                {{ Form::text('nome', "{!!Auth::user()->name!!}", ['class' => 'input', 'id' => 'nome']) }}
+                {{ Form::text('nome', "", ['class' => 'input', 'id' => 'nome']) }}
+                {{ Form::label('surname', 'Nome', ['class' => 'label-input']) }}
+                {{ Form::text('nome', "", ['class' => 'input', 'id' => 'nome']) }}
+                {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}
+                {{ Form::text('nome', "", ['class' => 'input', 'id' => 'nome']) }}
+                {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}
+                {{ Form::text('nome', "", ['class' => 'input', 'id' => 'nome']) }}
                 @if ($errors->first('nome'))
                 <ul class="errors">
                     @foreach ($errors->get('nome') as $message)

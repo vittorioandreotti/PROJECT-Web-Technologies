@@ -85,5 +85,5 @@ Route::get('/editProfile','UserController@editProfile')
         ->name('editProfile')->middleware('can:isUser');
 
 Route::post('/editProfile', 'UserController@storeProfile')
-        ->name('editProfile.store');
+        ->name('editProfile.store')->middleware('can:isUser');
 
