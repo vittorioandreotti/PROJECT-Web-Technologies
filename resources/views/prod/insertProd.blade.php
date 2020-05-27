@@ -1,6 +1,6 @@
-@extends('layouts.admin')
+@extends('layouts.staff')
 
-@section('title', 'ADMIN')
+@section('title', 'STAFF')
 
 @section('content')
 <div class="adminContainer clearfix">

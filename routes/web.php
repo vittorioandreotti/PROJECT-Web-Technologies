@@ -89,3 +89,8 @@ Route::get('/editProfile','UserController@editProfile')
 Route::post('/editProfile', 'UserController@storeProfile')
         ->name('editProfile.store')->middleware('can:isUser');
 
+Route::get('/admin/newstaff', 'AdminController@addStaff')
+        ->name('newstaff');
+
+Route::post('/admin/newstaff', 'AdminController@storeStaff')
+        ->name('newstaff.store');
