@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('username',20);
             $table->string('password');
             $table->string('role',10)->default('user');
-            $table->string('homeTown');
+            $table->string('residence');
             $table->date('birthday');
             $table->string('job');
             $table->rememberToken(); 

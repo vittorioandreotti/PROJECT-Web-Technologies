@@ -9,6 +9,7 @@ use App\Models\Staff;
 
 class StaffController extends Controller
 {
+    protected $_staffModel;
     
     public function __construct() {
         $this->middleware('can:isStaff');

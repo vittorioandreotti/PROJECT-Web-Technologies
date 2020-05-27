@@ -1,33 +1,38 @@
-@extends('layouts.public')
-@section('title', 'Registrazione')
+@extends('layouts.admin')
+
+@section('title', 'ADMIN')
 
 @section('content')
+<div class="adminContainer clearfix">
+    <h3>Aggiungi Prodotti</h3>
+    <p>Utilizza questa form per inserire un nuovo lavoratore come Staff</p>
 
-<div class="container spazio clearfix">
     <div class="box">
-        <h3>Registrazione</h3>
+        
+            {{ Form::open(array('route' => 'newstaff.store', 'id' => 'addStaff', 'files' => true, 'class' => 'contact-form')) }}
+            <div>
+                {{ Form::label('name', 'Nome Staff', ['class' => 'label-input']) }}
+                {{ Form::text('name', '', ['class' => 'input', 'id' => 'name']) }}
+                @if ($errors->first('name'))
+                <ul class="errors">
+                    @foreach ($errors->get('name') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                @endif
+            </div>
 
-        {{Form::open(array('route' => 'register'))}}
-
-        {{Form::label('name', 'Nome')}}
-        {{Form::text('name', ''), ['id' => 'name']}}
-        @if ($errors->first('name'))
-        <ul class="errors">
-            @foreach ($errors->get('name') as $message)
-            <li>{{ $message }}</li>
-            @endforeach
-        </ul>
-        @endif
-
-        {{ Form::label('surname', 'Cognome') }}
-        {{ Form::text('surname', '', ['class' => 'input', 'id' => 'surname']) }}
-        @if ($errors->first('surname'))
-        <ul class="errors">
-            @foreach ($errors->get('surname') as $message)
-            <li>{{ $message }}</li>
-            @endforeach
-        </ul>
-        @endif
+            <div>
+                {{ Form::label('surname', 'Cognome Staff', ['class' => 'label-input']) }}
+                {{ Form::text('suraname','', ['class' => 'input','id' => 'surname']) }}
+                @if ($errors->first('surname'))
+                <ul class="errors">
+                    @foreach ($errors->get('surname') as $message)
+                    <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                @endif
+            </div>
 
         {{ Form::label('username', 'Username') }}
         {{ Form::text('username', '', ['id' => 'username']) }}
@@ -81,7 +86,10 @@
             @endforeach
         </ul>
         @endif
-
+        
+        {{ Form::label('role', 'Ruolo=staff') }}
+        {{ Form::text('role','', ['id' => 'staff']) }}  
+        
         {{ Form::label('residence', 'Luogo di residenza') }}
         {{ Form::text('residence', '', ['id' => 'residence']) }}
         @if ($errors->first('residence'))
@@ -91,11 +99,13 @@
             @endforeach
         </ul>
         @endif
-
-        {{ Form::submit('Registra') }}
-
-        <p>Se hai già un account <a href="{{route("login")}}">Accedi</a></p>
-        {{ Form::close() }}
+        <div>                
+            {{ Form::submit('Aggiungi Prodotto', ['class' => 'form-btn1']) }}
+            
+            {{ Form::close() }}
+        </div>
     </div>
+
 </div>
 @endsection
+
