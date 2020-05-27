@@ -87,3 +87,8 @@ Route::get('/editProfile','UserController@editProfile')
 Route::post('/editProfile', 'UserController@storeProfile')
         ->name('editProfile.store');
 
+Route::get('/editPassword', 'UserController@editPassword')
+        ->name('editPassword')->middleware('can:isUser');
+
+Route::post('/editPassword', 'UserController@storePassword')
+        ->name('editPassword.store');

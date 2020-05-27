@@ -5,7 +5,7 @@
 
 <div class="container spazio clearfix">
     <div class="box">
-        <h3>Registrazione</h3>
+        <h1>Registrazione</h1>
 
         {{Form::open(array('route' => 'register'))}}
 
@@ -20,7 +20,7 @@
         @endif
 
         {{ Form::label('surname', 'Cognome') }}
-        {{ Form::text('surname', '', ['class' => 'input', 'id' => 'surname']) }}
+        {{ Form::text('surname', '', ['id' => 'surname']) }}
         @if ($errors->first('surname'))
         <ul class="errors">
             @foreach ($errors->get('surname') as $message)
@@ -59,7 +59,7 @@
         </ul>
         @endif
 
-        {{ Form::label('password-confirm', 'Conferma password', ['class' => 'label-input']) }}
+        {{ Form::label('password-confirm', 'Conferma password') }}
         {{ Form::password('password_confirmation', ['id' => 'password-confirm']) }}
 
         {{ Form::label('job', 'Occupazione') }}
