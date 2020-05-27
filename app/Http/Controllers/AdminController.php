@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use App\Models\Resources\Product;
-use App\Http\Requests\NewProductRequest;
+use App\Http\Requests\prodRequest;
 
 class AdminController extends Controller {
 
@@ -20,12 +20,12 @@ class AdminController extends Controller {
     }
 
     public function addProduct() {
-        $prodCats = $this->_adminModel->getProdsCats()->pluck('name', 'catId');
-        return view('product.insert')
+        $prodCats = $this->_adminModel->getProdsCats()->pluck('name', 'codCat');
+        return view('prod.insertProd')
                         ->with('cats', $prodCats);
     }
 
-    public function storeProduct(NewProductRequest $request) {
+    public function storeProduct(prodRequest $request) {
 
         if ($request->hasFile('image')) {
             $image = $request->file('image');
