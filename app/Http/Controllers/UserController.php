@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Log;
 
 class UserController extends Controller
 {
-    
+   protected $jobs=['Operaio','Insegnante','Ingegnere','Architetto']; 
     public function __construct() {
         $this->middleware('auth');
     }
@@ -16,5 +16,11 @@ class UserController extends Controller
     
     public function showProfile(){
         return view('profile');
+    }
+    
+    public function editProfile(){
+        return view('editUser')
+              ->with("jobs",$this->jobs);
+        
     }
 }

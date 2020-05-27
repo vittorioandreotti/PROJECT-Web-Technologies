@@ -81,4 +81,9 @@ Route::get('/user/profile', 'UserController@showProfile')
         ->name('profile')->middleware('can:isUser');
 
 
+Route::get('/editProfile','UserController@editProfile')
+        ->name('editProfile')->middleware('can:isUser');
+
+Route::post('/editProfile', 'UserController@storeProfile')
+        ->name('editProfile.store');
 
