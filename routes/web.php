@@ -48,6 +48,11 @@ Route::view('/howToRegister', 'reginfo')
 Route::get('/admin', 'AdminController@index')
         ->name('admin');
 
+Route::get('/manageUser', 'AdminController@manageUser')
+        ->name('manageUser');
+
+Route::get('/manageStaff', 'AdminController@')
+        ->name('manageStaff');
 
 // Rotte per lo STAFF
 Route::get('/staff', 'StaffController@index')

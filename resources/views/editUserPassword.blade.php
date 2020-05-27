@@ -8,7 +8,7 @@
     
     {{Form::label('currentPassword', 'Password Corrente')}}
     {{Form::text('password', '')}}
-    @if ($errors->first('currentPassword')
+    @if ($errors->first('currentPassword'))
     <ul>
         @foreach ($errors->get('currentPassword') as $message)
         <li>{{$message}}</li>
@@ -18,7 +18,7 @@
     
     {{Form::label('newPassword', 'Nuova Password')}}
     {{Form::password('password')}}
-    @if ($errors->first('newPassword')
+    @if ($errors->first('newPassword'))
     <ul>
         @foreach ($errors->get('newPassword') as $message)
         <li>{{$message}}</li>
@@ -28,7 +28,7 @@
     
     {{Form::label('newPassword_confirm', 'Conferma Password')}}
     {{Form::password('password_confirmation')}}
-    @if ($errors->first('currentPassword')
+    @if ($errors->first('currentPassword'))
     <ul>
         @foreach ($errors->get('surname') as $message)
         <li>{{$message}}</li>

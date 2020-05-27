@@ -41,7 +41,7 @@ class UserController extends Controller
         return view('editUserPassword');
     }
     
-    public function storePassword(EditProfile){
+    public function storePassword(){
 
     }
 }
