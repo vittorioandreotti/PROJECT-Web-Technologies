@@ -29,11 +29,11 @@ class UserController extends Controller
     
     public function storeProfile(EditProfileRequest $request) {
         $user=Auth::user();
-        $user->homeTown=$request->get('homeTown');
+        $user->update($request->validated());
         Log::info($request);
         Log::info($user);
         $user->save();
-        return redirect()->action('UserController@index');
+        return redirect()->action('UserController@showProfile');
         ;
     }
 }

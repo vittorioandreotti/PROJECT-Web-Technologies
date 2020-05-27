@@ -25,11 +25,11 @@ class EditProfileRequest extends FormRequest {
      */
     public function rules() {
         return [
-            'name' => 'max:30',
-            'surname' => 'max:30',
+            'name' => 'required|max:30',
+            'surname' => 'required|max:30',
             'email' => 'required|max:35',
-            'homeTown' => 'required|max:20',
-            'birthday' => 'max:20',
+            'residence' => 'required|max:20',
+            'birthday' => 'required|max:20',
             'job' => ''
         ];
     }
