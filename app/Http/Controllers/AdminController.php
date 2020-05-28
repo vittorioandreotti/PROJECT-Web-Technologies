@@ -25,12 +25,23 @@ class AdminController extends Controller {
             ->with('users', $users);
     }
     
+    public function deleteUser($id) {
+        $user = User::findOrFail($id);
+        $user->delete();
+        return redirect()->route('manageUser');
+    }
+    
     public function manageStaff() {
         $staffs = User::where('role', "staff")->get();
         return view('manageStaff')
                ->with('staffs', $staffs);
     }
     
+    public function deleteStaff ($id) {
+        $staff = User::findOrFail($id);
+        $staff->delete();
+        return redirect()->route('manageStaff');
+    }
     public function addStaff() {
         return view('prod.insertStaff');
     }

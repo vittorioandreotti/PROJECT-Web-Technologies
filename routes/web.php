@@ -48,11 +48,17 @@ Route::view('/howToRegister', 'reginfo')
 Route::get('/admin', 'AdminController@index')
         ->name('admin');
 
-Route::get('admin/manageUser', 'AdminController@manageUser')
+Route::get('/admin/manageUser', 'AdminController@manageUser')
         ->name('manageUser');
 
-Route::get('admin/manageStaff', 'AdminController@manageStaff')
+Route::get('/admin/manageStaff', 'AdminController@manageStaff')
         ->name('manageStaff');
+
+Route::post('deleteUser/{id}', 'AdminController@deleteUser')
+        ->name('deleteUser');
+
+Route::post('deleteStaff/{id}', 'AdminController@deleteStaff')
+        ->name('deleteStaff');
 
 Route::get('/admin/newstaff', 'AdminController@addStaff')
         ->name('newstaff');
