@@ -48,11 +48,17 @@ Route::view('/howToRegister', 'reginfo')
 Route::get('/admin', 'AdminController@index')
         ->name('admin');
 
-Route::get('/manageUser', 'AdminController@manageUser')
+Route::get('admin/manageUser', 'AdminController@manageUser')
         ->name('manageUser');
 
-Route::get('/manageStaff', 'AdminController@')
+Route::get('admin/manageStaff', 'AdminController@manageStaff')
         ->name('manageStaff');
+
+Route::get('/admin/newstaff', 'AdminController@addStaff')
+        ->name('newstaff');
+
+Route::post('/admin/newstaff', 'AdminController@storeStaff')
+        ->name('newstaff.store');
 
 // Rotte per lo STAFF
 Route::get('/staff', 'StaffController@index')
@@ -80,22 +86,20 @@ Route::get('signin', 'Auth\RegisterController@showRegistrationForm')
 
 Route::post('signin', 'Auth\RegisterController@register');
 
+// Rotte per lo USER
 Route::get('/user', 'UserController@index')
         ->name('user')->middleware('can:isUser');
-
-
 Route::get('/user/profile', 'UserController@showProfile')
         ->name('profile')->middleware('can:isUser');
 
-
-Route::get('/editProfile','UserController@editProfile')
+Route::get('user/editProfile','UserController@editProfile')
         ->name('editProfile')->middleware('can:isUser');
 
-Route::post('/editProfile', 'UserController@storeProfile')
+Route::post('user/editProfile', 'UserController@storeProfile')
         ->name('editProfile.store')->middleware('can:isUser');
 
-Route::get('/editPassword', 'UserController@editPassword')
+Route::get('user/editPassword', 'UserController@editPassword')
         ->name('editPassword')->middleware('can:isUser');
 
-Route::post('/editPassword', 'UserController@storePassword')
+Route::post('user/editPassword', 'UserController@storePassword')
         ->name('editPassword.store');

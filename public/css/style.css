@@ -397,10 +397,21 @@ CATALOGO
     color:#9b9b9b;
 }
 
-#contentCatalogo #cerca input {
-    padding: 0.4em 0;
+#contentCatalogo input {
+    padding: 0.4em 0.25em;
     width: 60%;
     border-radius: 0.5em;
+}
+#contentCatalogo button {
+    padding: 0.4em 0.25em;
+    width: 15%;
+    border-radius: 0.5em;
+    color: white;
+    background: dodgerblue;
+    cursor: pointer;
+}
+#contentCatalogo button:hover {
+    font-weight: bold;
 }
 
 #containerProdotti {
@@ -622,8 +633,86 @@ PROFILO UTENTE
     border-bottom: 1px solid lightgray;
 }
 
+/*-----------
+MODIFICA UTENTE
+------------*/
+#editProfile {
+    margin-left: 2em;
+    margin-top:1em;
+    height: 300em;
+}
+
+#formEditProfile {
+    width: 20em;
+}
+
+#formEditProfile .wrapInput {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: space-around;
+}
+#formEditProfile .wrapInput .labelInput {
+    width: 13em;
+}
 
 
+#editProfile .wrapInput .input {
+    padding: 0.4em;
+}
+
+#editProfile .submit {
+    padding: 0.3em;
+    width: 14em;
+    border-radius: 0.3em;
+    background-color: green;
+    color: white;
+}
+#editProfile .delete {
+    padding: 0.3em;
+    width: 6em;
+    border-radius: 0.3em;
+    background-color: red;
+    color: white;
+    margin-left: 0.25em;
+}
+
+
+#editProfile .submit:hover,#editProfile .delete:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#editProfile #birthday {
+    width: 12em;
+}
+
+/*----------
+MENU USER
+----------*/
+.headerMenuItemUser a{
+  display: block;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: white;
+  text-decoration: none;
+  width: 10em;
+  padding: 1em 0.5em;
+  text-align: center;
+  border-radius: 0.5em;
+}
+
+.headerMenuItemUser a:hover{
+  font-weight: bold;
+  color:black;
+  background-color: #fca905;
+  transition: 0.5s;
+}
+.headerMenuItemUser{
+  display: inline-block;
+}
 /*----------
     VARIE
 ----------*/
@@ -635,11 +724,27 @@ PROFILO UTENTE
     color: red;
 }
 
+.button{
+    padding: 0.5em;
+    width: 9em;
+    border-radius: 0.3em;
+    background-color: cyan;
+    color: white;
+    margin-left: 0.25em;
+    font-size: 1.5em;
+    float: right;
+}
+
+.button:hover{
+    font-weight: bold;
+}
+
 /*-----------
     TABELLA
 ------------*/
 .table {
     border-collapse: collapse;
+    margin: 15 px;
 }
 
 .table td {

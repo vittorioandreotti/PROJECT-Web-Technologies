@@ -8,8 +8,8 @@
         <tr><td><b>Nome</b></td><td>{{Auth::user()->name}}</td></tr>
         <tr><td><b>Cognome</b></td><td>{{Auth::user()->surname}}</td></tr>
         <tr><td><b>Email</b></td><td>{{Auth::user()->email}}</td></tr>
-        <tr><td><b>Residenza</b></td><td>{{Auth::user()->homeTown}}</td></tr>
-        <tr><td><b>Data di nascita</b></td><td>{{Auth::user()->birthday}}</td></tr>
+        <tr><td><b>Residenza</b></td><td>{{Auth::user()->residence}}</td></tr>
+        @include('helpers/convertDate',['date'=>Auth::user()->birthday])
         <tr><td><b>Occupazione</b></td><td>{{Auth::user()->job}}</td></tr>
     </table>
     <!--<h1>Dati Personali</h1>

@@ -19,8 +19,11 @@
         @endif
 
         <p id='totaleProdotti'>Totale prodotti: {{$products->total()}}</p>
-        <div id='cerca'>
-            <input type="text" placeholder="Cerca">
+        <div>
+            <input name='cerca' type="text" placeholder="Cerca">
+        @can('isStaff')
+            <button name='insertProduct' type="button">Inserisci prodotto</button>
+        @endcan
         </div>
         <div id='containerProdotti'>
             @foreach($products as $product)
