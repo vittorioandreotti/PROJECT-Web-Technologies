@@ -50,14 +50,14 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'nome' => ['required', 'string', 'max:191'],
-            'cognome' => ['required', 'string', 'max:191'],
+            'name' => ['required', 'string', 'max:191'],
+            'surname' => ['required', 'string', 'max:191'],
             'username' => ['required', 'string', 'min:8', 'max:191', 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:191', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'residenza' => ['required', 'string', 'max:191'], 
-            'occupazione' => ['required', 'string', 'max:191'],
-            'dataNascita' => ['required', 'date'],
+            'residence' => ['required', 'string', 'max:191'], 
+            'job' => ['required', 'string', 'max:191'],
+            'birthday' => ['required', 'date'],
         ]);
     }
 
@@ -75,9 +75,9 @@ class RegisterController extends Controller
             'username' => $data ['username'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'homeTown' => $date ['homeTown'],
-            'job' => $date ['job'],
-            'dateOfBirth' => $date ['dateofBirth'],
+            'residence' => $data ['residence'],
+            'job' => $data ['job'],
+            'birthday' => $data ['birthday'],
         ]);
     }
 }
