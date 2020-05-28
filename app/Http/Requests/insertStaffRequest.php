@@ -28,8 +28,11 @@ class insertStaffRequest extends FormRequest {
             'name' => 'max:30',
             'surname' => 'max:30',
             'email' => 'required|max:35',
+            'username'=>'required|max:20',
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'role'=>'required|max:10',
             'residence' => 'required|max:20',
-            'birthday' => 'max:20',
+            'birthday' => ['required', 'date'],
             'job' => ''
         ];
     }

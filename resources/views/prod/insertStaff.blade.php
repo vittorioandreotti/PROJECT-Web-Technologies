@@ -24,7 +24,7 @@
 
             <div>
                 {{ Form::label('surname', 'Cognome Staff', ['class' => 'label-input']) }}
-                {{ Form::text('suraname','', ['class' => 'input','id' => 'surname']) }}
+                {{ Form::text('surname','', ['class' => 'input','id' => 'surname']) }}
                 @if ($errors->first('surname'))
                 <ul class="errors">
                     @foreach ($errors->get('surname') as $message)
@@ -77,11 +77,11 @@
         </ul>
         @endif
         
-        {{ Form::label('dateOfBirth', 'Data di nascita') }}
-        {{ Form::text('dateofBirth', '', ['id' => 'dateOfBith']) }}
-        @if ($errors->first('dateOfBirth'))
+        {{ Form::label('birthday', 'Data di nascita') }}
+        {{ Form::text('birthday', '', ['id' => 'birthday']) }}
+        @if ($errors->first('birthday'))
         <ul class="errors">
-            @foreach ($errors->get('dateOfBirth') as $message)
+            @foreach ($errors->get('birthday') as $message)
             <li>{{ $message }}</li>
             @endforeach
         </ul>
@@ -100,7 +100,7 @@
         </ul>
         @endif
         <div>                
-            {{ Form::submit('Aggiungi Prodotto', ['class' => 'form-btn1']) }}
+            {{ Form::submit('Aggiungi', ['class' => 'form-btn1']) }}
             
             {{ Form::close() }}
         </div>

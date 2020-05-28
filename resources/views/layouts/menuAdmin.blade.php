@@ -2,12 +2,13 @@
         <ul class="headerMenu">
           <li class="headerMenuItem"><a href="{{ route('admin') }}" title="Va alla Home di Admin">Home</a></li>
           <li class="headerMenuItem"><a href="{{route('catalog1')}}">Catalogo</a></li>
+          <li class="headerMenuItem"><a href="{{route('manageUser')}}">Gestione Utenti</a></li>
           <li class="headerMenuItem">
-              <a href="">Gestione Utenti</a>
+              <a href="">Gestione Staff</a>
               <div id="subMenu">
                   <ul>
-                      <li><a href="{{route('manageUser')}}">Gestisci Utenti</a></li>
-                      <li><a href="{{route('manageStaff')}}">Gestisci Staff</a></li>
+                      <li><a href="{{route('manageStaff')}}">Elimina Staff</a></li>
+                      <li><a href="{{route('newstaff')}}">Aggiungi Staff</a></li>
                   </ul>
               </div>
            </li>
