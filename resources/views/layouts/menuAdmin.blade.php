@@ -1,6 +1,6 @@
 <div>
         <ul class="headerMenu">
-          <li class="headerMenuItem"><a href="{{ route('admin') }}" title="Va alla Home di Admin">Home</a></li>
+          <li class="headerMenuItem"><a href="{{ route('home') }}" title="Va alla Home">Home</a></li>
           <li class="headerMenuItem"><a href="{{route('catalog1')}}">Catalogo</a></li>
           <li class="headerMenuItem">
               <a href="">Gestione Utenti</a>

@@ -5,6 +5,11 @@ use Illuminate\Support\Facades\Log;
 use App\Http\Requests\EditProfileRequest;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Rules\CheckPassword;
+use App\Http\Requests\ChangePasswordRequest;
+use Illuminate\Support\Facades\Hash;
+
+
 
 class UserController extends Controller
 {
@@ -41,7 +46,15 @@ class UserController extends Controller
         return view('editUserPassword');
     }
     
-    public function storePassword(){
+    public function storePassword(ChangePasswordRequest $request){
+        $request->validate([
+                            'password' => ['required', new CheckPassword],
+                            'newPassword' => ['required'],
+                            'newPassword_confirmation' => ['same:newPassword'],
+                            ]);
+        User::find(auth()->user()->id)->update(['password'=> Hash::make($request->newPassword)]);
+         auth()->user()->save();
+        return redirect()->action('UserController@showProfile');
 
     }
 }

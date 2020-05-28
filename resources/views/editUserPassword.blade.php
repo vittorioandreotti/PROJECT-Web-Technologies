@@ -5,38 +5,34 @@
 
 <div>
 {{Form::open(array('route' => 'editPassword.store'))}}
-    
-    {{Form::label('currentPassword', 'Password Corrente')}}
-    {{Form::text('password', '')}}
-    @if ($errors->first('currentPassword'))
+    <div class="wrapInput"> 
+    {{Form::label('password', 'Password Corrente',['class'=>'labelInput'])}}
+    {{Form::text('password', ''),['class'=>'input','id' => 'password']}}
+    @if ($errors->first('password'))
     <ul>
-        @foreach ($errors->get('currentPassword') as $message)
+        @foreach ($errors->get('password') as $message)
         <li>{{$message}}</li>
         @endforeach
     </ul>
     @endif
-    
-    {{Form::label('newPassword', 'Nuova Password')}}
-    {{Form::password('password')}}
-    @if ($errors->first('newPassword'))
+    </div>
+    <div class="wrapInput"> 
+    {{Form::label('newPassword', 'Nuova Password',['class'=>'labelInput'])}}
+    {{Form::password('newPassword'),['class'=>'input','id' => 'newpassword']}}
+    @if ($errors->first('password'))
     <ul>
-        @foreach ($errors->get('newPassword') as $message)
+        @foreach ($errors->get('password') as $message)
         <li>{{$message}}</li>
         @endforeach
     </ul>
     @endif
-    
-    {{Form::label('newPassword_confirm', 'Conferma Password')}}
-    {{Form::password('password_confirmation')}}
-    @if ($errors->first('currentPassword'))
-    <ul>
-        @foreach ($errors->get('surname') as $message)
-        <li>{{$message}}</li>
-        @endforeach
-    </ul>
-    @endif
+    </div>
+    <div class="wrapInput"> 
+    {{Form::label('newPassword_confirm', 'Conferma Password',['class'=>'labelInput'])}}
+    {{Form::password('newPassword_confirmation'),['class'=>'input','id' => 'currentPassword']}}    
+    </div>
     
     {{ Form::submit('Modifica') }}
-{{Form::close()}}
+    {{Form::close()}}
 </div>
 @endsection
