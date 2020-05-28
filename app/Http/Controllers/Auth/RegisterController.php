@@ -78,6 +78,16 @@ class RegisterController extends Controller
             'avana' => $date ['residence'],
             'avana' => $date ['job'],
             'avana' => $date ['birthday'],
+            'avana' => $data ['residence'],
+            'avana' => $data ['job'],
+            'avana' => $data ['birthday'],
+            
+            'avana' => $data ['residence'],
+            'avana' => $data ['job'],
+            'avana' => $data ['birthday'],
+            'avana' => $data ['residence'],
+            'avana' => $data ['job'],
+            'avana' => $data ['birthday'],
         ]);
     }
 }
