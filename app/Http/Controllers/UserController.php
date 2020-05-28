@@ -47,14 +47,16 @@ class UserController extends Controller
     }
     
     public function storePassword(ChangePasswordRequest $request){
+        $user=Auth::user();
         $request->validate([
                             'password' => ['required', new CheckPassword],
                             'newPassword' => ['required'],
-                            'newPassword_confirmation' => ['same:newPassword'],
+                            'newPasswordConfirm' => ['same:newPassword'],
                             ]);
-        User::find(auth()->user()->id)->update(['password'=> Hash::make($request->newPassword)]);
-         auth()->user()->save();
-        return redirect()->action('UserController@showProfile');
+       $user->update(['password'=> Hash::make($request->newPassword)]);
+       $user->save();
+       return redirect()->back()
+                        ->with('confermPassword','Password cambiata!');
 
     }
 }

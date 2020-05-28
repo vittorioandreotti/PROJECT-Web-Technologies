@@ -26,6 +26,7 @@ class CheckPassword implements Rule
      */
     public function passes($attribute, $value)
     {
+        /*Confronta se la password inserita coincide con quella corrente*/
         return Hash::check($value, auth()->user()->password);
     }
 
@@ -36,6 +37,6 @@ class CheckPassword implements Rule
      */
     public function message()
     {
-        return 'Le password non coincidono!';
+        return 'Password corrente errata!';
     }
 }
