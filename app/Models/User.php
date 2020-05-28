@@ -8,5 +8,8 @@ class User extends Model {
     protected $table='users';
     protected $primaryKey='id';
     public $timestamps = false;
+    protected $fillable = [
+        'name','surname','username','email', 'password','job','birthday','residence'
+    ];
 }
 

@@ -11,6 +11,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        //User, Staff e Admin
         DB::table('users')->insert ([ 
             ['name'=>'User',
              'surname'=>'User',
@@ -45,17 +46,6 @@ class UserSeeder extends Seeder
              'job'=>'Admin',
              'created_at' => date("Y-m-d H:i:s"),
              'updated_at' => date("Y-m-d H:i:s")],
-            ['name'=>'Utente',
-             'surname'=>'Prova',
-             'email'=>'utenteprova@tweb.com',
-             'username'=>'utenteprova',
-             'password'=>Hash::make('utente_prova'),
-             'role'=>'user',
-             'residence'=>'Pavia',
-             'birthday'=>'1993-02-19',
-             'job'=>'User',
-            'created_at' => date("Y-m-d H:i:s"),
-            'updated_at' => date("Y-m-d H:i:s")],
             
             //Utenti di prova
             ['name'=>'Mario',

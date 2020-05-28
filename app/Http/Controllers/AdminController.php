@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\insertStaffRequest;
 use App\Models\Staff;
 use App\Models\User;
+use App\Http\Requests\EditProfileRequest;
+use Illuminate\Support\Facades\Log;
 
 class AdminController extends Controller {
 
@@ -37,11 +39,29 @@ class AdminController extends Controller {
                ->with('staffs', $staffs);
     }
     
+    public function editStaff ($id){
+        $jobs=['Operaio','Insegnante','Ingegnere','Architetto'];
+        $staff = User::where('id', "$id")->get()->first();
+        return view('editStaff')
+            ->with('staff', $staff)
+            ->with('jobs', $jobs);
+    }
+    
+    public function storeEditStaff (EditProfileRequest $request, $id){
+        $staff = User::where('id', "$id")->get()->first();
+        $staff -> update($request->validated());
+        Log::info($request);
+        Log::info($staff);
+        $staff -> save();
+        return redirect()->route('manageStaff');
+    }
+    
     public function deleteStaff ($id) {
         $staff = User::findOrFail($id);
         $staff->delete();
         return redirect()->route('manageStaff');
     }
+    
     public function addStaff() {
         return view('prod.insertStaff');
     }

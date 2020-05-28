@@ -6,7 +6,7 @@
               <a href="">Gestione Utenti</a>
               <div id="subMenu">
                   <ul>
-                      <li><a href="{{route('manageUser')}}">Gestisci Utenti</a></li>
+                      <li><a href="{{route('manageUser')}}">Cancella Utenti</a></li>
                       <li><a href="{{route('manageStaff')}}">Gestisci Staff</a></li>
                   </ul>
               </div>

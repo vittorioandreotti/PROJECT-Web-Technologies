@@ -66,6 +66,12 @@ Route::get('/admin/newstaff', 'AdminController@addStaff')
 Route::post('/admin/newstaff', 'AdminController@storeStaff')
         ->name('newstaff.store');
 
+Route::get('/admin/editStaff/{id}', 'AdminController@editStaff')
+        ->name('editStaff');
+
+Route::post('/admin/editStaff/{id}', 'AdminController@storeEditStaff')
+        ->name('editStaff.store');
+
 // Rotte per lo STAFF
 Route::get('/staff', 'StaffController@index')
         ->name('staff');
@@ -95,6 +101,7 @@ Route::post('signin', 'Auth\RegisterController@register');
 // Rotte per lo USER
 Route::get('/user', 'UserController@index')
         ->name('user')->middleware('can:isUser');
+
 Route::get('/user/profile', 'UserController@showProfile')
         ->name('profile')->middleware('can:isUser');
 

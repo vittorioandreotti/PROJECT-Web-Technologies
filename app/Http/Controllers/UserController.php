@@ -24,7 +24,6 @@ class UserController extends Controller
        $jobs=['Operaio','Insegnante','Ingegnere','Architetto']; 
         return view('editUser')
               ->with("jobs",$jobs);
-        
     }
     
     public function storeProfile(EditProfileRequest $request) {

@@ -6,6 +6,7 @@
 <div style="padding: 20px">
     <h1>Cancella Utente</h1>
     <br>
+    @if(!$users->isEmpty())
     <table border class="table"> 
         <tr>
             <th>Nome</th>
@@ -25,5 +26,8 @@
          </tr>
         @endforeach
     </table>
+    @else
+    <p>Al momento non è registrato alcun Utente.</p>
+    @endif
 </div>
 @endsection
