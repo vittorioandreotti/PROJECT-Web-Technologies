@@ -48,17 +48,29 @@ Route::view('/howToRegister', 'reginfo')
 Route::get('/admin', 'AdminController@index')
         ->name('admin');
 
-Route::get('admin/manageUser', 'AdminController@manageUser')
+Route::get('/admin/manageUser', 'AdminController@manageUser')
         ->name('manageUser');
 
-Route::get('admin/manageStaff', 'AdminController@manageStaff')
+Route::get('/admin/manageStaff', 'AdminController@manageStaff')
         ->name('manageStaff');
+
+Route::post('deleteUser/{id}', 'AdminController@deleteUser')
+        ->name('deleteUser');
+
+Route::post('deleteStaff/{id}', 'AdminController@deleteStaff')
+        ->name('deleteStaff');
 
 Route::get('/admin/newstaff', 'AdminController@addStaff')
         ->name('newstaff');
 
 Route::post('/admin/newstaff', 'AdminController@storeStaff')
         ->name('newstaff.store');
+
+Route::get('/admin/editStaff/{id}', 'AdminController@editStaff')
+        ->name('editStaff');
+
+Route::post('/admin/editStaff/{id}', 'AdminController@storeEditStaff')
+        ->name('editStaff.store');
 
 // Rotte per lo STAFF
 Route::get('/staff', 'StaffController@index')
@@ -89,6 +101,7 @@ Route::post('signin', 'Auth\RegisterController@register');
 // Rotte per lo USER
 Route::get('/user', 'UserController@index')
         ->name('user')->middleware('can:isUser');
+
 Route::get('/user/profile', 'UserController@showProfile')
         ->name('profile')->middleware('can:isUser');
 

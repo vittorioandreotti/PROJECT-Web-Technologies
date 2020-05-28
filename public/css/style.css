@@ -80,7 +80,7 @@ a{
   margin-bottom: 0px;
   color: white;
   text-decoration: none;
-  width: 8em;
+  width: auto;
   padding: 1em 0.5em;
   text-align: center;
   border-radius: 0.5em;
@@ -781,5 +781,43 @@ MENU USER
    width: 11em;
 }
 
+/*---------
+CHANGEPASSWORD
+----------*/
+.success {
+    color: green;
+    padding: 0.5em 1em;
+    list-style-type: disc;
+}
+#containerChangePassword {
+    text-align: center;
+    height: 30em;
+}
 
+#containerChangePassword .wrapInput{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+#containerChangePassword .wrapInput .labelInput {
+    width: 10em;
+}
+
+.submit {
+    display: block;
+    margin: 20px auto;
+    border: 1px solid black;
+    padding: 14px 20px;
+    width: 100px;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: green;
+    font-weight: bold;
+    color: white;
+
+}
 
