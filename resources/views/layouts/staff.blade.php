@@ -8,7 +8,8 @@
         <title>@yield('title', 'Home Staff')</title>
     </head>
     <body>
-        <header id="headerAdmin">
+        <header id="header">
+             <a href="{{route('home')}}" class="headerLogo"><img src="{{asset('images/logoApp.png')}}" id="logo"></a>
              <div id="menu">@include('layouts/menuStaff')</div>
         </header>
 
