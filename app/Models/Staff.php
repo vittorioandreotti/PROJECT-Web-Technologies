@@ -14,5 +14,6 @@ class Staff extends Model{
     public function getProdsCats() {
         return Category::where('codPar', '!=', 0)->get();
     }
-
+    protected $fillable = ['name','surname','username', 'email','password','residence','birthday','job' ];
+    
 }
