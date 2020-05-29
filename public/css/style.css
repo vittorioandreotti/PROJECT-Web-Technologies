@@ -80,7 +80,7 @@ a{
   margin-bottom: 0px;
   color: white;
   text-decoration: none;
-  width: auto;
+  width: 8em;
   padding: 1em 0.5em;
   text-align: center;
   border-radius: 0.5em;
@@ -690,7 +690,7 @@ MODIFICA UTENTE
 /*----------
 MENU USER
 ----------*/
-.headerMenuItemUser a{
+.headerMenuItemAuth a{
   display: block;
   margin-left: 5px;
   margin-right: 5px;
@@ -704,13 +704,13 @@ MENU USER
   border-radius: 0.5em;
 }
 
-.headerMenuItemUser a:hover{
+.headerMenuItemAuth a:hover{
   font-weight: bold;
   color:black;
   background-color: #fca905;
   transition: 0.5s;
 }
-.headerMenuItemUser{
+.headerMenuItemAuth{
   display: inline-block;
 }
 /*----------
@@ -821,3 +821,35 @@ CHANGEPASSWORD
 
 }
 
+.menuContainerAuth {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    height: 9em;
+    margin: 0;
+}
+
+.headerMenuItemStaff a{
+  display: block;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: white;
+  text-decoration: none;
+  width: 9em;
+  padding: 1em 0.5em;
+  text-align: center;
+  border-radius: 0.5em;
+}
+.headerMenuItemStaff a:hover{
+  font-weight: bold;
+  color:black;
+  background-color: #fca905;
+  transition: 0.5s;
+}
+
+.headerMenuItemStaff{
+  display: inline-block;
+}
