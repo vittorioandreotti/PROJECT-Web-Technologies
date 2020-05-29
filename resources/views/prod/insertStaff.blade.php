@@ -87,8 +87,8 @@
         </ul>
         @endif
         
-        {{ Form::label('role', 'Ruolo=staff') }}
-        {{ Form::text('role','', ['id' => 'staff']) }}  
+        <!--{{ Form::label('role', 'Ruolo=staff') }}
+        {{ Form::text('role','', ['id' => 'role']) }}-->
         
         {{ Form::label('residence', 'Luogo di residenza') }}
         {{ Form::text('residence', '', ['id' => 'residence']) }}

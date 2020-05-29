@@ -69,9 +69,14 @@ class AdminController extends Controller {
   
     public function storeStaff(insertStaffRequest $request) {
 
-        $staff = new Staff;
+        $staff = new User;
+        $staff->role="staff";
+        $staff->updated_at=date("Y-m-d H:i:s");
+        $staff->created_at=date("Y-m-d H:i:s");
         $staff->fill($request->validated());
-        $staff->fill(['password'=> Hash::make($request->password)]);
+        $staff->password = Hash::make($request->password);
+        Log::info($request);
+        Log::info($staff);
         $staff->save();
         
         return redirect()->action('AdminController@index');
