@@ -7,6 +7,7 @@ use App\Models\Staff;
 use App\Models\User;
 use App\Http\Requests\EditProfileRequest;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller {
 
@@ -70,6 +71,7 @@ class AdminController extends Controller {
 
         $staff = new Staff;
         $staff->fill($request->validated());
+        $staff->fill(['password'=> Hash::make($request->password)]);
         $staff->save();
         
         return redirect()->action('AdminController@index');
