@@ -87,7 +87,7 @@
                 @endif
             </div>
             <div>                
-                {{ Form::submit('Aggiungi Prodotto', ['class' => 'submit']) }}
+                {{ Form::submit('Modifica prodotto', ['class' => 'submit']) }}
             </div>
             
             {{ Form::close() }}

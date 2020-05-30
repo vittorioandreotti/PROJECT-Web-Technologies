@@ -41,7 +41,7 @@
         <div id='containerProdotti'>
             @foreach($products as $product)
             <div id="containerProdotto">
-                <img src="{{ asset('images/products/' . $product->image) }}">
+                @include('helpers/productImg',['imgFile' => $product->image])
                 <div class="info">
                     <a href="{{route('product',[$product->prodCat->codPar,$product->codCat,$product->codProd])}}"><h2 class="title">{{ $product->nome }}</h2></a>
                     <p class="price"> @include('helpers/productPriceCatalog') </p>

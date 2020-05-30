@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Resources\Product;
 use App\Models\Catalog;
 use Illuminate\Support\Facades\Log;
 
@@ -64,6 +65,7 @@ class PublicController extends Controller
 
         // Prodotti della categoria selezionata
        $products = $this->catalog->getProducts([$codCat],4,'asc');
+       Log::info($products);
 
         return view('catalog')
                         ->with('topCategories', $topCategories)
@@ -89,7 +91,11 @@ class PublicController extends Controller
         // Prodotti della categoria selezionata
        $products = $this->catalog->getProducts([$codCat],4,'asc');
        
-       $selectedProduct = $products->where('codProd',$codProd)->first();
+       $selectedProduct=Product::find($codProd);
+       
+       /*$selectedProduct = $products->where('codProd',$codProd)->first();*/
+       
+       Log::info($selectedProduct);
 
         return view('product')
                         ->with('topCategories', $topCategories)

@@ -49,7 +49,8 @@ class StaffController extends Controller
     }
     
     public function editProduct($id) {
-            $product=$this->_staffModel->getProduct($id);
+        $product=new Product;
+        $product=$this->_staffModel->getProduct($id);
         return view ('prod/editProduct')
                     ->with('prod', $product);
     }

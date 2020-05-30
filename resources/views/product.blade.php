@@ -19,7 +19,7 @@
         @include('layouts/menuCatalog')
     </div>
 <div id="product">
-    <img src="{{asset('images/products/'. $selectedProduct->image)}}">
+    @include('helpers/productImg',['imgFile' => $selectedProduct->image])
     <div class="infoWrapper">
         <div id="nome"><h1>{{$selectedProduct->nome}}</h1></div>
         <div id="categoria">Categoria: <b>{{$selectedTopCategory->name}}</b></div>
