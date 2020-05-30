@@ -2,11 +2,23 @@
 
 @section('title', 'ADMIN')
 
+@section('link')
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" > 
+<link rel="stylesheet" type="text/css" href="{{ asset('css/log.css') }}" > 
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+@endsection
+
+
 @section('scripts')
 
 @parent
 <script src="{{ asset('js/formValid.js') }}" ></script>
+<!-- Serve per l'autocompilazione della residenza-->
+<script src="{{ asset('js/comuni.js') }}" ></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
 $(function () {
     var actionUrl = "{{ route('newstaff.store') }}";
@@ -20,6 +32,12 @@ $(function () {
         doFormValidation(actionUrl, formId);
     });
 });
+</script>
+<script>
+    $( function() {$( "#residence" ).autocomplete({
+      source: listacomuni
+    });
+  } );
 </script>
 
 @endsection
@@ -69,7 +87,7 @@ $(function () {
         
         
         {{ Form::label('residence', 'Luogo di residenza') }}
-        {{ Form::text('residence', '', ['id' => 'residence']) }}
+        {{ Form::text('residence', '', ['id' => 'residence','class'=>'ui-widget']) }}
              
         
         {{ Form::submit('Aggiungi', ['class' => 'form-btn1']) }}
