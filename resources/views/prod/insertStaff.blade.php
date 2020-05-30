@@ -2,6 +2,28 @@
 
 @section('title', 'ADMIN')
 
+@section('scripts')
+
+@parent
+<script src="{{ asset('js/formValid.js') }}" ></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(function () {
+    var actionUrl = "{{ route('newstaff.store') }}";
+    var formId = 'addStaff';
+    $(":input").on('blur', function (event) {
+        var formElementId = $(this).attr('id');
+        doElemValidation(formElementId, actionUrl, formId);
+    });
+    $("#addStaff").on('submit', function (event) {
+        event.preventDefault();
+        doFormValidation(actionUrl, formId);
+    });
+});
+</script>
+
+@endsection
+
 @section('content')
 <div class="adminContainer clearfix">
     <h3>Aggiungi Prodotti</h3>
@@ -9,101 +31,51 @@
 
     <div class="box">
         
-            {{ Form::open(array('route' => 'newstaff.store', 'id' => 'addStaff', 'files' => true, 'class' => 'contact-form')) }}
-            <div>
-                {{ Form::label('name', 'Nome Staff', ['class' => 'label-input']) }}
-                {{ Form::text('name', '', ['class' => 'input', 'id' => 'name']) }}
-                @if ($errors->first('name'))
-                <ul class="errors">
-                    @foreach ($errors->get('name') as $message)
-                    <li>{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
-            </div>
+        {{ Form::open(array('route' => 'newstaff.store', 'id' => 'addStaff', 'files' => true, 'class' => 'contact-form')) }}
+          
+                
+        {{ Form::label('name', 'Nome Staff', ['class' => 'label-input']) }}
+        {{ Form::text('name', '', ['class' => 'input', 'id' => 'name']) }}
+                
+                
+        {{ Form::label('surname', 'Cognome Staff', ['class' => 'label-input']) }}
+        {{ Form::text('surname','', ['class' => 'input','id' => 'surname']) }}
 
-            <div>
-                {{ Form::label('surname', 'Cognome Staff', ['class' => 'label-input']) }}
-                {{ Form::text('surname','', ['class' => 'input','id' => 'surname']) }}
-                @if ($errors->first('surname'))
-                <ul class="errors">
-                    @foreach ($errors->get('surname') as $message)
-                    <li>{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
-            </div>
-
+        
         {{ Form::label('username', 'Username') }}
         {{ Form::text('username', '', ['id' => 'username']) }}
-        @if ($errors->first('username'))
-        <ul class="errors">
-            @foreach ($errors->get('username') as $message)
-            <li>{{ $message }}</li>
-            @endforeach
-        </ul>
-        @endif
 
+        
         {{ Form::label('email', 'Email') }}
         {{ Form::text('email', '', ['id' => 'email']) }}
-        @if ($errors->first('email'))
-        <ul class="errors">
-            @foreach ($errors->get('email') as $message)
-            <li>{{ $message }}</li>
-            @endforeach
-        </ul>
-        @endif
+        
+        
 
         {{ Form::label('password', 'Password') }}
         {{ Form::password('password', ['id' => 'password']) }}
-        @if ($errors->first('password'))
-        <ul class="errors">
-            @foreach ($errors->get('password') as $message)
-            <li>{{ $message }}</li>
-            @endforeach
-        </ul>
-        @endif
+        
+        
 
         {{ Form::label('password-confirm', 'Conferma password', ['class' => 'label-input']) }}
         {{ Form::password('password_confirmation', ['id' => 'password-confirm']) }}
 
+        
         {{ Form::label('job', 'Occupazione') }}
         {{ Form::text('job', '',  ['id' => 'job']) }}
-        @if ($errors->first('job'))
-        <ul class="errors">
-            @foreach ($errors->get('job') as $message)
-            <li>{{ $message }}</li>
-            @endforeach
-        </ul>
-        @endif
+        
         
         {{ Form::label('birthday', 'Data di nascita') }}
         {{ Form::text('birthday', '', ['id' => 'birthday']) }}
-        @if ($errors->first('birthday'))
-        <ul class="errors">
-            @foreach ($errors->get('birthday') as $message)
-            <li>{{ $message }}</li>
-            @endforeach
-        </ul>
-        @endif
         
-        <!--{{ Form::label('role', 'Ruolo=staff') }}
-        {{ Form::text('role','', ['id' => 'role']) }}-->
         
         {{ Form::label('residence', 'Luogo di residenza') }}
         {{ Form::text('residence', '', ['id' => 'residence']) }}
-        @if ($errors->first('residence'))
-        <ul class="errors">
-            @foreach ($errors->get('residence') as $message)
-            <li>{{ $message }}</li>
-            @endforeach
-        </ul>
-        @endif
-        <div>                
-            {{ Form::submit('Aggiungi', ['class' => 'form-btn1']) }}
+             
+        
+        {{ Form::submit('Aggiungi', ['class' => 'form-btn1']) }}
             
-            {{ Form::close() }}
-        </div>
+        {{ Form::close() }}
+        
     </div>
 
 </div>

@@ -6,6 +6,8 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/log.css') }}" > 
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
         <title>@yield('title', 'Home Admin')</title>
+        @section('scripts')
+        @show
     </head>
     <body>
         <header id="header">

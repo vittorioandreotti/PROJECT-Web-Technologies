@@ -78,8 +78,7 @@ class AdminController extends Controller {
         Log::info($request);
         Log::info($staff);
         $staff->save();
-        
-        return redirect()->action('AdminController@index');
+        return response()->json(['redirect' => route('admin')]);
     }
 
 }
