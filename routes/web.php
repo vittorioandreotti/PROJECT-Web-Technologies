@@ -85,7 +85,7 @@ Route::post('/staff/newproduct', 'StaffController@storeProduct')
 Route::get('/staff/editproduct/{id}', 'StaffController@editProduct')
         ->name('editproduct');
 
-Route::post('/staff/editproduct', 'StaffController@storeEditProduct')
+Route::post('/staff/editproduct/{id}', 'StaffController@storeEditProduct')
         ->name('editproduct.store');
 
 // Rotte per il login

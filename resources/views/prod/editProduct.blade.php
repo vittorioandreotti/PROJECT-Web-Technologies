@@ -9,7 +9,7 @@
 
     <div id="formEditProfile">
         
-            {{ Form::open(array('route' => 'editproduct.store', 'id' => 'editproduct', 'files' => true)) }}
+            {{ Form::open(array('route' =>['editproduct.store',$prod->codProd], 'id' => 'editproduct', 'files' => true)) }}
             <div class="wrapInput">
                 {{ Form::label('nome', 'Nome Prodotto', ['class' => 'labelInput']) }}
                 {{ Form::text('nome', $prod->nome, ['class' => 'input', 'id' => 'nome']) }}
@@ -66,7 +66,7 @@
             
             <div class="wrapInput">
                 {{ Form::label('descLunga', 'Descrizione Estesa', ['class' => 'labelInput']) }}
-                {{ Form::textarea('descLunga', $prod->descLunga, ['class' => 'input', 'id' => 'descLong', 'rows' => 2]) }}
+                {{ Form::textarea('descLunga', $prod->descLunga, ['class' => 'input', 'id' => 'descLunga', 'rows' => 10, 'column'=> 20 ]) }}
                 @if ($errors->first('descLunga'))
                 <ul class="errors">
                     @foreach ($errors->get('descLunga') as $message)

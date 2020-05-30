@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Resources\Product;
 use App\Http\Requests\prodRequest;
 use App\Models\Staff;
+use App\Http\Requests\EditProductRequest;
 
 
 class StaffController extends Controller
@@ -52,4 +53,12 @@ class StaffController extends Controller
         return view ('prod/editProduct')
                     ->with('prod', $product);
     }
+    public function storeEditProduct(EditProductRequest $request,$id){
+        $product=$this->_staffModel->getProduct($id);
+        $product->update($request->validated());
+        $product->save();
+                return redirect()->action('StaffController@index');
+    }
 }
+
+
