@@ -46,4 +46,10 @@ class StaffController extends Controller
 
         return redirect()->action('StaffController@index');
     }
+    
+    public function editProduct($id) {
+            $product=$this->_staffModel->getProduct($id);
+        return view ('prod/editProduct')
+                    ->with('prod', $product);
+    }
 }

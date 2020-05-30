@@ -5,7 +5,7 @@
 @section('content')
 <div id="editProfile">
     <h1>Modifica profilo</h1>
-    <form id="formEditProfile" name="editProfile"  method="post" action="{{route('editProfile.store')}}">
+<!--   <form id="formEditProfile" name="editProfile"  method="post" action="{{route('editProfile.store')}}">
                     @csrf
                     <div  class="wrapInput">
                         <label class="labelInput" for="name">Nome </label>
@@ -72,28 +72,77 @@
                     </div>               
                         <input type="submit" class="submit" value="Salva">
                         <button type="button" class="delete" href="{{route('profile')}}">Annulla</button>
-    </form>
-    <!--{{ Form::open(array('route' => 'newproduct.store', 'id' => 'editProfile', 'files' => false, 'class' => 'contact-form')) }}
-                <div>
-                    {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}
-                    {{ Form::text('nome', "", ['class' => 'input', 'id' => 'nome']) }}
-                    {{ Form::label('surname', 'Nome', ['class' => 'label-input']) }}
-                    {{ Form::text('nome', "", ['class' => 'input', 'id' => 'nome']) }}
-                    {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}
-                    {{ Form::text('nome', "", ['class' => 'input', 'id' => 'nome']) }}
-                    {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}
-                    {{ Form::text('nome', "", ['class' => 'input', 'id' => 'nome']) }}
-                    @if ($errors->first('nome'))
+    </form>-->
+    {{ Form::open(array('route' => 'editProfile.store', 'id' => 'formEditProfile', 'files' => false)) }}
+                <div class="wrapInput">
+                    {{ Form::label('name', 'Nome', ['class' => 'labelInput']) }}
+                    {{ Form::text('name', '', ['class' => 'input', 'id' => 'name']) }}
+                      @if ($errors->first('name'))
+                        <ul class="errors">
+                            @foreach ($errors->get('name') as $message)
+                            <li>{{ $message }}</li>
+                            @endforeach
+                        </ul>
+                      @endif
+                </div>
+               <!-- <div class="wrapInput">
+                    {{ Form::label('surname', 'Cognome', ['class' => 'labelInput']) }}
+                    {{ Form::text('surname', auth()->user()->surname, ['class' => 'input', 'id' => 'surname']) }}
+                    @if ($errors->first('surname'))
+                        <ul class="errors">
+                            @foreach ($errors->get('surname') as $message)
+                            <li>{{ $message }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
+                </div>
+                <div class="wrapInput">
+                    {{ Form::label('email', 'Email', ['class' => 'labelInput']) }}
+                    {{ Form::text('email', auth()->user()->email, ['class' => 'input', 'id' => 'email']) }}
+                    @if ($errors->first('email'))
+                        <ul class="errors">
+                            @foreach ($errors->get('email') as $message)
+                            <li>{{ $message }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
+                </div>
+                <div class="wrapInput">
+                    {{ Form::label('residence', 'Residenza', ['class' => 'labelInput']) }}
+                    {{ Form::text('residence', auth()->user()->residence, ['class' => 'input', 'id' => 'residence']) }}
+                    @if ($errors->first('residence'))
                     <ul class="errors">
-                        @foreach ($errors->get('nome') as $message)
+                        @foreach ($errors->get('residence') as $message)
                         <li>{{ $message }}</li>
                         @endforeach
                     </ul>
                     @endif
                 </div>
-                <div >                
-                    {{ Form::submit('Salva', ['class' => 'form-btn1']) }}
+                <div class="wrapInput">
+                     {{ Form::label('birthday', 'Data di nascita', ['class' => 'labelInput']) }}
+                    {{ Form::text('birthday', auth()->user()->birthday, ['class' => 'input', 'id' => 'birthday']) }}
+                    @if ($errors->first('birthday'))
+                    <ul class="errors">
+                        @foreach ($errors->get('birthday') as $message)
+                        <li>{{ $message }}</li>
+                        @endforeach
+                    </ul>
+                    @endif
                 </div>
-    {{ Form::close() }}-->
+               <div class="wrapInput">
+                     {{ Form::label('job', 'Occupazione', ['class' => 'labelInput']) }}
+                    {{ Form::text('job', ['1'=>'Operaio','2'=>'Insegnante','3'=>'Ingegnere','4'=>'Architetto'], '' , ['class' => 'input', 'id' => 'job']) }}
+                    @if ($errors->first('job'))
+                    <ul class="errors">
+                        @foreach ($errors->get('job') as $message)
+                        <li>{{ $message }}</li>
+                        @endforeach
+                    </ul>
+                    @endif
+                </div>-->
+                <div>                
+                    {{ Form::submit('Salva', ['class' => 'submit']) }}
+                </div>
+    {{ Form::close() }}
 </div>
-    @endsection
+@endsection

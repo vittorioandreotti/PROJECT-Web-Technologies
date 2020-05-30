@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Resources\Product;
 use App\Models\Resources\Category;
 use Illuminate\Database\Eloquent\Model;
 
@@ -13,6 +14,9 @@ class Staff extends Model{
     
     public function getProdsCats() {
         return Category::where('codPar', '!=', 0)->get();
+    }
+    public function getProduct($id) {
+        return Product::where('codProd','=',$id)->get()->first();
     }
     protected $fillable = ['name','surname','username', 'email','password','residence','birthday','job' ];
     

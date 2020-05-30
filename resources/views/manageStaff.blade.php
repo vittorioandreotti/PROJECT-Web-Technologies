@@ -2,9 +2,8 @@
 @section('title', 'Gestisci Staff')
 
 @section ('content')
-<div style="padding: 20px">
+<div>
     <h1>Gestisci Staff</h1>
-    <br>
     @if(!$staffs->isEmpty())
     <table border class="table"> 
         <tr>
@@ -37,5 +36,6 @@
     <p><a href="{{route('newstaff')}}">Clicca qui</a> per aggiungerne uno</p>
     @endif
     <br>
-    <button type="button" onclick="location.href='{{route('newstaff')}}'" class="button">Aggiugni Staff</button>
+    <button type="button" onclick="location.href='{{route('newstaff')}}'" class="button">Aggiungi Staff</button>
 </div>
+@endsection

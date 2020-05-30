@@ -1,6 +1,19 @@
 @extends('layouts.public')
 @section('title', 'Catalogo')
 
+@section('scripts')
+@parent
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script> 
+        $(function () {
+                $('#insertProduct').on('click', function () {
+                    window.location.href="{{route('newproduct')}}";
+                })
+            });
+    </script>
+
+@endsection
+
 @section('content')
 <div id="containerCatalogo">
     <div id="menuCatalogo">
@@ -22,7 +35,7 @@
         <div>
             <input name='cerca' type="text" placeholder="Cerca">
         @can('isStaff')
-            <button name='insertProduct' type="button">Inserisci prodotto</button>
+            <button id='insertProduct'>Inserisci prodotto</button>
         @endcan
         </div>
         <div id='containerProdotti'>

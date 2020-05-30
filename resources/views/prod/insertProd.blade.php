@@ -1,17 +1,17 @@
 @extends('layouts.staff')
 
-@section('title', 'STAFF')
+@section('title', 'Inserisci prodotto')
 
 @section('content')
-<div class="adminContainer clearfix">
+<div class="containerCatalogo">
     <h3>Aggiungi Prodotti</h3>
     <p>Utilizza questa form per inserire un nuovo prodotto nel Catalogo</p>
 
-    <div class="box">
+    <div id="formEditProfile">
         
-            {{ Form::open(array('route' => 'newproduct.store', 'id' => 'addproduct', 'files' => true, 'class' => 'contact-form')) }}
-            <div>
-                {{ Form::label('nome', 'Nome Prodotto', ['class' => 'label-input']) }}
+            {{ Form::open(array('route' => 'newproduct.store', 'id' => 'addproduct', 'files' => true)) }}
+            <div class="wrapInput">
+                {{ Form::label('nome', 'Nome Prodotto', ['class' => 'labelInput']) }}
                 {{ Form::text('nome', '', ['class' => 'input', 'id' => 'nome']) }}
                 @if ($errors->first('nome'))
                 <ul class="errors">
@@ -22,13 +22,13 @@
                 @endif
             </div>
 
-            <div>
-                {{ Form::label('codCat', 'Categoria', ['class' => 'label-input']) }}
+            <div class="wrapInput">
+                {{ Form::label('codCat', 'Categoria', ['class' => 'labelInput']) }}
                 {{ Form::select('codCat', $cats, '', ['class' => 'input','id' => 'codCat']) }}
             </div>
 
-            <div>
-                {{ Form::label('image', 'Immagine', ['class' => 'label-input']) }}
+            <div class="wrapInput">
+                {{ Form::label('image', 'Immagine', ['class' => 'labelInput']) }}
                 {{ Form::file('image', ['class' => 'input', 'id' => 'image']) }}
                 @if ($errors->first('image'))
                 <ul class="errors">
@@ -39,8 +39,8 @@
                 @endif
             </div>
 
-            <div>
-                {{ Form::label('descCorta', 'Descrizione Breve', ['class' => 'label-input']) }}
+            <div class="wrapInput">
+                {{ Form::label('descCorta', 'Descrizione Breve', ['class' => 'labelInput']) }}
                 {{ Form::text('descCorta', '', ['class' => 'input', 'id' => 'descCorta']) }}
                 @if ($errors->first('descCorta'))
                 <ul class="errors">
@@ -51,8 +51,8 @@
                 @endif
             </div>
 
-            <div>
-                {{ Form::label('prezzo', 'Prezzo', ['class' => 'label-input']) }}
+            <div class="wrapInput">
+                {{ Form::label('prezzo', 'Prezzo', ['class' => 'labelInput']) }}
                 {{ Form::text('prezzo', '', ['class' => 'input', 'id' => 'prezzo']) }}
                 @if ($errors->first('prezzo'))
                 <ul class="errors">
@@ -63,8 +63,8 @@
                 @endif
             </div>
 
-            <div>
-                {{ Form::label('percSconto', 'Sconto (%)', ['class' => 'label-input']) }}
+            <div class="wrapInput">
+                {{ Form::label('percSconto', 'Sconto (%)', ['class' => 'labelInput']) }}
                 {{ Form::text('percSconto', '', ['class' => 'input', 'id' => 'percSconto']) }}
                 @if ($errors->first('percSconto'))
                 <ul class="errors">
@@ -75,13 +75,13 @@
                 @endif
             </div>
 
-            <div>
-                {{ Form::label('sconto', 'In Sconto', ['class' => 'label-input']) }}
+            <div class="wrapInput">
+                {{ Form::label('sconto', 'In Sconto', ['class' => 'labelInput']) }}
                 {{ Form::select('sconto', ['1' => 'Si', '0' => 'No'], 1, ['class' => 'input','id' => 'sconto']) }}
             </div>
 
-            <div>
-                {{ Form::label('descLunga', 'Descrizione Estesa', ['class' => 'label-input']) }}
+            <div class="wrapInput">
+                {{ Form::label('descLunga', 'Descrizione Estesa', ['class' => 'labelInput']) }}
                 {{ Form::textarea('descLunga', '', ['class' => 'input', 'id' => 'descLong', 'rows' => 2]) }}
                 @if ($errors->first('descLunga'))
                 <ul class="errors">
@@ -93,7 +93,7 @@
             </div>
             
             <div>                
-                {{ Form::submit('Aggiungi Prodotto', ['class' => 'form-btn1']) }}
+                {{ Form::submit('Aggiungi Prodotto', ['class' => 'submit']) }}
             </div>
             
             {{ Form::close() }}

@@ -26,7 +26,7 @@ class UserController extends Controller
     }
     
     public function editProfile(){
-       $jobs=['Operaio','Insegnante','Ingegnere','Architetto']; 
+       $jobs=['1'=>'Operaio','2'=>'Insegnante','3'=>'Ingegnere','4'=>'Architetto']; 
         return view('editUser')
               ->with("jobs",$jobs);
     }

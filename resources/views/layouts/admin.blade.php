@@ -12,6 +12,7 @@
         @show
         <title>@yield('title', 'Home Admin')</title>
     </head>
+        
     <body>
         <header id="header">
             <a href="{{route('home')}}" class="headerLogo"><img src="{{asset('images/logoApp.png')}}" id="logo"></a>
