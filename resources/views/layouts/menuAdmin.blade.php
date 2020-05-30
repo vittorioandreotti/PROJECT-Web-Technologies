@@ -7,8 +7,8 @@
               <a href="">Gestione Staff</a>
               <div id="subMenu">
                   <ul>
-                      <li><a href="{{route('manageUser')}}">Cancella Utenti</a></li>
-                      <li><a href="{{route('manageStaff')}}">Gestisci Staff</a></li>
+                      <li><a href="{{route('newstaff')}}">Aggiungi Staff</a></li>
+                      <li><a href="{{route('manageStaff')}}">Cancella Staff</a></li>
                   </ul>
               </div>
            </li>

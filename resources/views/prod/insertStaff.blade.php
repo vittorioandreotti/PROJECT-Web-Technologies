@@ -31,7 +31,7 @@ $(function () {
 
     <div class="box">
         
-        {{ Form::open(array('route' => 'newstaff.store', 'id' => 'addStaff', 'files' => true, 'class' => 'contact-form')) }}
+        {{ Form::open(array('route' => 'newstaff.store', 'id' => 'addStaff', 'class' => 'contact-form')) }}
           
                 
         {{ Form::label('name', 'Nome Staff', ['class' => 'label-input']) }}
