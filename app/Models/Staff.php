@@ -28,4 +28,7 @@ class Staff extends Model{
         return $products->paginate($paged);
         
     }
+    
+
+    
 }

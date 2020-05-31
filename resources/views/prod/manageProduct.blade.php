@@ -25,7 +25,7 @@
         <tr>
             <td>{{Form::checkbox('products[]',$product->codProd)}}</td>
             <td>{{$product->nome}}</td>
-            <td>{{$product->prodCat->codPar}}</td>
+            <td>{{$product->getTopCatName()->name}}</td>
             <td>{{$product->prodCat->name}}</td>
             <td>{{number_format($product->prezzo,2,',','.')}}€</td>
             <td>{{$product->percSconto}}%</td>

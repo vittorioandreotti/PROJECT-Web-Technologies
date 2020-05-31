@@ -1,6 +1,6 @@
 @extends('layouts.staff')
 
-@section('title', 'Inserisci prodotto')
+@section('title', 'Modifica prodotto')
 
 @section('content')
 <div class="containerCatalogo">

@@ -28,4 +28,7 @@ class Product extends Model
     public function prodCat() {
         return $this->hasOne(Category::class, 'codCat', 'codCat');
     }
+        public function getTopCatName(){
+        return Category::where('codCat','=',$this->prodCat->codPar)->get()->first();   
+}
 }
