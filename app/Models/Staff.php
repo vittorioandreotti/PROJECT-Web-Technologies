@@ -20,4 +20,12 @@ class Staff extends Model{
     }
     protected $fillable = ['name','surname','username', 'email','password','residence','birthday','job' ];
     
+    public function getProducts($paged, $order=null) {
+        $products=Product::all();
+         if (!is_null($order)) {
+            $products = $products->orderBy('codPar', $order);
+        }
+        return $products->paginate($paged);
+        
+    }
 }

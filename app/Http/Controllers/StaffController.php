@@ -7,6 +7,8 @@ use App\Models\Resources\Category;
 use App\Http\Requests\prodRequest;
 use App\Models\Staff;
 use App\Http\Requests\EditProductRequest;
+use App\Http\Requests\DeleteProductsRequest;
+use Illuminate\Support\Facades\Log;
 
 
 class StaffController extends Controller
@@ -76,6 +78,17 @@ class StaffController extends Controller
         $product=$this->_staffModel->getProduct($id);
         $product->delete();
         return redirect()->route('catalog1');
+    }
+    
+    public function manageProducts() {
+        $products=Product::where('codCat','!=','3000')->paginate(10);
+        return view('prod/manageProduct')
+                    ->with('products', $products);
+    }
+    
+    public function storeManageProducts(EditProductRequest $request) {
+        Log::info('prova');
+        return redirect()->route('staff');
     }
 }
 

@@ -2,6 +2,7 @@
         <ul class="headerMenu">
           <li class="headerMenuItem"><a href="{{ route('home') }}" title="Va alla Home ">Home</a></li>
           <li class="headerMenuItem"><a href="{{route('catalog1')}}">Catalogo</a></li>
+          <li class="headerMenuItem"><a href="{{route('manageproduct')}}">Gestisci prodotti</a></li>
           <li class="headerMenuItemStaff" id="newProduct"><a href="{{ route('newproduct') }}" title="Inserisce nuovi prodotti">Inserisci Prodotto</a></li>
          
           @auth

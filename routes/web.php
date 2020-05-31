@@ -82,10 +82,10 @@ Route::get('/staff/newproduct', 'StaffController@addProduct')
 Route::post('/staff/newproduct', 'StaffController@storeProduct')
         ->name('newproduct.store');
 
-Route::get('/staff/editproduct/{id}', 'StaffController@editProduct')
+Route::get('/staff/editproduct/product/{id}', 'StaffController@editProduct')
         ->name('editproduct');
 
-Route::post('/staff/editproduct/{id}', 'StaffController@storeEditProduct')
+Route::post('/staff/editproduct/product/{id}', 'StaffController@storeEditProduct')
         ->name('editproduct.store');
 
 Route::get('/staff/deleteproduct/product/{id}', 'StaffController@deleteProduct')
@@ -93,6 +93,12 @@ Route::get('/staff/deleteproduct/product/{id}', 'StaffController@deleteProduct')
 
 Route::post('/staff/deleteproduct/product/{id}', 'StaffController@storeDeleteProduct')
         ->name('deleteproduct.store');
+
+Route::get('/staff/manageProducts', 'StaffController@manageProducts')
+        ->name('manageproduct');
+
+Route::post('/staff/manageProducts', 'StaffController@storeManageProducts')
+        ->name('manageproduct.store');
 
 // Rotte per il login
 Route::get('login', 'Auth\LoginController@showLoginForm')
