@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Resources\Product;
+use App\Models\Resources\Category;
 use App\Http\Requests\prodRequest;
 use App\Models\Staff;
 use App\Http\Requests\EditProductRequest;
@@ -59,6 +60,16 @@ class StaffController extends Controller
         $product->update($request->validated());
         $product->save();
                 return redirect()->action('StaffController@index');
+    }
+    
+    public function deleteProduct($id) {
+        $product=new Product;
+        $product=$this->_staffModel->getProduct($id);
+        $selectedTopCategory = Category::find($product->prodCat->codPar);
+        return view('prod/deleteProduct')
+                ->with('product', $product)
+                ->with('selectedTopCategory', $selectedTopCategory);
+        
     }
 }
 
