@@ -71,6 +71,12 @@ class StaffController extends Controller
                 ->with('selectedTopCategory', $selectedTopCategory);
         
     }
+    
+    public function storeDeleteProduct($id){
+        $product=$this->_staffModel->getProduct($id);
+        $product->delete();
+        return redirect()->route('catalog1');
+    }
 }
 
 

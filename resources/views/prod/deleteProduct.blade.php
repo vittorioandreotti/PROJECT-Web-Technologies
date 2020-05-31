@@ -14,7 +14,9 @@
     <p id="descBreve"><h3>Descrizione breve</h3>{{$product->descCorta}}</p>
     <p id="descEstesa"><h3>Descrizione estesa</h3>{{$product->descLunga}}</p>
     <div>Sei sicuro di voler cancellare il prodotto?</div>
-    <button id='editProduct'>Conferma</button>
+    {{ Form::open(array('route' =>['deleteproduct.store',$product->codProd], 'id' => 'deleteproduct')) }}
+    {{ Form::submit('Conferma', ['class' => 'submit']) }}
+    {{ Form::close() }}
     <button id='deleteProduct'>Annulla</button>
 </div>
 @endsection
