@@ -2,6 +2,28 @@
 
 @section('title', 'Inserisci prodotto')
 
+@section('scripts')
+
+@parent
+<script src="{{ asset('js/formValid.js') }}" ></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(function () {
+    var actionUrl = "{{ route('newproduct.store') }}";
+    var formId = 'addproduct';
+    $(":input").on('blur', function (event) {
+        var formElementId = $(this).attr('id');
+        doElemValidation(formElementId, actionUrl, formId);
+    });
+    $("#addproduct").on('submit', function (event) {
+        event.preventDefault();
+        doFormValidation(actionUrl, formId);
+    });
+});
+</script>
+
+@endsection
+
 @section('content')
 <div class="containerCatalogo">
     <h3>Aggiungi Prodotti</h3>
@@ -13,13 +35,7 @@
             <div class="wrapInput">
                 {{ Form::label('nome', 'Nome Prodotto', ['class' => 'labelInput']) }}
                 {{ Form::text('nome', '', ['class' => 'input', 'id' => 'nome']) }}
-                @if ($errors->first('nome'))
-                <ul class="errors">
-                    @foreach ($errors->get('nome') as $message)
-                    <li>{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
+                
             </div>
 
             <div class="wrapInput">
@@ -30,49 +46,23 @@
             <div class="wrapInput">
                 {{ Form::label('image', 'Immagine', ['class' => 'labelInput']) }}
                 {{ Form::file('image', ['class' => 'input', 'id' => 'image']) }}
-                @if ($errors->first('image'))
-                <ul class="errors">
-                    @foreach ($errors->get('image') as $message)
-                    <li>{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
-            </div>
+                            </div>
 
             <div class="wrapInput">
                 {{ Form::label('descCorta', 'Descrizione Breve', ['class' => 'labelInput']) }}
                 {{ Form::text('descCorta', '', ['class' => 'input', 'id' => 'descCorta']) }}
-                @if ($errors->first('descCorta'))
-                <ul class="errors">
-                    @foreach ($errors->get('descCorta') as $message)
-                    <li>{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
+                
             </div>
 
             <div class="wrapInput">
                 {{ Form::label('prezzo', 'Prezzo', ['class' => 'labelInput']) }}
                 {{ Form::text('prezzo', '', ['class' => 'input', 'id' => 'prezzo']) }}
-                @if ($errors->first('prezzo'))
-                <ul class="errors">
-                    @foreach ($errors->get('prezzo') as $message)
-                    <li>{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
-            </div>
+                            </div>
 
             <div class="wrapInput">
                 {{ Form::label('percSconto', 'Sconto (%)', ['class' => 'labelInput']) }}
                 {{ Form::text('percSconto', '', ['class' => 'input', 'id' => 'percSconto']) }}
-                @if ($errors->first('percSconto'))
-                <ul class="errors">
-                    @foreach ($errors->get('percSconto') as $message)
-                    <li>{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
+              
             </div>
 
             <div class="wrapInput">
@@ -83,14 +73,7 @@
             <div class="wrapInput">
                 {{ Form::label('descLunga', 'Descrizione Estesa', ['class' => 'labelInput']) }}
                 {{ Form::textarea('descLunga', '', ['class' => 'input', 'id' => 'descLong', 'rows' => 2]) }}
-                @if ($errors->first('descLunga'))
-                <ul class="errors">
-                    @foreach ($errors->get('descLunga') as $message)
-                    <li>{{ $message }}</li>
-                    @endforeach
-                </ul>
-                @endif
-            </div>
+                            </div>
             
             <div>                
                 {{ Form::submit('Aggiungi Prodotto', ['class' => 'submit']) }}

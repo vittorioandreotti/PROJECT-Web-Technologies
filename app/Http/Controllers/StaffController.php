@@ -47,8 +47,8 @@ class StaffController extends Controller
             $destinationPath = public_path() . '/images/products';
             $image->move($destinationPath, $imageName);
         };
-
-        return redirect()->action('StaffController@index');
+        return response()->json(['redirect' => route('staff')]);
+        
     }
     
     public function editProduct($id) {
@@ -68,7 +68,7 @@ class StaffController extends Controller
         } 
         $product->update($request->validated());
         $product->save();
-        return redirect()->action('StaffController@index');
+        return response()->json(['redirect' => route('staff')]);
     }
     
     public function deleteProduct($id) {
