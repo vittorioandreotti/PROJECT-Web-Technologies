@@ -47,7 +47,7 @@ $(function () {
             <td>{{number_format($product->prezzo,2,',','.')}}€</td>
             <td>{{$product->percSconto}}%</td>
             <td>{{$product->descCorta}}</td>
-            <td>{{$product->descLunga}}</td>
+            <td id="descLunga">{{$product->descLunga}}</td>
             <td><a href="{{route('editproduct',[$product->codProd])}}">Modifica</a></td>
             <td>{{ Form::open(array('route' =>['deleteproduct.store',$product->codProd], 'id' => 'deleteproduct')) }}
                 {{ Form::submit('Cancella', ['class' => '']) }}

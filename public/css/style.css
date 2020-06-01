@@ -761,6 +761,13 @@ MENU USER
     padding: 15px;
 }
 
+.table #descLunga {
+    max-width: 20em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 /*-----------
     TABELLA
 ------------*/
