@@ -2,11 +2,28 @@
 
 @section('title', 'Gestisci prodotti')
 
+@section('scripts')
+
+@parent
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(function () {
+    $('#deleteproduct').click(function(){
+       var val = [];
+       $(':checkbox:checked').each(function(i){
+       val[i] = $(this).val();
+       console.log(val);
+     });
+    });
+});
+</script>
+@endsection
+
 @section('content')
 <h1>Gestisci prodotti</h1>
 {{ Form::open(array('route' =>'manageproduct.store', 'id' => 'deleteproduct')) }}
-{{ Form::submit('Cancella', ['class' => 'submit']) }}
-{{ Form::close() }}
+{{ Form::submit('Cancella tutti', ['class' => 'submit']) }}
+
 @isset($products)
     <table border class="table"> 
         <tr>
@@ -41,4 +58,5 @@
     </table>
      @include('pagination.paginator',['paginator' => $products])
 @endisset
+{{ Form::close() }}
 @endsection

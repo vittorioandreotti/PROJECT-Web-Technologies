@@ -25,8 +25,7 @@ class Staff extends Model{
          if (!is_null($order)) {
             $products = $products->orderBy('codPar', $order);
         }
-        return $products->paginate($paged);
-        
+        return $products->paginate($paged); 
     }
     
 

@@ -93,8 +93,12 @@ class StaffController extends Controller
                     ->with('products', $products);
     }
     
-    public function storeManageProducts(EditProductRequest $request) {
-        Log::info('prova');
+    public function storeManageProducts(DeleteProductsRequest $request) {
+        /*Estrae ogni prodotto in funzione del codice prodotto contenuto nell'array delle checkbox selezionate e lo elimina*/
+        foreach ($request->input('products') as $r) {
+          $product=$this->_staffModel->getProduct($r);
+          $product->delete();
+        }
         return redirect()->route('staff');
     }
 }
