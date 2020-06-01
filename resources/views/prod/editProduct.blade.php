@@ -76,6 +76,7 @@
                 @endif
             </div>
              <div class="wrapInput">
+                  <div>@include('helpers/productImg',['imgFile' => $prod->image])</div>
                 {{ Form::label('image', 'Immagine', ['class' => 'labelInput']) }}
                 {{ Form::file('image', ['class' => 'input', 'id' => 'image']) }}
                 @if ($errors->first('image'))

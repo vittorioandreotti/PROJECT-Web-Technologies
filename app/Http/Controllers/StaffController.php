@@ -59,9 +59,16 @@ class StaffController extends Controller
     }
     public function storeEditProduct(EditProductRequest $request,$id){
         $product=$this->_staffModel->getProduct($id);
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = $image->getClientOriginalName();
+            $destinationPath = public_path() . '/images/products';
+            $image->move($destinationPath, $imageName);
+            $product->image = $imageName;
+        } 
         $product->update($request->validated());
         $product->save();
-                return redirect()->action('StaffController@index');
+        return redirect()->action('StaffController@index');
     }
     
     public function deleteProduct($id) {

@@ -661,6 +661,11 @@ MODIFICA UTENTE
     padding: 0.4em;
 }
 
+.wrapInput img {
+    width: 100px;
+    margin-left: 20em;
+}
+
 #editProfile .submit {
     padding: 0.3em;
     width: 14em;
