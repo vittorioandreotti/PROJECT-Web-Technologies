@@ -11,7 +11,7 @@
     <h2>Modifica Password</h2>
     @if(session()->has('confermPassword'))
         <ul class="success">
-            {{ session()->get('confermPassword') }}
+            <li>{{ session()->get('confermPassword') }}</li>
         </ul>
     @endif
     {{Form::open(array('route' => 'editPassword.store'))}}
