@@ -15,7 +15,7 @@
         <tr><td><b>Email</b></td><td>{{Auth::user()->email}}</td></tr>
         <tr><td><b>Residenza</b></td><td>{{Auth::user()->residence}}</td></tr>
         @include('helpers/convertDate',['date'=>Auth::user()->birthday])
-        <tr><td><b>Occupazione</b></td><td>{{Auth::user()->job}}</td></tr>
+        <tr><td><b>Occupazione</b></td><td>{{auth()->user()->job}}</td></tr>
     </table>
     <!--<h1>Dati Personali</h1>
     <span style="float:left;">Nome:{{Auth::user()->name}}</span>

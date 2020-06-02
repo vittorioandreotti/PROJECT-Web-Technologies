@@ -12,7 +12,9 @@ use Illuminate\Support\Facades\Hash;
 
 
 class UserController extends Controller
+
 {
+    protected $jobs=['1'=>'Operaio','2'=>'Insegnante','3'=>'Ingegnere','4'=>'Architetto']; 
     public function __construct() {
         $this->middleware('auth');
     }
@@ -26,15 +28,15 @@ class UserController extends Controller
     }
     
     public function editProfile(){
-       $jobs=['1'=>'Operaio','2'=>'Insegnante','3'=>'Ingegnere','4'=>'Architetto']; 
+       
         return view('editUser')
-              ->with("jobs",$jobs);
+              ->with("jobs",$this->jobs);
     }
     
     public function storeProfile(EditProfileRequest $request) {
         $user=Auth::user();
         $user->update($request->validated());
-        Log::info($request);
+       $user->job=($this->jobs[$request->input('job')]);
         Log::info($user);
         $user->save();
         return redirect()->action('UserController@showProfile');

@@ -7,6 +7,8 @@
 @endsection
 
 @section('content')
+
+@section('content')
 <div class="containerRegistration">
     {{Form::open(array('route' => 'register', 'class'=>'registerForm'))}}
     <h1>Registrazione</h1>
