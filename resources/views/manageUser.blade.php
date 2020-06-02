@@ -45,6 +45,7 @@
          </tr>
         @endforeach
     </table>
+    {{Form::close()}}
     @else
     <p>Al momento non è registrato alcun Utente.</p>
     @endif
