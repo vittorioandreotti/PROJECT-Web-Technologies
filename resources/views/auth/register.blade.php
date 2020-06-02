@@ -1,8 +1,12 @@
 @extends('layouts.public')
 @section('title', 'Registrazione')
 
-@section('content')
+@section('link')
+@parent 
+<link rel="stylesheet" type="text/css" href="{{ asset('css/registration.css') }}" > 
+@endsection
 
+@section('content')
 <div class="containerRegistration">
     {{Form::open(array('route' => 'register', 'class'=>'registerForm'))}}
     <h1>Registrazione</h1>

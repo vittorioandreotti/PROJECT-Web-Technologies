@@ -4,7 +4,6 @@
         <meta charset="utf-8">
         @section('link')
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" > 
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/log.css') }}" > 
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
         @show
         
@@ -17,7 +16,7 @@
             <a href="{{route('home')}}" class="headerLogo"><img src="{{asset('images/logoApp.png')}}" id="logo"></a>
              <div id="menu">@include('layouts/menuPublic')</div>
         </header>
-        <div style="margin: 0">
+        <div id="container">
             @yield('content')
         </div>
         <footer id="footer">

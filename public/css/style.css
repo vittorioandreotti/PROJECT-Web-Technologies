@@ -112,6 +112,18 @@ a{
    margin-left: -2.2em;
 }
 
+/*----------
+CONTENT
+-----------*/
+
+
+#container{
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+
 
 .log{
   float: right;
@@ -121,92 +133,6 @@ a{
   font-weight: 700;
   background: #eee ;
   color: #E90D0D;
-}
-
-/*-----------
-    CORPO
-------------*/
-.container{
-  margin-top: 0;
-  margin-left: 0;
-  margin-right: 0;
-  background: #eee;
-}
-
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-
-#slideshow{
-    height: 40em;
-}
-
-/*@keyframes fade {
-    0%,100% {opacity: 0;}
-    30%,80% {opacity: 1;}
-}*/
-
-.mySlides{
-  /* Questi 2 attributi centrano l'immagine */
-  border-radius: 0.25em;
-  margin: 0 auto;
-  height: 100%;
-  max-width: 960px;
-  display:flex;
-  /*animation-delay: 1s;
-  animation: fade 9s infinite;*/
-  z-index: -9999;
-}
-
-/*--------
-  CARDS (3 IMMAGINI)
---------*/
-.cards{
-  margin-top: 0.5em;
-  display: flex;
-  justify-content: space-around;
-}
-.card{
-    background: #ffffff;
-    margin: 0.25em;
-}
-
-.card_copy{
-    padding: 0.25em;
-    text-align: center;
-}
-.card_copy h3{
-    margin: 0;
-    padding: 0.5em 0;
-}
-.card_image{
-    width: 100%;
-    height: 25em;
-}
-
-.card_delete {
-   max-width: 5%; 
-   max-height: 5%;
-   display:table;
-}
-/*--------
-  CHI SIAMO
---------*/
-
-.whoWrapper{
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
-.whoWrapper .card {
-    width: 20%;
-}
-
-.whoWrapper .card img {
-    width: 100%;
 }
 /*-----------
     FOOTER
@@ -230,221 +156,6 @@ a{
     font-weight: bold;
 }
 
-
-/*--------------
-CONTATTACI
---------------*/
-.contactWrapper {
-    width: 100%;
-    height:50em;
-    background-image: url("images/contattaci.jpg");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-}
-
-.contactWrapper h1 {
-    margin-top: 0;
-    text-align: center;
-    color: white;
-    padding: 2em;
-}
-
-.contactContainer {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-.emailContainer {
-    text-align: center;
-    height: 100%;
-    float: left;
-    margin-right: 5em;
-    background-color: white;
-    padding: 0.5em;
-    height: 20em;
-    width: 15em;
-    border-radius: 0.5em;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.emailContainer:hover{
-  color:black;
-  font-size: 16.5px;
-  background-color: #fca905;
-  transition: 0.5s;
-}
-
-.phoneContainer {
-    text-align: center;
-    height: 100%;
-    background-color: white;
-    height: 20em;
-    width: 15em;
-    padding: 0.5em;
-    border-radius: 0.5em;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.phoneContainer:hover{
-  color:black;
-  font-size: 16.5px;
-  background-color: #fca905;
-  transition: 0.5s;
-}
-
-/*--------------
-MODALITA DI ACQUISTO
---------------*/
-#containerInfoShop {
-    margin: 0;
-    padding-left: 1em;
-}
-
-#containerInfoShop h1 {
-    text-align: center;
-}
-
-#containerInfoShop .contentInfoShop p{
-    margin-bottom: 3em;
-}
-#containerInfoShop .contentInfoShop h3{
-    margin-left: 1.5em;
-}
-/*--------------
-PRIVACY POLICY
---------------*/
-#containerPrivacyPolicy {
-    margin-left: 1em;
-    margin-right: 1em;
-}
-
-/*------------
-CATALOGO
-------------*/
-#menuCatalogo {
-    width: 14em;
-    float: left;
-    height: 100%;
-}
-
-#menuCatalogo ul {
-    list-style-type: none;
-    padding-left: 0.5em;
-}
-
-#menuCatalogo ul ul {
-    display: block;
-    margin: 0 auto;
-    padding: 0;
-}
-
-#menuCatalogo .topCategories {
-    padding: 0.5em 2em;
-    margin: 0.5em 0;
-    width: 9em;
-    border: 1px solid black;
-    border: 1px solid black;
-    border-radius: 0.5em;
-}
-#menuCatalogo ul ul li {
-    padding: 0.3em 1em;
-    margin: 0.5em auto;
-    width: 7em;
-}
-
-#menuCatalogo ul ul li:last-child {
-    border:none;
-}
-
-#menuCatalogo .topCategories a {
-    margin: 1em auto;
-    text-align: center;
-    text-transform: uppercase;
-    color: dodgerblue;
-    font-weight: bold;
-}
-
-#menuCatalogo ul ul li a {
-    text-align: center;
-}
-
-
-
-#menuCatalogo h3 {
-    text-align: center;
-    padding: 0.5em;
-    margin: 0 0.5em;
-    border: 1px solid dodgerblue;
-    border-radius: 0.5em;
-    background-color: dodgerblue;
-    color: white;
-}
-
-#contentCatalogo {
-    margin-left: 14em;
-    margin-right: 2em;
-    padding-left: 1em;
-}
-
-#contentCatalogo #totaleProdotti {
-    color:#9b9b9b;
-}
-
-#contentCatalogo input {
-    padding: 0.4em 0.25em;
-    width: 60%;
-    border-radius: 0.5em;
-}
-#contentCatalogo button {
-    padding: 0.4em 0.25em;
-    width: 15%;
-    border-radius: 0.5em;
-    color: white;
-    background: dodgerblue;
-    cursor: pointer;
-}
-#contentCatalogo button:hover {
-    font-weight: bold;
-}
-
-#containerProdotti {
-    width: 100%;
-}
-
-#containerProdotto {
-    float: left;
-    width: 45%;
-    height: 400px;
-    padding: 0 1em;
-    border: 1px solid lightgray;
-    border-radius: 0.5em;
-    margin: 0.5em;
-}
-
-#containerProdotto img {
-    display: block;
-    margin: 0 auto;
-    width: 70%;
-    height:70%;
-}
-
-#containerProdotto .price {
-    font-size: 20px;
-    margin-bottom: 0.5em;
-}
-
-#containerProdotto .info {
-    margin-bottom: 0;
-}
-
-
 /*----------
 BARRA PAGINAZIONE
 ----------*/
@@ -465,71 +176,6 @@ BARRA PAGINAZIONE
     width: 100%;
     padding-top: 1em;
 }
-
-/*---------
-PAGINA PRODOTTO
----------*/
-#product {
-    padding-left: 2em;
-    margin-left: 14em;
-}
-
-#product img {
-    display: block;
-    float: left;
-    width: 40%;
-    margin-right: 1em;
-}
-#product .infoWrapper {
-    margin: 1em;
-}
-
-#product .sconto {
-    color: red;
-    font-weight: bold;
-}
-
-#product .price {
-    font-size: 18px;
-}
-
-#product .sconto {
-    font-size: 16px;
-}
-
-#product .realPrice {
-    font-size: 14px;
-}
-
-#product #descBreve {
-    clear: both;
-}
-
-/*--------
-  AGGIUSTA LE IMMAGINI PER I TABLET O SCHERMO A META'
---------*/
-@media (max-width:1500px){
-  .card{
-      width: 97%;
-      background: #ffffff;
-      float:left;
-      margin: 10px;
-      border: 1px solid black;
-      border-radius: 5px;
-  }
-  .card_copy{
-      padding: 10px;
-  }
-  .card_image{
-      width: 100%;
-      width: 400px;
-      height: 260px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-  }
-}
-
 /*---------
 USER
 ---------*/
@@ -594,103 +240,6 @@ USER
     padding-bottom: 50px;
     min-height: 700px;
 }
-/*-------
-PRODUCT PRICE
---------*/
-.containerPriceCatalog{
-    display: flex;
-    margin-top: -1.5em;
-}
-
-.containerPriceCatalog .priceCatalog {
-    font-size: 22px;
-}
-
-.containerPriceCatalog .realPriceCatalog {
-    margin-left: 1em;
-    font-size: 12px;
-    margin-top: 0.5em;
-    color: red;
-}
-/*-----------
-PROFILO UTENTE
--------------*/
-#profile {
-    margin: 2em 2em;
-    height: 50em;
-}
-
-#profile table {
-    width: 70%;
-}
-
-#profile table td {
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    margin-bottom: 0.5em;
-    margin-top: 0.5em;
-    border-top: 1px solid lightgray;
-    border-bottom: 1px solid lightgray;
-}
-
-/*-----------
-MODIFICA UTENTE
-------------*/
-#editProfile {
-    margin-left: 2em;
-    margin-top:1em;
-    height: 300em;
-}
-
-#formEditProfile {
-    width: 20em;
-}
-
-#formEditProfile .wrapInput {
-    margin-top: 1em;
-    margin-bottom: 1em;
-    display: flex;
-    justify-content: space-around;
-}
-#formEditProfile .wrapInput .labelInput {
-    width: 13em;
-}
-
-
-#editProfile .wrapInput .input {
-    padding: 0.4em;
-}
-
-.wrapInput img {
-    width: 100px;
-    margin-left: 20em;
-}
-
-#editProfile .submit {
-    padding: 0.3em;
-    width: 14em;
-    border-radius: 0.3em;
-    background-color: green;
-    color: white;
-}
-#editProfile .delete {
-    padding: 0.3em;
-    width: 6em;
-    border-radius: 0.3em;
-    background-color: red;
-    color: white;
-    margin-left: 0.25em;
-}
-
-
-#editProfile .submit:hover,#editProfile .delete:hover {
-    font-weight: bold;
-    cursor: pointer;
-}
-
-#editProfile #birthday {
-    width: 12em;
-}
 
 /*----------
 MENU USER
@@ -717,120 +266,6 @@ MENU USER
 }
 .headerMenuItemAuth{
   display: inline-block;
-}
-/*----------
-    VARIE
-----------*/
-.border{
-    border: solid black 1px
-}
-
-.errors{
-    color: red;
-}
-
-.button{
-    padding: 0.5em;
-    width: 9em;
-    border-radius: 0.3em;
-    background-color: dodgerblue;
-    color: white;
-    margin-left: 0.25em;
-    font-size: 1.5em;
-    float: right;
-}
-
-.button:hover{
-    font-weight: bold;
-}
-
-/*-----------
-    TABELLA
-------------*/
-.table {
-    border-collapse: collapse;
-    margin: 15 px;
-}
-
-.table td {
-    padding:15px;
-}
-
-.table th {
-    background-color: #fca905;
-    padding: 15px;
-}
-
-.table #descLunga {
-    max-width: 20em;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-/*-----------
-    TABELLA
-------------*/
-.containerRegistration {
-    margin-top: 1em;
-    margin-left: 1em;
-}
-
-.containerRegistration .registerForm {
-    margin: 0 auto;
-    width: 30em;
-    display: block;
-    float: left;
-}
-.containerRegistration .wrapInput{
-    display: flex;
-    justify-content: space-around;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-}
-
-.containerRegistration .wrapInput .labelInput{
-   width: 11em;
-}
-
-/*---------
-CHANGEPASSWORD
-----------*/
-.success {
-    color: green;
-    padding: 0.5em 1em;
-    list-style-type: disc;
-}
-#containerChangePassword {
-    text-align: center;
-    height: 30em;
-}
-
-#containerChangePassword .wrapInput{
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-}
-
-#containerChangePassword .wrapInput .labelInput {
-    width: 10em;
-}
-
-.submit {
-    display: block;
-    margin: 20px auto;
-    border: 1px solid black;
-    padding: 14px 20px;
-    width: 100px;
-    border-radius: 24px;
-    transition: 0.25s;
-    cursor: pointer;
-}
-
-.submit:hover {
-    background-color: green;
-    font-weight: bold;
-    color: white;
-
 }
 
 .menuContainerAuth {
@@ -865,3 +300,104 @@ CHANGEPASSWORD
 .headerMenuItemStaff{
   display: inline-block;
 }
+
+/*----------
+    VARIE
+----------*/
+.border{
+    border: solid black 1px
+}
+
+.errors{
+    color: red;
+}
+
+.button{
+    padding: 0.5em;
+    width: 9em;
+    border-radius: 0.3em;
+    background-color: dodgerblue;
+    color: white;
+    margin-left: 0.25em;
+    font-size: 1.5em;
+    float: right;
+}
+
+.button:hover{
+    font-weight: bold;
+}
+
+.success {
+    color: green;
+    padding: 0.5em 1em;
+    list-style-type: disc;
+}
+
+.submit {
+    display: block;
+    margin: 20px auto;
+    border: 1px solid black;
+    padding: 14px 20px;
+    width: 100px;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: green;
+    font-weight: bold;
+    color: white;
+
+}
+
+
+/*-----------
+    TABELLA
+------------*/
+.table {
+    border-collapse: collapse;
+    margin: 15 px;
+}
+
+.table td {
+    padding:15px;
+}
+
+.table th {
+    background-color: #fca905;
+    padding: 15px;
+}
+
+.table #descLunga {
+    max-width: 20em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/*--------
+  AGGIUSTA LE IMMAGINI PER I TABLET O SCHERMO A META'
+--------*/
+@media (max-width:1500px){
+  .card{
+      width: 97%;
+      background: #ffffff;
+      float:left;
+      margin: 10px;
+      border: 1px solid black;
+      border-radius: 5px;
+  }
+  .card_copy{
+      padding: 10px;
+  }
+  .card_image{
+      width: 100%;
+      width: 400px;
+      height: 260px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+  }
+}
+

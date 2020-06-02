@@ -2,6 +2,11 @@
 
 @section('title', 'Chi Siamo')
 
+@section('link')
+@parent 
+<link rel="stylesheet" type="text/css" href="{{ asset('css/who.css') }}" > 
+@endsection
+
 @section('content')
 <div class="whoWrapper">
   <br><center><h1>Il leader ITALIANO dell'e-commerce</h1></center><br>

@@ -1,6 +1,11 @@
 @extends('layouts.user')
 @section('title', 'Profilo Personale')
 
+@section('link')
+@parent 
+<link rel="stylesheet" type="text/css" href="{{ asset('css/profile.css') }}" > 
+@endsection
+
 @section('content')
 <div id="profile" >
     <h1>Dati Personali</h1>

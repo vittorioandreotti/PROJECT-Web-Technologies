@@ -2,6 +2,11 @@
 
 @section('title', 'Accesso')
 
+@section('link')
+@parent 
+<link rel="stylesheet" type="text/css" href="{{ asset('css/log.css') }}" > 
+@endsection
+
 @section('content')
 <div class="container spazio clearfix">
     <div class="box">

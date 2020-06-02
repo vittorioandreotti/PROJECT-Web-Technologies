@@ -1,6 +1,11 @@
 @extends('layouts.user')
 @section('title', 'Modifica password')
 
+@section('link')
+@parent 
+<link rel="stylesheet" type="text/css" href="{{ asset('css/changePassword.css') }}" > 
+@endsection
+
 @section('content')
 <div id="containerChangePassword">
     <h2>Modifica Password</h2>

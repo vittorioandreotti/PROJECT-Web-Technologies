@@ -1,0 +1,137 @@
+/*------------
+CATALOGO
+------------*/
+#menuCatalogo {
+    width: 14em;
+    float: left;
+    height: 100%;
+}
+
+#menuCatalogo ul {
+    list-style-type: none;
+    padding-left: 0.5em;
+}
+
+#menuCatalogo ul ul {
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+}
+
+#menuCatalogo .topCategories {
+    padding: 0.5em 2em;
+    margin: 0.5em 0;
+    width: 9em;
+    border: 1px solid black;
+    border: 1px solid black;
+    border-radius: 0.5em;
+}
+#menuCatalogo ul ul li {
+    padding: 0.3em 1em;
+    margin: 0.5em auto;
+    width: 7em;
+}
+
+#menuCatalogo ul ul li:last-child {
+    border:none;
+}
+
+#menuCatalogo .topCategories a {
+    margin: 1em auto;
+    text-align: center;
+    text-transform: uppercase;
+    color: dodgerblue;
+    font-weight: bold;
+}
+
+#menuCatalogo ul ul li a {
+    text-align: center;
+}
+
+
+
+#menuCatalogo h3 {
+    text-align: center;
+    padding: 0.5em;
+    margin: 0 0.5em;
+    border: 1px solid dodgerblue;
+    border-radius: 0.5em;
+    background-color: dodgerblue;
+    color: white;
+}
+
+#contentCatalogo {
+    margin-left: 14em;
+    margin-right: 2em;
+    padding-left: 1em;
+}
+
+#contentCatalogo #totaleProdotti {
+    color:#9b9b9b;
+}
+
+#contentCatalogo input {
+    padding: 0.4em 0.25em;
+    width: 60%;
+    border-radius: 0.5em;
+}
+#contentCatalogo button {
+    padding: 0.4em 0.25em;
+    width: 15%;
+    border-radius: 0.5em;
+    color: white;
+    background: dodgerblue;
+    cursor: pointer;
+}
+#contentCatalogo button:hover {
+    font-weight: bold;
+}
+
+#containerProdotti {
+    width: 100%;
+}
+
+#containerProdotto {
+    float: left;
+    width: 45%;
+    height: 400px;
+    padding: 0 1em;
+    border: 1px solid lightgray;
+    border-radius: 0.5em;
+    margin: 0.5em;
+}
+
+#containerProdotto img {
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+    height:70%;
+}
+
+#containerProdotto .price {
+    font-size: 20px;
+    margin-bottom: 0.5em;
+}
+
+#containerProdotto .info {
+    margin-bottom: 0;
+}
+
+/*-------
+PRODUCT PRICE
+--------*/
+.containerPriceCatalog{
+    display: flex;
+    margin-top: -1.5em;
+}
+
+.containerPriceCatalog .priceCatalog {
+    font-size: 22px;
+}
+
+.containerPriceCatalog .realPriceCatalog {
+    margin-left: 1em;
+    font-size: 12px;
+    margin-top: 0.5em;
+    color: red;
+}

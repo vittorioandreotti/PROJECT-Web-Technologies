@@ -1,0 +1,18 @@
+/*--------------
+MODALITA DI ACQUISTO
+--------------*/
+#containerInfoShop {
+    margin: 0;
+    padding-left: 1em;
+}
+
+#containerInfoShop h1 {
+    text-align: center;
+}
+
+#containerInfoShop .contentInfoShop p{
+    margin-bottom: 3em;
+}
+#containerInfoShop .contentInfoShop h3{
+    margin-left: 1.5em;
+}

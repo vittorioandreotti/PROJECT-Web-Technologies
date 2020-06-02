@@ -1,6 +1,12 @@
 @extends('layouts.public')
 @section('title', 'Prodotto')
 
+@section('link')
+@parent 
+<link rel="stylesheet" type="text/css" href="{{ asset('css/catalog.css') }}" > 
+<link rel="stylesheet" type="text/css" href="{{ asset('css/product.css') }}" > 
+@endsection
+
 @section('scripts')
 @parent
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

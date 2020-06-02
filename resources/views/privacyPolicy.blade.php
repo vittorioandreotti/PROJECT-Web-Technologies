@@ -1,6 +1,11 @@
 @extends ('layouts.public')
 @section ('title', 'Privacy Policy')
 
+@section('link')
+@parent 
+<link rel="stylesheet" type="text/css" href="{{ asset('css/privacyPolicy.css') }}" > 
+@endsection
+
 @section('content')
  <div id='containerPrivacyPolicy'>
     <h2>Privacy Policy</h2>

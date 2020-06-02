@@ -1,8 +1,13 @@
 @extends('layouts.public')
 @section('title', 'Home')
 
+@section('link')
+@parent 
+<link rel="stylesheet" type="text/css" href="{{ asset('css/home.css') }}" > 
+@endsection
+
 @section('content')
-<div class="container clearfix">
+<div class="clearfix">
     <div id="slideshow">
       <img class="mySlides" src="{{asset('images/brandComponenti.jpg')}}">
       <!--<img class="mySlides" src="{{asset('images/airpods2pro.jpg')}}">

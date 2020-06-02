@@ -1,6 +1,11 @@
 @extends ('layouts.public')
 @section ('title', "Modalità d'acquisto")
 
+@section('link')
+@parent 
+<link rel="stylesheet" type="text/css" href="{{ asset('css/shopinfo.css') }}" > 
+@endsection
+
 @section('content')
 <div id='containerInfoShop'>
         <h1>Le nostre modalità d'acquisto</h1>

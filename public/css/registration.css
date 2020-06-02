@@ -1,0 +1,24 @@
+/*-----------
+    REGISTRAZIONE
+------------*/
+.containerRegistration {
+    margin-top: 1em;
+    margin-left: 1em;
+}
+
+.containerRegistration .registerForm {
+    margin: 0 auto;
+    width: 30em;
+    display: block;
+    float: left;
+}
+.containerRegistration .wrapInput{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.containerRegistration .wrapInput .labelInput{
+   width: 11em;
+}

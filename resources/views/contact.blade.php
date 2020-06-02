@@ -2,6 +2,11 @@
 
 @section('title', 'Contattaci')
 
+@section('link')
+@parent 
+<link rel="stylesheet" type="text/css" href="{{ asset('css/contact.css') }}" > 
+@endsection
+
 @section('content')
 <div class="contactWrapper">
     <h1>Hai bisogno di contattarci? Il Servizio Clienti è a tua disposizione al telefono o via email</h1>
