@@ -73,7 +73,9 @@ class AdminController extends Controller {
     }*/
     
     public function addStaff() {
-        return view('prod.insertStaff');
+        return view('prod.insertStaff')
+              ->with('jobs',$this->jobs);
+        
     }
   
     public function storeStaff(insertStaffRequest $request) {

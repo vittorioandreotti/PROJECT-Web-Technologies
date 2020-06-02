@@ -48,7 +48,7 @@
     </div>
      <div class="wrapInput">
         {{ Form::label('job', 'Occupazione',['class'=>'labelInput']) }}
-        @include('helpers.getJobs')
+        {{ Form::select('job', $jobs,  ['id' => 'job']) }}
         @if ($errors->first('job'))
         <ul class="errors">
             @foreach ($errors->get('job') as $message)

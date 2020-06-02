@@ -44,7 +44,7 @@ $(function () {
 
 @section('content')
 <div class="adminContainer clearfix">
-    <h3>Aggiungi Prodotti</h3>
+    <h3>Aggiungi Staff</h3>
     <p>Utilizza questa form per inserire un nuovo lavoratore come Staff</p>
 
     <div class="box">
@@ -79,7 +79,7 @@ $(function () {
 
         
         {{ Form::label('job', 'Occupazione') }}
-        {{ Form::text('job', '',  ['id' => 'job']) }}
+        {{ Form::select('job', $jobs,  ['id' => 'job']) }}
         
         
         {{ Form::label('birthday', 'Data di nascita') }}

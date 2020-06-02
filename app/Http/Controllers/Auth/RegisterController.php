@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
+    protected $jobs=['Operaio','Insegnante','Ingegnere','Architetto']; 
     /*
     |--------------------------------------------------------------------------
     | Register Controller
@@ -77,9 +78,12 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'residence' => $data ['residence'],
-            'job' => $data ['job'],
+            'job' =>$this->jobs [$data ['job']],
             'birthday' => $data ['birthday'],
         ]);
     }
-   
+   public function showRegistrationForm () { 
+       return view('auth.register')
+              ->with('jobs',$this->jobs);
+       }
 }
