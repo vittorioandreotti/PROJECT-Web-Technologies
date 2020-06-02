@@ -20,7 +20,7 @@
                   <h3>COMPONENTI PC</h3>
                   <img class="card_image" src="{{asset('images/componenti.jpg')}}" alt="Immagine componenti pc" usemap="#componentiPC">
                   <map name="#componentiPC">
-                      <area shape="rect" coords="0 260 400 0" href="{{route('catalog2',[1])}}">
+                      <area shape="rect" coords="0 350 424 0" href="{{route('catalog2',[1])}}">
                   </map>
               </div>
           </div>
@@ -29,7 +29,7 @@
                   <h3>AUDIO</h3>
                   <img class="card_image" src="{{asset('images/audio.jpg')}}" alt="image" usemap="#audio">
                   <map name="#audio">
-                    <area shape="rect" coords="0 260 400 0" href="{{route('catalog2',[2])}}">
+                    <area shape="rect" coords="0 350 424 0" href="{{route('catalog2',[2])}}">
                   </map>
               </div>
           </div>
@@ -38,7 +38,7 @@
                   <h3>FOTOGRAFIA</h3>
                   <img class="card_image" src="{{asset('images/foto.jpg')}}" alt="image" usemap="#fotografia">
                   <map name="#fotografia">
-                    <area shape="rect" coords="0 260 400 0" href="{{route('catalog2',[3])}}">
+                    <area shape="rect" coords="0 350 424 0" href="{{route('catalog2',[3])}}">
                   </map>
                 </div>
             </div>

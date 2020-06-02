@@ -8,21 +8,22 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
 $(function () {
-    $('#deleteproduct').click(function(){
-       var val = [];
-       $(':checkbox:checked').each(function(i){
-       val[i] = $(this).val();
-       console.log(val);
-     });
-    });
+    $('#deleteproduct').hide(); /*Nasconde il bottone "Cancella Tutti" inizialmente*/
+    $(':checkbox').on("change",(function(){
+        if($(':checkbox:checked').length > 0) {
+            $('#deleteproduct').show();
+        } else {
+            $('#deleteproduct').hide();
+        }
+    }));
 });
 </script>
 @endsection
 
 @section('content')
 <h1>Gestisci prodotti</h1>
-{{ Form::open(array('route' =>'manageproduct.store', 'id' => 'deleteproduct')) }}
-{{ Form::submit('Cancella tutti', ['class' => 'submit']) }}
+{{ Form::open(array('route' =>'manageproduct.store', 'id' => 'manageproduct')) }}
+{{ Form::submit('Cancella tutti', ['class' => 'submit','id'=>'deleteproduct']) }}
 
 @isset($products)
     <table border class="table"> 
@@ -48,10 +49,13 @@ $(function () {
             <td>{{$product->percSconto}}%</td>
             <td>{{$product->descCorta}}</td>
             <td id="descLunga">{{$product->descLunga}}</td>
-            <td><a href="{{route('editproduct',[$product->codProd])}}">Modifica</a></td>
-            <td>{{ Form::open(array('route' =>['deleteproduct.store',$product->codProd], 'id' => 'deleteproduct')) }}
+            <td>
+                <a href="{{route('editproduct',$product->codProd)}}">Modifica</a>
+                
+            <td>
+                {{ Form::open(array('route' =>['deleteproduct.store',$product->codProd], 'id' => 'deleteproduct')) }}
                 {{ Form::submit('Cancella', ['class' => '']) }}
-                    {{ Form::close() }}
+                {{ Form::close() }}
             </td>
         </tr>
         @endforeach
