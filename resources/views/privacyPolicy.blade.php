@@ -8,10 +8,10 @@
 
 @section('content')
  <div id='containerPrivacyPolicy'>
-    <h2>Privacy Policy</h2>
+    <h2 id='title'>Privacy Policy</h2>
     <p><strong>Informativa ai sensi dell'art. 13 del Codice della Privacy</strong></p>
     <p><b>Ai sensi dell'articolo 13 del codice della D.Lgs. 196/2003, vi rendiamo le seguenti informazioni.</b></p>
-    <p>Noi di <strong><span id="sito">http://tweb2.dii.univpm.it/~grp_11/laraProject/public/</span></strong> riteniamo che la privacy dei nostri visitatori sia estremamente importante. Questo documento descrive dettagliatamente i tipi di informazioni personali raccolti e registrati dal nostro sito e come essi vengano utilizzati.</p>
+    <p>Noi di <strong><span id="sito">iPrice</span></strong> riteniamo che la privacy dei nostri visitatori sia estremamente importante. Questo documento descrive dettagliatamente i tipi di informazioni personali raccolti e registrati dal nostro sito e come essi vengano utilizzati.</p>
     <h3>File di Registrazione (Log Files)</h3>
     <p>Come molti altri siti web, il nostro utilizza file di log. Questi file registrano semplicemente i visitatori del sito - di solito una procedura standard delle aziende di hosting e dei servizi di analisi degli hosting.</p>
     <p>Le informazioni contenute nei file di registro comprendono indirizzi di protocollo Internet (IP), il tipo di browser, Internet Service Provider (ISP), informazioni come data e ora, pagine referral, pagine d'uscita ed entrata o il numero di clic.</p>

@@ -35,7 +35,7 @@ class LoginController extends Controller
                 break;
             case 'staff': return '/staff';
                 break;
-            case 'user':  return '/user';
+            case 'user':  return '/';
                 break;
             default: return '/';
         };

@@ -27,10 +27,10 @@ class EditProfileRequest extends FormRequest {
         return [
             'name' => 'required|max:30',
             'surname' => 'required|max:30',
-            'email' => 'required|max:35',
+            'email' => 'required|email|max:35',
             'residence' => 'required|max:20',
             'birthday' => 'required|max:20',
-            'job' => ''
+            'job' => 'required'
         ];
     }
 

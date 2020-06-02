@@ -50,7 +50,7 @@ class UserController extends Controller
         $user->job=($this->jobs[$request->input('job')]);
        // Log::info($user);
         $user->save();
-        return redirect()->action('UserController@showProfile');
+        return redirect()->action('UserController@showProfile')->with("confermMessage","Profilo modificato con successo!");
         ;
     }
     

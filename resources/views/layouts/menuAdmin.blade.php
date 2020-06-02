@@ -4,7 +4,7 @@
           <li class="headerMenuItem"><a href="{{route('catalog1')}}">Catalogo</a></li>
           <li class="headerMenuItem"><a href="{{route('manageUser')}}">Gestione Utenti</a></li>
           <li class="headerMenuItem">
-              <a href="">Gestione Staff</a>
+              <a href="{{route('manageStaff')}}">Gestione Staff</a>
               <div id="subMenu">
                   <ul>
                       <li><a href="{{route('newstaff')}}">Aggiungi Staff</a></li>

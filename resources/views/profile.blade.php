@@ -6,9 +6,25 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('css/profile.css') }}" > 
 @endsection
 
+@section('scripts')
+@parent
+<script>
+    $(function () {
+        setTimeout(function(){
+            $("#correct").fadeOut("slow");
+            }, 5000);
+    });
+</script>
+@endsection
+
 @section('content')
 <div id="profile" >
     <h1>Dati Personali</h1>
+    @if(session()->has('confermMessage'))
+            <ul id="correct" class="success">
+                <li>{{ session()->get('confermMessage') }}</li>
+            </ul>
+        @endif
     <table>
         <tr><td><b>Nome</b></td><td>{{Auth::user()->name}}</td></tr>
         <tr><td><b>Cognome</b></td><td>{{Auth::user()->surname}}</td></tr>

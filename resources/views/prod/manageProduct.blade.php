@@ -3,27 +3,14 @@
 @section('title', 'Gestisci prodotti')
 
 @section('scripts')
-
 @parent
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script>
-$(function () {
-    $('#deleteproduct').hide(); /*Nasconde il bottone "Cancella Tutti" inizialmente*/
-    $(':checkbox').on("change",(function(){
-        if($(':checkbox:checked').length > 0) {
-            $('#deleteproduct').show();
-        } else {
-            $('#deleteproduct').hide();
-        }
-    }));
-});
-</script>
+<script src="{{asset('js/showHideDeleteAllButton.js')}}"></script>
 @endsection
 
 @section('content')
 <h1>Gestisci prodotti</h1>
 {{ Form::open(array('route' =>'manageproduct.store', 'id' => 'manageproduct')) }}
-{{ Form::submit('Cancella tutti', ['class' => 'submit','id'=>'deleteproduct']) }}
+{{ Form::submit('Cancella tutti', ['class' => 'submit','id'=>'multipleDelete']) }}
 
 @isset($products)
     <table border class="table"> 

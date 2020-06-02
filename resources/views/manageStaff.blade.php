@@ -1,6 +1,11 @@
 @extends('layouts.admin')
 @section('title', 'Gestisci Staff')
 
+@section('scripts')
+@parent
+<script src="{{asset('js/showHideDeleteAllButton.js')}}"></script>
+@endsection
+
 @section ('content')
 <div>
     <h1>Gestisci Staff</h1>
@@ -10,7 +15,7 @@
         </ul>
     @endif
     {{ Form::open(array('route' =>'deleteMultipleUser.store', 'id' => 'deleteMultipleUser')) }}
-    {{ Form::submit('Cancella tutti', ['class' => 'submit']) }}
+    {{ Form::submit('Cancella tutti', ['class' => 'submit','id' => 'multipleDelete']) }}
     @if(!$staffs->isEmpty())
     <table border class="table"> 
         <tr>

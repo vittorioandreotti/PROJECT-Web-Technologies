@@ -5,3 +5,7 @@ PRIVACY POLICY
     margin-left: 1em;
     margin-right: 1em;
 }
+
+#containerPrivacyPolicy #title {
+    text-align:center;
+}

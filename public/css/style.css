@@ -4,6 +4,10 @@ html, body{
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
 }
+
+input[type="text"],input[type="submit"],input[type="date"],input[type="select"] {
+  font-family: 'Montserrat', sans-serif;
+}
 a{
   text-decoration: none;
   color: #000;
@@ -308,10 +312,6 @@ MENU USER
     border: solid black 1px
 }
 
-.errors{
-    color: red;
-}
-
 .button{
     padding: 0.5em;
     width: 9em;
@@ -327,12 +327,30 @@ MENU USER
     font-weight: bold;
 }
 
-.success {
-    color: green;
-    padding: 0.5em 1em;
-    list-style-type: disc;
+.errors {
+    background-color: #FAE5E5;
+    width: max-content;
+    padding: 0.75em 1em;
+    list-style-type: none;
+    border-radius: 0.5em;
 }
 
+.errors li {
+    color:red;
+}
+
+
+.success {
+    width: 20em;
+    padding: 1.5em 1em;
+    background-color: #DFF0D8;
+    list-style-type: none;
+    border-radius: 0.5em;
+}
+
+.success li{
+    color: #8CAC88;
+}
 .submit {
     display: block;
     margin: 20px auto;

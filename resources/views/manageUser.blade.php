@@ -1,8 +1,12 @@
 @extends('layouts.admin')
 @section('title', 'Cancella utente')
 
-@section('content')
+@section('scripts')
+@parent
+<script src="{{asset('js/showHideDeleteAllButton.js')}}"></script>
+@endsection
 
+@section('content')
 <div>
     <h1>Cancella Utente</h1>
      @if(session()->has('confermDelete'))
@@ -11,7 +15,7 @@
         </ul>
     @endif
     {{ Form::open(array('route' =>'deleteMultipleUser.store', 'id' => 'deleteMultipleUser')) }}
-    {{ Form::submit('Cancella tutti', ['class' => 'submit']) }}
+    {{ Form::submit('Cancella tutti', ['class' => 'submit','id' => 'multipleDelete']) }}
     @if(!$users->isEmpty())
     <table border class="table"> 
         <tr>
