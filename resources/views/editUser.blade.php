@@ -57,7 +57,7 @@
                 </div>
                 <div class="wrapInput">
                      {{ Form::label('birthday', 'Data di nascita', ['class' => 'labelInput']) }}
-                    {{ Form::text('birthday', auth()->user()->birthday, ['class' => 'input', 'id' => 'birthday']) }}
+                    {{ Form::date('birthday', auth()->user()->birthday, ['class' => 'input', 'id' => 'birthday']) }}
                     @if ($errors->first('birthday'))
                     <ul class="errors">
                         @foreach ($errors->get('birthday') as $message)
@@ -68,7 +68,7 @@
                 </div>
                 <div class="wrapInput">
                      {{ Form::label('job', 'Occupazione', ['class' => 'labelInput']) }}
-                    {{ Form::select('job',$jobs, auth()->user()->job , ['class' => 'input', 'id' => 'job']) }}
+                    {{ Form::select('job',$jobs, $job , ['class' => 'input', 'id' => 'job']) }}
                     @if ($errors->first('job'))
                     <ul class="errors">
                         @foreach ($errors->get('job') as $message)

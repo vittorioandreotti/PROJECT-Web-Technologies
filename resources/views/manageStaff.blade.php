@@ -23,7 +23,7 @@
                 </form>
             </td>
             <td>
-                <form action="{{route('deleteStaff', $staff->id)}}" method="POST">
+                <form action="{{route('deleteUser', $staff->id)}}" method="POST">
                     @csrf
                     <input type="submit" value="Cancella">              
                 </form>

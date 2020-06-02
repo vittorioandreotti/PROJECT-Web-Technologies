@@ -57,6 +57,9 @@ Route::get('/admin/manageStaff', 'AdminController@manageStaff')
 Route::post('deleteUser/{id}', 'AdminController@deleteUser')
         ->name('deleteUser');
 
+Route::post('/admin/deleteMultipleUser', 'AdminController@deleteMultipleUser')
+        ->name('deleteMultipleUser.store');
+
 Route::post('deleteStaff/{id}', 'AdminController@deleteStaff')
         ->name('deleteStaff');
 
@@ -71,6 +74,7 @@ Route::get('/admin/editStaff/{id}', 'AdminController@editStaff')
 
 Route::post('/admin/editStaff/{id}', 'AdminController@storeEditStaff')
         ->name('editStaff.store');
+
 
 // Rotte per lo STAFF
 Route::get('/staff', 'StaffController@index')
