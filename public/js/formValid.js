@@ -27,7 +27,7 @@ function doElemValidation(id, actionUrl, formId) {
             error: function (data) {
                 if (data.status === 422) {
                     var errMsgs = JSON.parse(data.responseText);
-                    $("#" + id).parent().find('.errors').html(' ');
+                    $("#" + id).parent().find('.errors').remove();
                     $("#" + id).after(getErrorHtml(errMsgs[id]));
                 }
             },
@@ -67,7 +67,7 @@ function doFormValidation(actionUrl, formId) {
             if (data.status === 422) {
                 var errMsgs = JSON.parse(data.responseText);
                 $.each(errMsgs, function (id) {
-                    $("#" + id).parent().find('.errors').html(' ');
+                    $("#" + id).parent().find('.errors').remove();
                     $("#" + id).after(getErrorHtml(errMsgs[id]));
                 });
             }

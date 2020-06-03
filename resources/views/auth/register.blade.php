@@ -115,6 +115,7 @@
         {{ Form::label('password-confirm', 'Conferma password',['class'=>'labelInput']) }}
         {{ Form::password('password_confirmation', ['class'=>'input','id' => 'password-confirm']) }}
     </div>
+        
         {{ Form::submit('Registra',['class'=>'submit','id'=>'submit']) }}
         {{ Form::reset('Annulla',['class'=>'cancel','id'=>'cancel']) }}
 

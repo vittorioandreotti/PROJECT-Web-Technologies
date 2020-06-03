@@ -13,15 +13,15 @@
     text-align: center;
 }
 .containerRegistration .wrapInput{
-    display: flex;
-    justify-content: space-around;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
 }
 
 .containerRegistration .wrapInput .labelInput{
+   display: inline-block;
    width: 11em;
    text-align: right;
+   margin-right: 1em;
 }
 
 #error {

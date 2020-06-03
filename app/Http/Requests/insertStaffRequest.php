@@ -30,15 +30,15 @@ class insertStaffRequest extends FormRequest {
      */
     public function rules() {
         return [
-            'name' => 'max:30',
-            'surname' => 'max:30',
+            'name' => 'required|max:30',
+            'surname' => 'required|max:30',
             'email' => 'required|max:35',
             'username'=>'required|max:20',
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             //'role'=>'required|max:10',
             'residence' => 'required|max:20',
             'birthday' => ['required', 'date'],
-            'job' => ''
+            'job' => 'required'
         ];
     }
     

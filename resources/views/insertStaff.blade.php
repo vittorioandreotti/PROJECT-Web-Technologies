@@ -3,9 +3,9 @@
 @section('title', 'ADMIN')
 
 @section('link')
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" > 
-<link rel="stylesheet" type="text/css" href="{{ asset('css/log.css') }}" > 
+@parent
+<link rel="stylesheet" type="text/css" href="{{ asset('css/registration.css') }}" > 
+<link rel="stylesheet" type="text/css" href="{{ asset('css/insertStaff.css') }}" > 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
 @endsection
 
@@ -33,68 +33,61 @@ $(function () {
     });
 });
 </script>
-<script>
+<!--<script>
     $( function() {$( "#residence" ).autocomplete({
       source: listacomuni
     });
   } );
-</script>
+</script>-->
 
 @endsection
 
 @section('content')
-<div class="adminContainer clearfix">
+<div class="containerRegistration">
     <h3>Aggiungi Staff</h3>
     <p>Utilizza questa form per inserire un nuovo lavoratore come Staff</p>
-
-    <div class="box">
         
         {{ Form::open(array('route' => 'newstaff.store', 'id' => 'addStaff', 'class' => 'contact-form')) }}
           
-                
-        {{ Form::label('name', 'Nome Staff', ['class' => 'label-input']) }}
+     <div class="wrapInput">          
+        {{ Form::label('name', 'Nome Staff', ['class' => 'labelInput']) }}
         {{ Form::text('name', '', ['class' => 'input', 'id' => 'name']) }}
-                
-                
-        {{ Form::label('surname', 'Cognome Staff', ['class' => 'label-input']) }}
+    </div>           
+    <div class="wrapInput">          
+        {{ Form::label('surname', 'Cognome Staff', ['class' => 'labelInput']) }}
         {{ Form::text('surname','', ['class' => 'input','id' => 'surname']) }}
-
-        
-        {{ Form::label('username', 'Username') }}
-        {{ Form::text('username', '', ['id' => 'username']) }}
-
-        
-        {{ Form::label('email', 'Email') }}
-        {{ Form::text('email', '', ['id' => 'email']) }}
-        
-        
-
-        {{ Form::label('password', 'Password') }}
-        {{ Form::password('password', ['id' => 'password']) }}
-        
-        
-
-        {{ Form::label('password-confirm', 'Conferma password', ['class' => 'label-input']) }}
-        {{ Form::password('password_confirmation', ['id' => 'password-confirm']) }}
-
-        
-        {{ Form::label('job', 'Occupazione') }}
-        {{ Form::select('job', $jobs,  ['id' => 'job']) }}
-        
-        
-        {{ Form::label('birthday', 'Data di nascita') }}
-        {{ Form::text('birthday', '', ['id' => 'birthday']) }}
-        
-        
-        {{ Form::label('residence', 'Luogo di residenza') }}
-        {{ Form::text('residence', '', ['id' => 'residence','class'=>'ui-widget']) }}
-             
-        
-        {{ Form::submit('Aggiungi', ['class' => 'form-btn1']) }}
-            
-        {{ Form::close() }}
-        
     </div>
+    <div class="wrapInput">    
+        {{ Form::label('email', 'Email',['class' => 'labelInput']) }}
+        {{ Form::text('email', '', ['class' => 'input','id' => 'email']) }}
+    </div>
+    <div class="wrapInput">   
+        {{ Form::label('job', 'Occupazione',['class' => 'labelInput']) }}
+        {{ Form::select('job', $jobs,  ['class' => 'input','id' => 'job']) }}
+    </div>    
+    <div class="wrapInput">    
+        {{ Form::label('birthday', 'Data di nascita',['class' => 'labelInput']) }}
+        {{ Form::date('birthday', '', ['class' => 'input','id' => 'birthday']) }}
+    </div>    
+    <div class="wrapInput">    
+        {{ Form::label('residence', 'Luogo di residenza',['class' => 'labelInput']) }}
+        {{ Form::text('residence', '', ['class' => 'input','id' => 'residence']) }}
+    </div>
+    <div class="wrapInput">    
+        {{ Form::label('username', 'Username',['class' => 'labelInput']) }}
+        {{ Form::text('username', '', ['class' => 'input','id' => 'username']) }}
+    </div>
+    <div class="wrapInput">    
+        {{ Form::label('password', 'Password',['class' => 'labelInput']) }}
+        {{ Form::password('password', ['class' => 'input','id' => 'password']) }}
+    </div>    
+    <div class="wrapInput">    
+        {{ Form::label('password-confirm', 'Conferma password', ['class' => 'labelInput']) }}
+        {{ Form::password('password_confirmation', ['class' => 'input','id' => 'password-confirm']) }}
+    </div>             
+        {{ Form::submit('Aggiungi', ['class' => 'submit','id'=>'submit']) }}
+        {{ Form::reset('Cancella',['class'=>'cancel','id'=>'cancel']) }}   
+        {{ Form::close() }}
 
 </div>
 @endsection

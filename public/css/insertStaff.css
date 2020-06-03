@@ -1,0 +1,16 @@
+.containerRegistration {
+    margin: 1em 2em;
+    width: 40%;
+}
+
+.submit {
+    margin-left: 2em;
+}
+
+.containerRegistration .wrapInput{
+    margin: 1em auto;
+}
+
+.errors {
+    margin: 0.25em auto;
+}
