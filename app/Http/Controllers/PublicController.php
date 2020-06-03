@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Resources\Product;
+use App\Http\Requests\SearchProductRequest;
 use App\Models\Catalog;
 use Illuminate\Support\Facades\Log;
 
@@ -104,5 +105,32 @@ class PublicController extends Controller
                         ->with('products', $products)
                         ->with('selectedSubCategory', $selectedSubCategory)
                         ->with('selectedProduct',$selectedProduct);
+    }
+    
+     public function filterProduct($topCodCat, $codCat, SearchProductRequest $request) {
+
+        //Categorie Top
+        $topCategories = $this->catalog->getTopCategories();
+
+        //Categoria Top selezionata
+        $selectedTopCategory = $topCategories->where('codCat', $topCodCat)->first();
+
+        // Sottocategorie
+        $subCategories = $this->catalog->getSubCategories([$topCodCat]);
+        
+        $selectedSubCategory=$subCategories->where('codCat',$codCat)->first();
+
+        $descLong=$request->input('search');
+        Log::info($descLong);
+        // Prodotti della categoria selezionata
+       $products = $this->catalog->getProductByDescLong($descLong,[$codCat],4,'asc');
+       Log::info($products);
+       
+        return view('catalog')
+                        ->with('topCategories', $topCategories)
+                        ->with('selectedTopCategory', $selectedTopCategory)
+                        ->with('subCategories', $subCategories)
+                        ->with('products', $products)
+                        ->with('selectedSubCategory', $selectedSubCategory);
     }
 }

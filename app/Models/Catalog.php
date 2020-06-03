@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Resources\Category;
 use App\Models\Resources\Product;
+use Illuminate\Support\Facades\Log;
 
 
 class Catalog
@@ -35,4 +36,13 @@ class Catalog
         return $product->paginate($paged);
     }
     
+    public function getProductByDescLong($descLong, $codCat, $paged, $order=null) {
+        $product = Product::whereIn('codCat', $codCat)
+                            ->where('descLunga', 'LIKE', '%'.$descLong.'%');
+        /*Metodo per ordinare i prodotti in ordine alfabetico*/
+        if (!is_null($order)) {
+            $product = $product->orderBy('nome', $order);
+        }
+        return $product->paginate($paged);
+    }
 }

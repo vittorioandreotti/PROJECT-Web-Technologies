@@ -138,3 +138,7 @@ Route::get('user/editPassword', 'UserController@editPassword')
 
 Route::post('user/editPassword', 'UserController@storePassword')
         ->name('editPassword.store');
+
+Route::post('/selTopCat/{topCat}/selCat/{subCat}', 'PublicController@filterProduct')
+        ->name('filterProduct.store');
+

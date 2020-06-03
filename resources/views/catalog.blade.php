@@ -38,7 +38,17 @@
 
         <p id='totaleProdotti'>Totale prodotti: {{$products->total()}}</p>
         <div>
-            <input name='cerca' type="text" placeholder="Cerca">
+            @if(Auth::guest() || Auth::user()->role=='user')
+                @isset($selectedTopCategory)
+                @isset($selectedSubCategory)
+            {{ Form::open(array('route' =>['filterProduct.store',$selectedTopCategory->codCat,$selectedSubCategory->codCat], 'id' => 'editproduct')) }}
+            {{ Form::text('search','',['class' => 'input', 'id' => 'search']) }}
+            {{ Form::submit('Ricerca') }}
+            {{ Form::close() }}
+        @endisset
+    @endisset
+@endif
+
         @can('isStaff')
             <button id='insertProduct'>Inserisci prodotto</button>
         @endcan
