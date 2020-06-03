@@ -18,7 +18,7 @@
             {{ Form::text('username', '', ['class' => 'input','id' => 'username']) }}
             
                 @if ($errors->first('username'))
-                <ul class="errors">
+                <ul id="error" class="errors">
                     @foreach ($errors->get('username') as $message)
                     <li>{{ $message }}</li>
                     @endforeach
@@ -28,7 +28,7 @@
                 {{ Form::label('password', 'Password', ['class' => 'label-input']) }}
                 {{ Form::password('password', ['class' => 'input', 'id' => 'password']) }}
                 @if ($errors->first('password'))
-                <ul class="errors">
+                <ul id="error" class="errors">
                     @foreach ($errors->get('password') as $message)
                     <li>{{ $message }}</li>
                     @endforeach

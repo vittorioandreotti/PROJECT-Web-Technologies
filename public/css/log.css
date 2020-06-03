@@ -1,5 +1,5 @@
 .box{
-    width: 350px;
+    width: 30em;
     height: auto;
     margin-left: auto;
     margin-right: auto;
@@ -72,6 +72,12 @@
 input:focus, textarea:focus {
     outline: none;
 }
+
+#error{
+    margin: 0.25em auto;
+}
+
+
 /*-----------
   CLEARFIX (FLOAT)
 ------------*/

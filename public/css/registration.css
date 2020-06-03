@@ -2,8 +2,7 @@
     REGISTRAZIONE
 ------------*/
 .containerRegistration {
-    margin-top: 1em;
-    margin-left: 1em;
+    margin: 1em 2em;
 }
 
 .containerRegistration .registerForm {
@@ -11,6 +10,7 @@
     width: 30em;
     display: block;
     float: left;
+    text-align: center;
 }
 .containerRegistration .wrapInput{
     display: flex;
@@ -21,4 +21,43 @@
 
 .containerRegistration .wrapInput .labelInput{
    width: 11em;
+   text-align: right;
+}
+
+#error {
+    margin: 0.25em auto;
+}
+
+.submit {
+    display: inline-block;
+    border: 1px solid black;
+    padding: 0.25em 0;
+    width: 15em;
+    border-radius: 0.5em;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: green;
+    font-weight: bold;
+    color: white;
+}
+
+
+.cancel {
+    display: inline-block;
+    margin-left: 0.5em;
+    border: 1px solid black;
+    padding: 0.25em 0;
+    width: 8em;
+    border-radius: 0.5em;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.cancel:hover {
+    background-color: red;
+    font-weight: bold;
+    color: white;
 }
