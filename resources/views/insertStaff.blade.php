@@ -14,32 +14,21 @@
 
 @parent
 <script src="{{ asset('js/formValid.js') }}" ></script>
-<!-- Serve per l'autocompilazione della residenza-->
-<script src="{{ asset('js/comuni.js') }}" ></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
-$(function () {
-    var actionUrl = "{{ route('newstaff.store') }}";
-    var formId = 'addStaff';
-    $(":input").on('blur', function (event) {
-        var formElementId = $(this).attr('id');
-        doElemValidation(formElementId, actionUrl, formId);
+    $(function () {
+        var actionUrl = "{{ route('newstaff.store') }}";
+        var formId = 'addStaff';
+        $(":input").on('blur', function (event) {
+            var formElementId = $(this).attr('id');
+            console.log(formElementId);
+            doElemValidation(formElementId, actionUrl, formId);
+        });
+        $("#addStaff").on('submit', function (event) {
+            event.preventDefault();
+            doFormValidation(actionUrl, formId);
+        });
     });
-    $("#addStaff").on('submit', function (event) {
-        event.preventDefault();
-        doFormValidation(actionUrl, formId);
-    });
-});
 </script>
-<!--<script>
-    $( function() {$( "#residence" ).autocomplete({
-      source: listacomuni
-    });
-  } );
-</script>-->
-
 @endsection
 
 @section('content')

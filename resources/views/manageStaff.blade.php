@@ -4,6 +4,13 @@
 @section('scripts')
 @parent
 <script src="{{asset('js/showHideDeleteAllButton.js')}}"></script>
+<script>
+    $(function() {
+        $("#insertStaff").on('click',function() {
+            window.location.href="{{route('newstaff')}}";
+        })
+    })
+</script>
 @endsection
 
 @section ('content')
@@ -14,6 +21,7 @@
             <li>{{ session()->get('confermDelete') }}</li>
         </ul>
     @endif
+    <button id="insertStaff" class="button">Aggiungi Staff</button>
     {{ Form::open(array('route' =>'deleteMultipleUser.store', 'id' => 'deleteMultipleUser')) }}
     {{ Form::submit('Cancella tutti', ['class' => 'submit','id' => 'multipleDelete']) }}
     @if(!$staffs->isEmpty())
@@ -31,16 +39,12 @@
             <td>{{$staff->name}}</td>
             <td>{{$staff->surname}}</td>
             <td>
-                <form action="{{route('editStaff', $staff->id)}}" method="GET">
-                    @csrf
-                    <input type="submit" value="Modifica">          
-                </form>
+                <button id="staff{{$staff->id}}"><a href="{{route('editStaff', $staff->id)}}">Modifica</a></button>
             </td>
             <td>
-                <form action="{{route('deleteUser', $staff->id)}}" method="POST">
-                    @csrf
-                    <input type="submit" value="Cancella">              
-                </form>
+                {{ Form::open(array('route' =>['deleteUser',$staff->id], 'id' => 'deleteUser')) }}
+                {{ Form::submit('Cancella', ['class' => '']) }}
+                {{ Form::close() }}
             </td>
         </tr>
         @endforeach
@@ -50,7 +54,5 @@
     <p>Al momento non è registrato nessun utente Staff.</p>
     <p><a href="{{route('newstaff')}}">Clicca qui</a> per aggiungerne uno</p>
     @endif
-    <br>
-    <button type="button" onclick="location.href='{{route('newstaff')}}'" class="button">Aggiungi Staff</button>
 </div>
 @endsection

@@ -5,10 +5,18 @@
 @section('scripts')
 @parent
 <script src="{{asset('js/showHideDeleteAllButton.js')}}"></script>
+<script>
+    $(function() {
+        $("#newproduct").on('click',function() {
+            window.location.href="{{route('newproduct')}}";
+        })
+    })
+</script>
 @endsection
 
 @section('content')
 <h1>Gestisci prodotti</h1>
+<button id="newproduct" class="button">Inserisci prodotto</button>
 {{ Form::open(array('route' =>'manageproduct.store', 'id' => 'manageproduct')) }}
 {{ Form::submit('Cancella tutti', ['class' => 'submit','id'=>'multipleDelete']) }}
 
@@ -37,7 +45,7 @@
             <td>{{$product->descCorta}}</td>
             <td id="descLunga">{{$product->descLunga}}</td>
             <td>
-                <a href="{{route('editproduct',$product->codProd)}}">Modifica</a>
+                <button id='product{{$product->codProd}}'><a href="{{route('editproduct',[$product->codProd])}}">Modifica</a></button>
                 
             <td>
                 {{ Form::open(array('route' =>['deleteproduct.store',$product->codProd], 'id' => 'deleteproduct')) }}

@@ -41,10 +41,9 @@
             <td>{{$user->job}}</td>
             <td>{{$user->username}}</td>
             <td>
-                <form action="{{route('deleteUser', $user->id)}}" method="POST">
-                    @csrf
-                    <input type="submit" value="Cancella">
-                </form>
+                {{ Form::open(array('route' =>['deleteUser',$user->id], 'id' => 'deleteUser')) }}
+                {{ Form::submit('Cancella', ['class' => '']) }}
+                {{ Form::close() }}
             </td>
          </tr>
         @endforeach

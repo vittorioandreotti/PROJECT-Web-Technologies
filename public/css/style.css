@@ -313,14 +313,14 @@ MENU USER
 }
 
 .button{
-    padding: 0.5em;
-    width: 9em;
-    border-radius: 0.3em;
+    padding: 0.25em 0.5em;
+    width: max-content;
+    border-radius: 0.5em;
     background-color: dodgerblue;
     color: white;
     margin-left: 0.25em;
-    font-size: 1.5em;
-    float: right;
+    cursor: pointer;
+    margin-bottom: 1em; 
 }
 
 .button:hover{

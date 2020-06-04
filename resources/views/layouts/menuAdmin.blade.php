@@ -5,12 +5,6 @@
           <li class="headerMenuItem"><a href="{{route('manageUser')}}">Gestione Utenti</a></li>
           <li class="headerMenuItem">
               <a href="{{route('manageStaff')}}">Gestione Staff</a>
-              <div id="subMenu">
-                  <ul>
-                      <li><a href="{{route('newstaff')}}">Aggiungi Staff</a></li>
-                      <li><a href="{{route('manageStaff')}}">Cancella Staff</a></li>
-                  </ul>
-              </div>
            </li>
           @auth
           <li class="headerMenuItem" id="logout"><a href="" class="" title="Esci dal sito" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>

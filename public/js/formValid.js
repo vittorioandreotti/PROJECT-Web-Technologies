@@ -12,7 +12,6 @@ function getErrorHtml(elemErrors) {
 function doElemValidation(id, actionUrl, formId) {
 
     var formElems;
-
     function addFormToken() {
         var tokenVal = $("#" + formId + " input[name=_token]").val();
         formElems.append('_token', tokenVal);
