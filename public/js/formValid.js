@@ -26,16 +26,32 @@ function doElemValidation(id, actionUrl, formId) {
             error: function (data) {
                 if (data.status === 422) {
                     var errMsgs = JSON.parse(data.responseText);
-                    $("#" + id).parent().find('.errors').remove();
-                    $("#" + id).after(getErrorHtml(errMsgs[id]));
+                    if(elem.attr('type')=='password') {
+                        elem.each(function() {
+                            $(this).parent().find('.errors').remove();
+                            $(this).after(getErrorHtml(errMsgs[$(this).attr('id')]));
+                        })
+                    } else {
+                            $("#" + id).parent().find('.errors').remove();
+                            $("#" + id).after(getErrorHtml(errMsgs[id]));
+                     }
+                    
                 }
             },
+            success: function () {
+                 console.log('successo');
+                    if(elem.attr('type')=='password') {
+                        elem.each(function() {
+                           $(this).find('.errors').remove();
+                       }
+                )}
+             },
             contentType: false,
             processData: false
         });
     }
 
-    var elem = $("#" + formId + " :input[name=" + id + "]");
+    var elem = $("#" + formId + " :input[id=" + id + "]");
     if (elem.attr('type') === 'file') {
     // elemento di input type=file valorizzato
         if (elem.val() !== '') {
@@ -43,15 +59,29 @@ function doElemValidation(id, actionUrl, formId) {
         } else {
             inputVal = new File([""], "");
         }
-    } else {
+    } else{
         // elemento di input type != file
         inputVal = elem.val();
+        console.log(inputVal);
     }
     formElems = new FormData();
-    formElems.append(id, inputVal);
-    addFormToken();
-    sendAjaxReq();
-
+    if(elem.attr('type')=='password') {
+        var elem=$("#"+formId + " :input[type=password]");
+        console.log(elem);
+        elem.each(function() {
+            inputVal=$(this).val();
+            inputName=$(this).attr('name');
+            formElems.append(inputName,inputVal);
+        });
+        /*formElems.append("password_confirmation", $('#password_confirmation').val());
+        formElems.append(id, inputVal);*/
+        addFormToken();
+        sendAjaxReq();
+    } else {
+        formElems.append(id, inputVal);
+        addFormToken();
+        sendAjaxReq();
+    }
 }
 
 function doFormValidation(actionUrl, formId) {

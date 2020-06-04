@@ -20,7 +20,6 @@
         var formId = 'addStaff';
         $(":input").on('blur', function (event) {
             var formElementId = $(this).attr('id');
-            console.log(formElementId);
             doElemValidation(formElementId, actionUrl, formId);
         });
         $("#addStaff").on('submit', function (event) {
@@ -71,8 +70,8 @@
         {{ Form::password('password', ['class' => 'input','id' => 'password']) }}
     </div>    
     <div class="wrapInput">    
-        {{ Form::label('password-confirm', 'Conferma password', ['class' => 'labelInput']) }}
-        {{ Form::password('password_confirmation', ['class' => 'input','id' => 'password-confirm']) }}
+        {{ Form::label('password_confirmation', 'Conferma password', ['class' => 'labelInput']) }}
+        {{ Form::password('password_confirmation', ['class' => 'input','id' => 'password_confirmation']) }}
     </div>             
         {{ Form::submit('Aggiungi', ['class' => 'submit','id'=>'submit']) }}
         {{ Form::reset('Cancella',['class'=>'cancel','id'=>'cancel']) }}   
