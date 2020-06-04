@@ -6,13 +6,19 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('css/home.css') }}" > 
 @endsection
 
+@section('scripts')
+@parent
+<script src="{{asset('js/slider.js')}}"></script>
+@endsection
+
 @section('content')
-<div class="clearfix">
-    <div id="slideshow">
-      <img class="mySlides" src="{{asset('images/brandComponenti.jpg')}}">
-      <!--<img class="mySlides" src="{{asset('images/airpods2pro.jpg')}}">
-      <img class="mySlides" src="{{asset('images/reflex.jpg')}}">-->
+<div id="slideshow">
+    <div id="slideshow-wrapper">
+        <img src="{{asset('images/brandComponenti.jpg')}}">
+        <img src="{{asset('images/airpods2pro.jpg')}}">
+        <img src="{{asset('images/reflex.jpg')}}">
     </div>
+</div>
 
     <section class="cards">
           <div class="card">
@@ -43,5 +49,4 @@
                 </div>
             </div>
     </section>
-</div>
 @endsection 

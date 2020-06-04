@@ -1,17 +1,23 @@
 /*-----------
     CORPO
 ------------*/
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-
-#slideshow{
+#slideshow-wrapper{
     height: 40em;
+    width: 210em;
+}
+#slideshow {
+	margin: 2em auto;
+	width: 70em;
+	height: 40em;
+	border: 5px solid #313131;
+	overflow: hidden;
 }
 
+#slideshow-wrapper img {
+	width: 70em;
+	height: 40em;
+	float: left;
+}
 .mySlides{
   /* Questi 2 attributi centrano l'immagine */
   border-radius: 0.25em;
