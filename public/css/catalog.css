@@ -70,9 +70,14 @@ CATALOGO
     color:#9b9b9b;
 }
 
-#contentCatalogo input {
+#contentCatalogo #search {
     padding: 0.4em 0.25em;
     width: 60%;
+    border-radius: 0.5em;
+}
+#contentCatalogo #submit {
+    padding: 0.4em 0.25em;
+    width: 10%;
     border-radius: 0.5em;
 }
 #contentCatalogo button {

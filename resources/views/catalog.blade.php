@@ -14,7 +14,7 @@
                 $('#insertProduct').on('click', function () {
                     window.location.href="{{route('newproduct')}}";
                 })
-            });
+    });
     </script>
 
 @endsection
@@ -38,17 +38,7 @@
 
         <p id='totaleProdotti'>Totale prodotti: {{$products->total()}}</p>
         <div>
-            @if(Auth::guest() || Auth::user()->role=='user')
-                @isset($selectedTopCategory)
-                @isset($selectedSubCategory)
-            {{ Form::open(array('route' =>['filterProduct.store',$selectedTopCategory->codCat,$selectedSubCategory->codCat], 'id' => 'editproduct')) }}
-            {{ Form::text('search','',['class' => 'input', 'id' => 'search']) }}
-            {{ Form::submit('Ricerca') }}
-            {{ Form::close() }}
-        @endisset
-    @endisset
-@endif
-
+           @include('search.search')
         @can('isStaff')
             <button id='insertProduct'>Inserisci prodotto</button>
         @endcan

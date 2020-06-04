@@ -18,6 +18,15 @@ $(function () {
         event.preventDefault();
         doFormValidation(actionUrl, formId);
     });
+        
+    $('#sconto').on('change',function() {
+        if($('#sconto').val()=='0') {
+            $('.wrapInputPerc').hide();
+        }    else {
+            $('.wrapInputPerc').show();
+            $('#percSconto').val('0');
+        }
+    })    
 });
 </script>
 
@@ -49,7 +58,7 @@ $(function () {
                 {{ Form::select('sconto', ['1' => 'Si', '0' => 'No'],$prod->sconto, ['class' => 'input','id' => 'sconto']) }}
             </div>
             
-            <div class="wrapInput">
+            <div class="wrapInputPerc">
                 {{ Form::label('percSconto', 'Sconto (%)', ['class' => 'labelInput']) }}
                 {{ Form::text('percSconto', $prod->percSconto, ['class' => 'input', 'id' => 'percSconto']) }}
                 

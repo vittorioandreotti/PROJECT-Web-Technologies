@@ -67,8 +67,8 @@ class UserController extends Controller
                             ]);
        $user->update(['password'=> Hash::make($request->newPassword)]);
        $user->save();
-       return redirect()->back()
-                        ->with('confermPassword','Password cambiata!');
+       return redirect()->route('profile')
+                        ->with('confermMessage','Password cambiata con successo!');
 
     }
 }

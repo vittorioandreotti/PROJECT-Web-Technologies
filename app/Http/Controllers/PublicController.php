@@ -120,7 +120,8 @@ class PublicController extends Controller
         
         $selectedSubCategory=$subCategories->where('codCat',$codCat)->first();
 
-        $descLong=$request->input('search');
+        Log::info($request);
+        $descLong=$request->validated()['search'];
         Log::info($descLong);
         // Prodotti della categoria selezionata
        $products = $this->catalog->getProductByDescLong($descLong,[$codCat],4,'asc');
