@@ -104,6 +104,16 @@ Route::get('/staff/manageProducts', 'StaffController@manageProducts')
 Route::post('/staff/manageProducts', 'StaffController@storeManageProducts')
         ->name('manageproduct.store');
 
+Route::get('/staff/insertcategory', 'StaffController@insertCategory')
+        ->name('insertCategory');
+
+Route::post('/staff/insertcategory', 'StaffController@storeCategory')
+        ->name('insertCategory.store');
+
+Route::post('/staff/insertsubcategory', 'StaffController@storeSubCategory')
+        ->name('insertSubCategory.store');
+
+
 // Rotte per il login
 Route::get('login', 'Auth\LoginController@showLoginForm')
         ->name('login');

@@ -8,6 +8,8 @@ use App\Http\Requests\prodRequest;
 use App\Models\Staff;
 use App\Http\Requests\EditProductRequest;
 use App\Http\Requests\DeleteProductsRequest;
+use App\Http\Requests\InsertCategoryRequest;
+use App\Http\Requests\InsertSubCategoryRequest;
 use Illuminate\Support\Facades\Log;
 
 
@@ -101,6 +103,30 @@ class StaffController extends Controller
         }
         return redirect()->route('staff');
     }
+    
+    public function insertCategory(){
+        $prodCats = $this->_staffModel->getTopCategories()->pluck('name', 'codCat');
+        return view('staff.insertCategory')
+               ->with('cats',$prodCats);
+        
+    }
+    
+    public function storeCategory(InsertCategoryRequest $request){
+        $category= new Category();
+        $category->fill($request->validated());
+        $category->codPar =0;
+        $category->save();
+        return redirect()->route('staff');
+        
+    }
+    public function storeSubCategory(InsertSubCategoryRequest $request){
+        $category= new Category();
+        $category->fill($request->validated());
+        $category->codPar = $request->input('codCat');
+        $category->save();
+        return redirect()->route('staff');
+    }
+
 }
 
 

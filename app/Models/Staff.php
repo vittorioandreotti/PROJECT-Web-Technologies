@@ -27,6 +27,12 @@ class Staff extends Model{
         }
         return $products->paginate($paged); 
     }
+     public function getTopCategories() {
+        return Category::where('codPar', '=', 0)->get();
+    }
+    
+  
+       
     
 
     

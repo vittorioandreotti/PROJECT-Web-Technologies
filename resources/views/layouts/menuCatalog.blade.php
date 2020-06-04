@@ -1,7 +1,7 @@
 <h3>CATEGORIE</h3> 
 <ul>
      @foreach($topCategories as $category)
-     <li class="topCategories"><a href="{{route('catalog2',[$category->codCat])}}">{{$category->name}}</a> </li>
+     <li class="topCategories"><a href="{{route('catalog2',[$category->codCat])}}" title="{{$category->desc}}">{{$category->name}}</a> </li>
          @isset($selectedTopCategory)
          @isset($subCategories)
          @if($category->codCat==$selectedTopCategory->codCat)
