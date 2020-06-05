@@ -15,7 +15,7 @@
         
     <body>
         <header id="header">
-            <a href="{{route('home')}}" class="headerLogo"><img src="{{asset('images/logoApp.png')}}" id="logo"></a>
+            <a href="{{route('home')}}" class="headerLogo"><img src="{{asset('img/logoApp.png')}}" id="logo"></a>
              <div id="menu">@include('layouts/menuAdmin')</div>
         </header>
 
