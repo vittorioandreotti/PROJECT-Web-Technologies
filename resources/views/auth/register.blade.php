@@ -57,7 +57,7 @@
         @endif
      <div class="wrapInput">
         {{ Form::label('job', 'Occupazione',['class'=>'labelInput']) }}
-        {{ Form::select('job', $jobs,['placeholder' => '--Seleziona--','id' => 'job']) }}
+        {{ Form::select('job',['default' => '--Seleziona--']+ $jobs,['id' => 'job']) }}
     </div>
         @if ($errors->first('job'))
         <ul id="error" class="errors">

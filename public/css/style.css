@@ -394,28 +394,15 @@ MENU USER
     white-space: nowrap;
 }
 
-/*--------
-  AGGIUSTA LE IMMAGINI PER I TABLET O SCHERMO A META'
---------*/
-@media (max-width:1500px){
-  .card{
-      width: 97%;
-      background: #ffffff;
-      float:left;
-      margin: 10px;
-      border: 1px solid black;
-      border-radius: 5px;
-  }
-  .card_copy{
-      padding: 10px;
-  }
-  .card_image{
-      width: 100%;
-      width: 400px;
-      height: 260px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-  }
+.wrapInput {
+    margin: 1em auto;
 }
+
+.wrapInput .labelInput, .wrapInputPerc .labelInput {
+    display: block;
+    float: left;
+    width: 12em;
+}
+
+
 

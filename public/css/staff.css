@@ -1,0 +1,12 @@
+/*-----------
+MODIFICA PRODOTTO
+------------*/
+#formEditProduct {
+    margin-left: 1em;
+}
+
+#formEditProduct img {
+    width: 10em;
+    float: left;
+}
+

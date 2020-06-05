@@ -8,7 +8,7 @@
          <ul>
              
             @foreach($subCategories as $subCategory) 
-            <li><a href="{{route('catalog3',[$selectedTopCategory->codCat,$subCategory->codCat])}}">{{$subCategory->name}}</a> </li>
+            <li><a id="subCategory" href="{{route('catalog3',[$selectedTopCategory->codCat,$subCategory->codCat])}}">{{$subCategory->name}}</a> </li>
             @endforeach
            
          </ul>

@@ -1,8 +1,14 @@
 @extends('layouts.staff')
 
 @section('title', 'Modifica prodotto')
-@section('scripts')
 
+
+@section('link') 
+@parent
+<link rel="stylesheet" type="text/css" href="{{ asset('css/staff.css') }}" >
+@endsection
+
+@section('scripts')
 @parent
 <script src="{{ asset('js/formValid.js') }}" ></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -26,9 +32,24 @@ $(function () {
             $('.wrapInputPerc').show();
             $('#percSconto').val('0');
         }
-    })    
+    });
+    
+    $('#image').change(function () {
+            console.log($(this));
+           if ($(this)[0].files && $(this)[0].files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#newImage')
+                        .attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL($(this)[0].files[0]);
+            }
+        });
 });
 </script>
+
 
 @endsection
 
@@ -38,7 +59,7 @@ $(function () {
     <h3>Modifica Prodotto</h3>
     <p>Utilizza questa form per modificare un prodotto nel catalogo</p>
 
-    <div id="formEditProfile">
+    <div id="formEditProduct">
         
             {{ Form::open(array('route' =>['editproduct.store',$prod->codProd], 'id' => 'editproduct', 'files' => true)) }}
             <div class="wrapInput">
@@ -73,15 +94,17 @@ $(function () {
             
             <div class="wrapInput">
                 {{ Form::label('descLunga', 'Descrizione Estesa', ['class' => 'labelInput']) }}
-                {{ Form::textarea('descLunga', $prod->descLunga, ['class' => 'input', 'id' => 'descLunga', 'rows' => 10, 'column'=> 20 ]) }}
+                {{ Form::textarea('descLunga', $prod->descLunga, ['class' => 'input', 'id' => 'descLunga', 'rows' => 20, 'column'=> 250,'style'=>'resize:none' ]) }}
                 
             </div>
              <div class="wrapInput">
-                  <div>@include('helpers/productImg',['imgFile' => $prod->image])</div>
                 {{ Form::label('image', 'Immagine', ['class' => 'labelInput']) }}
                 {{ Form::file('image', ['class' => 'input', 'id' => 'image']) }}
-               
-            </div>
+             </div>
+             <div>@include('helpers/productImg',['imgFile' => $prod->image])</div>
+             <div class='containerNewImage'>
+                 <img id='newImage'>
+             </div>
             <div>                
                 {{ Form::submit('Modifica prodotto', ['class' => 'submit']) }}
             </div>
