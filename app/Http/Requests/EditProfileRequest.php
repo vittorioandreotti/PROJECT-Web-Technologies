@@ -4,6 +4,10 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
+// Aggiunti per la failedValidation (risposta JSON)
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Contracts\Validation\Validator;
+use Symfony\Component\HttpFoundation\Response;
 
 class EditProfileRequest extends FormRequest {
 
@@ -32,6 +36,13 @@ class EditProfileRequest extends FormRequest {
             'birthday' => 'required|max:20',
             'job' => 'required'
         ];
+    }
+     /**
+     * Override poichè la risposta è in formato JSON
+    */
+    protected function failedValidation(Validator $validator)
+    {
+        throw new HttpResponseException(response($validator->errors(), Response::HTTP_UNPROCESSABLE_ENTITY));
     }
 
 }
