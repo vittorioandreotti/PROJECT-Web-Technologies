@@ -3,4 +3,4 @@
             $imgFile = 'default.jpg';
         }
 @endphp
-<img src="{{ asset('images/products/' . $imgFile) }}" >
+<img src="{{ asset('img/products/' . $imgFile) }}" >

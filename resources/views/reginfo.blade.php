@@ -13,10 +13,10 @@
         <ul>
             <li><h3>Cliccando direttamente sul tasto REGISTRATI posizionato in alto a destra</h3></li>
             <hr>
-            <div class="imgContainer"><img style="width: 70%;"  src="{{asset('images/register.png')}}" alt="image"></div>
+            <div class="imgContainer"><img style="width: 70%;"  src="{{asset('img/register.png')}}" alt="image"></div>
             <li><h3>Cliccando sul pulsante registrati nella finestra di accesso</h3></li>
             <hr>
-            <div class="imgContainer"><img style="width: 30%"  src="{{asset('images/register2.png')}}" alt="image"></div>
+            <div class="imgContainer"><img style="width: 30%"  src="{{asset('img/register2.png')}}" alt="image"></div>
             @guest
                 <li><h3>Oppure puoi cliccare direttamente <a style="color: red" href="{{route('register')}}">QUI</a> </h3></li>
             @endguest

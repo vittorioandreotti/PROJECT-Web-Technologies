@@ -7,6 +7,7 @@ use App\Models\Staff;
 use App\User;
 use App\Models\Admin;
 use App\Http\Requests\EditProfileRequest;
+use App\Http\Requests\EditStaffRequest;
 use App\Http\Requests\DeleteMultipleUserRequest;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Hash;
@@ -55,7 +56,7 @@ class AdminController extends Controller {
             ->with('jobs', $this->jobs);
     }
     
-    public function storeEditStaff (EditProfileRequest $request, $id){
+    public function storeEditStaff (EditStaffRequest $request, $id){
         $staff = $this->_adminModel->getUserById($id);
         $staff -> update($request->validated());
         Log::info($request);

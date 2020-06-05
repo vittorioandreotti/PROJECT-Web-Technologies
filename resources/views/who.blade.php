@@ -31,25 +31,25 @@
           <div class="card">
               <div class="card_copy">
                   <h3>LO</h3>
-                  <img class="card_image" src="{{asset('images/fondatore.jpg')}}" alt="image">
+                  <img class="card_image" src="{{asset('img/fondatore.jpg')}}" alt="image">
               </div>
           </div>
           <div class="card">
               <div class="card_copy">
                   <h3>ALE</h3>
-                  <img class="card_image" src="{{asset('images/fondatore.jpg')}}" alt="image">
+                  <img class="card_image" src="{{asset('img/fondatore.jpg')}}" alt="image">
               </div>
           </div>
           <div class="card">
               <div class="card_copy">
                   <h3>VITT</h3>
-                  <img class="card_image" src="{{asset('images/fondatore.jpg')}}" alt="image">
+                  <img class="card_image" src="{{asset('img/fondatore.jpg')}}" alt="image">
                 </div>
           </div>
           <div class="card">
               <div class="card_copy">
                   <h3>LO</h3>
-                  <img class="card_image" src="{{asset('images/fondatore.jpg')}}" alt="image">
+                  <img class="card_image" src="{{asset('img/fondatore.jpg')}}" alt="image">
                 </div>
           </div>
     </section>

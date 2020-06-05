@@ -34,40 +34,12 @@
                 </ul></p>
             Tra i più noti corrieri a cui affidiamo le nostre spedizioni ci sono:
             <div class="infobox1">
-                <!--<img src="{{asset('images/courier/BRT.png')}}">-->
-                <img src="{{asset('images/courier/corrieri.png')}}">
+                
+                <img src="{{asset('img/corrieri.png')}}">
             </div>
             
         </section>
-   <!-- <div class="infoContainer">
-        <section class="infobox">
-            <h3>MODALITÀ DI PAGAMENTO</h3>
-            <div class="infobox1">
-                <img src="{{asset('images/payments/americanexpress.png')}}">
-                <img src="{{asset('images/payments/mastercard.png')}}">
-                <img src="{{asset('images/payments/paypal.png')}}">
-                <img src="{{asset('images/payments/visa.png')}}">
-            </div>
-        </section>
-        <section class="infobox">
-            <h3>SPEDITO DA</h3>
-            <div class="infobox1">
-                <img src="{{asset('images/courier/BRT.png')}}">
-                <img src="{{asset('images/courier/Posteitaliane.png')}}">
-                <img src="{{asset('images/courier/gls.png')}}">
-                <img src="{{asset('images/courier/sda.png')}}">
-                <img src="{{asset('images/courier/tnt.png')}}">
-            </div>
-        </section>
-        <section class="infobox">
-            <h3>PUOI TROVARCI SU</h3>
-            <div class="infobox1">
-                <div class="infobox2"><img src="{{asset('images/social/facebook.png')}}"></div>
-                <div class="infobox2"><img src="{{asset('images/social/instagram.png')}}"></div>
-                <div class="infobox2"><img src="{{asset('images/social/twitter.png')}}"></div>
-            </div>
-        </section>
-    </div>-->
+   
 </div>
 @endsection
         

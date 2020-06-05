@@ -38,11 +38,11 @@
         {{ Form::open(array('route' => 'newstaff.store', 'id' => 'addStaff', 'class' => 'contact-form')) }}
           
      <div class="wrapInput">          
-        {{ Form::label('name', 'Nome Staff', ['class' => 'labelInput']) }}
+        {{ Form::label('name', 'Nome Staff*', ['class' => 'labelInput']) }}
         {{ Form::text('name', '', ['class' => 'input', 'id' => 'name']) }}
     </div>           
     <div class="wrapInput">          
-        {{ Form::label('surname', 'Cognome Staff', ['class' => 'labelInput']) }}
+        {{ Form::label('surname', 'Cognome Staff*', ['class' => 'labelInput']) }}
         {{ Form::text('surname','', ['class' => 'input','id' => 'surname']) }}
     </div>
     <div class="wrapInput">    
@@ -62,20 +62,21 @@
         {{ Form::text('residence', '', ['class' => 'input','id' => 'residence']) }}
     </div>
     <div class="wrapInput">    
-        {{ Form::label('username', 'Username',['class' => 'labelInput']) }}
+        {{ Form::label('username', 'Username*',['class' => 'labelInput']) }}
         {{ Form::text('username', '', ['class' => 'input','id' => 'username']) }}
     </div>
     <div class="wrapInput">    
-        {{ Form::label('password', 'Password',['class' => 'labelInput']) }}
+        {{ Form::label('password', 'Password*',['class' => 'labelInput']) }}
         {{ Form::password('password', ['class' => 'input','id' => 'password']) }}
     </div>    
     <div class="wrapInput">    
-        {{ Form::label('password_confirmation', 'Conferma password', ['class' => 'labelInput']) }}
+        {{ Form::label('password_confirmation', 'Conferma password*', ['class' => 'labelInput']) }}
         {{ Form::password('password_confirmation', ['class' => 'input','id' => 'password_confirmation']) }}
     </div>             
         {{ Form::submit('Aggiungi', ['class' => 'submit','id'=>'submit']) }}
         {{ Form::reset('Cancella',['class'=>'cancel','id'=>'cancel']) }}   
         {{ Form::close() }}
+        <p>I campi contrassegnati con  <b> * </b> sono <b>obbligatori</b> </p>
 
 </div>
 @endsection
