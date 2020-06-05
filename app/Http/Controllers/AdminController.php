@@ -44,13 +44,13 @@ class AdminController extends Controller {
     
     public function manageStaff() {
         $staffs = $this->_adminModel->getUserByRole("staff");
-        return view('manageStaff')
+        return view('staff.manageStaff')
                ->with('staffs', $staffs);
     }
     
     public function editStaff ($id){
         $staff = $this->_adminModel->getUserById($id);
-        return view('editStaff')
+        return view('staff.editStaff')
             ->with('staff', $staff)
             ->with('jobs', $this->jobs);
     }
@@ -61,7 +61,7 @@ class AdminController extends Controller {
         Log::info($request);
         Log::info($staff);
         $staff -> save();
-        return redirect()->route('manageStaff');
+        return response()->json(['redirect' => route('admin')]);
     }
     
     /*public function deleteStaff ($id) {
@@ -73,7 +73,7 @@ class AdminController extends Controller {
     }*/
     
     public function addStaff() {
-        return view('insertStaff')
+        return view('staff.insertStaff')
               ->with('jobs',$this->jobs);
         
     }

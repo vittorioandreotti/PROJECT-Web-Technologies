@@ -18,7 +18,7 @@
 @endsection
 @section('content')
 <div class="containerRegistration">
-    {{Form::open(array('route' => 'register', 'class'=>'registerForm'))}}
+    {{Form::open(array('route' => 'register', 'class'=>'registerForm','id'=>'register'))}}
     <h1>Registrazione</h1>
     <hr>
     <h2>Dati Personali</h2>
@@ -57,7 +57,7 @@
         @endif
      <div class="wrapInput">
         {{ Form::label('job', 'Occupazione',['class'=>'labelInput']) }}
-        {{ Form::select('job', $jobs,  ['id' => 'job']) }}
+        {{ Form::select('job', $jobs,['placeholder' => '--Seleziona--','id' => 'job']) }}
     </div>
         @if ($errors->first('job'))
         <ul id="error" class="errors">

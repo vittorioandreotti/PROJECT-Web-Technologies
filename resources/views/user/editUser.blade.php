@@ -34,7 +34,7 @@
                     {{ Form::label('name', 'Nome', ['class' => 'labelInput']) }}
                     {{ Form::text('name',auth()->user()->name, ['class' => 'input', 'id' => 'name']) }}
                 </div>
-                                      <div class="wrapInput">
+                <div class="wrapInput">
                     {{ Form::label('surname', 'Cognome', ['class' => 'labelInput']) }}
                     {{ Form::text('surname', auth()->user()->surname, ['class' => 'input', 'id' => 'surname']) }}
                 </div>

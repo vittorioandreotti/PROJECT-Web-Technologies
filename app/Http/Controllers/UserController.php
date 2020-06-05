@@ -24,7 +24,7 @@ class UserController extends Controller
     }
     
     public function showProfile(){
-        return view('profile');
+        return view('user.profile');
     }
     
     public function editProfile(){
@@ -39,7 +39,7 @@ class UserController extends Controller
         Log::info($i);
         Log::info(array_keys($this->jobs));
          Log::info($this->jobs);
-        return view('editUser')
+        return view('user.editUser')
               ->with("jobs",$this->jobs)
               ->with("job",$i);
     }
@@ -50,13 +50,13 @@ class UserController extends Controller
         $user->job=($this->jobs[$request->input('job')]);
        // Log::info($user);
         $user->save();
-        return response()->json(['redirect' => action('UserController@showProfile')->with("confermMessage","Profilo modificato con successo!")]);
+        return response()->json(['redirect' => route('profile')]);
         
         
     }
     
     public function editPassword() {
-        return view('editUserPassword');
+        return view('user.editUserPassword');
     }
     
     public function storePassword(ChangePasswordRequest $request){

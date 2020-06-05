@@ -27,7 +27,7 @@ class StaffController extends Controller
     }
     public function addProduct() {
         $prodCats = $this->_staffModel->getProdsCats()->pluck('name', 'codCat');
-        return view('prod.insertProd')
+        return view('product.insertProd')
                         ->with('cats', $prodCats);
     }
 
@@ -56,7 +56,7 @@ class StaffController extends Controller
     public function editProduct($id) {
         $product=new Product;
         $product=$this->_staffModel->getProduct($id);
-        return view ('prod/editProduct')
+        return view ('product.editProduct')
                     ->with('prod', $product);
     }
     public function storeEditProduct(EditProductRequest $request,$id){
@@ -77,7 +77,7 @@ class StaffController extends Controller
         $product=new Product;
         $product=$this->_staffModel->getProduct($id);
         $selectedTopCategory = Category::find($product->prodCat->codPar);
-        return view('prod/deleteProduct')
+        return view('product.deleteProduct')
                 ->with('product', $product)
                 ->with('selectedTopCategory', $selectedTopCategory);
         
@@ -91,7 +91,7 @@ class StaffController extends Controller
     
     public function manageProducts() {
         $products=Product::where('codCat','!=','3000')->paginate(10);
-        return view('prod/manageProduct')
+        return view('product.manageProduct')
                     ->with('products', $products);
     }
     
