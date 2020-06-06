@@ -59,6 +59,9 @@ class AdminController extends Controller {
     public function storeEditStaff (EditStaffRequest $request, $id){
         $staff = $this->_adminModel->getUserById($id);
         $staff -> update($request->validated());
+        if($request->input('job')!='default') {
+            $staff->job=($this->jobs[$request->input('job')]);
+        }
         Log::info($request);
         Log::info($staff);
         $staff -> save();

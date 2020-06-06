@@ -54,19 +54,19 @@ Route::get('/admin/manageUser', 'AdminController@manageUser')
 Route::get('/admin/manageStaff', 'AdminController@manageStaff')
         ->name('manageStaff');
 
-Route::post('deleteUser/{id}', 'AdminController@deleteUser')
+Route::post('/admin/deleteUser/{id}', 'AdminController@deleteUser')
         ->name('deleteUser');
 
 Route::post('/admin/deleteMultipleUser', 'AdminController@deleteMultipleUser')
         ->name('deleteMultipleUser.store');
 
-Route::post('deleteStaff/{id}', 'AdminController@deleteStaff')
+Route::post('/admin/deleteStaff/{id}', 'AdminController@deleteStaff')
         ->name('deleteStaff');
 
-Route::get('/admin/newstaff', 'AdminController@addStaff')
+Route::get('/admin/newStaff', 'AdminController@addStaff')
         ->name('newstaff');
 
-Route::post('/admin/newstaff', 'AdminController@storeStaff')
+Route::post('/admin/newStaff', 'AdminController@storeStaff')
         ->name('newstaff.store');
 
 Route::get('/admin/editStaff/{id}', 'AdminController@editStaff')
@@ -98,19 +98,19 @@ Route::get('/staff/deleteproduct/product/{id}', 'StaffController@deleteProduct')
 Route::post('/staff/deleteproduct/product/{id}', 'StaffController@storeDeleteProduct')
         ->name('deleteproduct.store');
 
-Route::get('/staff/manageProducts', 'StaffController@manageProducts')
+Route::get('/staff/manageProduct', 'StaffController@manageProducts')
         ->name('manageproduct');
 
-Route::post('/staff/manageProducts', 'StaffController@storeManageProducts')
+Route::post('/staff/manageProduct', 'StaffController@storeManageProducts')
         ->name('manageproduct.store');
 
-Route::get('/staff/insertcategory', 'StaffController@insertCategory')
+Route::get('/staff/insertCategory', 'StaffController@insertCategory')
         ->name('insertCategory');
 
-Route::post('/staff/insertcategory', 'StaffController@storeCategory')
+Route::post('/staff/insertCategory', 'StaffController@storeCategory')
         ->name('insertCategory.store');
 
-Route::post('/staff/insertsubcategory', 'StaffController@storeSubCategory')
+Route::post('/staff/insertSubcategory', 'StaffController@storeSubCategory')
         ->name('insertSubCategory.store');
 
 

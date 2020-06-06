@@ -38,11 +38,11 @@
         {{ Form::open(array('route' => 'newstaff.store', 'id' => 'addStaff', 'class' => 'contact-form')) }}
           
      <div class="wrapInput">          
-        {{ Form::label('name', 'Nome Staff*', ['class' => 'labelInput']) }}
+        {{ Form::label('name', 'Nome Staff *', ['class' => 'labelInput']) }}
         {{ Form::text('name', '', ['class' => 'input', 'id' => 'name']) }}
     </div>           
     <div class="wrapInput">          
-        {{ Form::label('surname', 'Cognome Staff*', ['class' => 'labelInput']) }}
+        {{ Form::label('surname', 'Cognome Staff *', ['class' => 'labelInput']) }}
         {{ Form::text('surname','', ['class' => 'input','id' => 'surname']) }}
     </div>
     <div class="wrapInput">    
@@ -51,7 +51,7 @@
     </div>
     <div class="wrapInput">   
         {{ Form::label('job', 'Occupazione',['class' => 'labelInput']) }}
-        {{ Form::select('job', $jobs,  ['class' => 'input','id' => 'job']) }}
+        {{ Form::select('job',['default' => '--Seleziona--']+ $jobs,  ['class' => 'input','id' => 'job']) }}
     </div>    
     <div class="wrapInput">    
         {{ Form::label('birthday', 'Data di nascita',['class' => 'labelInput']) }}
@@ -62,11 +62,11 @@
         {{ Form::text('residence', '', ['class' => 'input','id' => 'residence']) }}
     </div>
     <div class="wrapInput">    
-        {{ Form::label('username', 'Username*',['class' => 'labelInput']) }}
+        {{ Form::label('username', 'Username *',['class' => 'labelInput']) }}
         {{ Form::text('username', '', ['class' => 'input','id' => 'username']) }}
     </div>
     <div class="wrapInput">    
-        {{ Form::label('password', 'Password*',['class' => 'labelInput']) }}
+        {{ Form::label('password', 'Password *',['class' => 'labelInput']) }}
         {{ Form::password('password', ['class' => 'input','id' => 'password']) }}
     </div>    
     <div class="wrapInput">    

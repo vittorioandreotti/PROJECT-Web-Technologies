@@ -36,10 +36,11 @@ $(function () {
     
     $('#image').change(function () {
             console.log($(this));
-           if ($(this)[0].files && $(this)[0].files[0]) {
+            if ($(this)[0].files && $(this)[0].files[0]) {
                 var reader = new FileReader();
 
                 reader.onload = function (e) {
+                    console.log(reader);
                     $('#newImage')
                         .attr('src', e.target.result);
                 };

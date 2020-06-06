@@ -25,11 +25,11 @@
     <h1>Modifica profilo staff</h1>
     {{ Form::open(array('route' => ['editStaff.store', $staff->id], 'id' => 'staffEditProfile')) }}
         <div  class="wrapInput">
-            {{ Form::label('name', 'Nome', ['class' => 'labelInput']) }}
+            {{ Form::label('name', 'Nome *', ['class' => 'labelInput']) }}
             {{ Form::text('name',$staff->name, ['class' => 'input', 'id' => 'name']) }}
         </div>
         <div  class="wrapInput">
-            {{ Form::label('surname', 'Cognome', ['class' => 'labelInput']) }}
+            {{ Form::label('surname', 'Cognome *', ['class' => 'labelInput']) }}
             {{ Form::text('surname', $staff->surname, ['class' => 'input', 'id' => 'surname']) }}
         </div>        
         <div  class="wrapInput">
@@ -46,11 +46,12 @@
         </div>
         <div  class="wrapInput">
             {{ Form::label('job', 'Occupazione', ['class' => 'labelInput']) }}
-            {{ Form::select('job',$jobs, $staff->job , ['class' => 'input', 'id' => 'job']) }}
+            {{ Form::select('job',['default' => '--Seleziona--']+$jobs, $staff->job , ['class' => 'input', 'id' => 'job']) }}
         </div>
         <div id="containerButton">                
             {{ Form::submit('Salva', ['class' => 'submit']) }}
         </div>       
     {{ Form::close() }}
+    <p>I campi contrassegnati con  <b> * </b> sono <b>obbligatori</b> </p>
 </div>
 @endsection
