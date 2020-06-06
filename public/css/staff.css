@@ -1,3 +1,6 @@
+
+
+
 /*-----------
 MODIFICA PRODOTTO
 ------------*/
@@ -9,4 +12,28 @@ MODIFICA PRODOTTO
     width: 10em;
     float: left;
 }
+/*-----------
+CANCELLA PRODOTTO
+------------*/
+#product img{
+    width: 10em;
+}
+#product .confirmation{
+    text-align: center;
+}
 
+/*-----------
+ Inserimento Categoria/Sottocategoria
+------------*/
+.insertCategory{
+    margin:1em 2em;
+}
+
+.insertProduct{
+    margin:1em 2em;
+}
+
+.wrapInput #newImage,.wrapInput #image{
+    display:block;
+    float:left;
+}

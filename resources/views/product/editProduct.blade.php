@@ -56,11 +56,11 @@ $(function () {
 
 
 @section('content')
-<div class="containerCatalogo">
+<div id="formEditProduct">
     <h3>Modifica Prodotto</h3>
     <p>Utilizza questa form per modificare un prodotto nel catalogo</p>
 
-    <div id="formEditProduct">
+    
         
             {{ Form::open(array('route' =>['editproduct.store',$prod->codProd], 'id' => 'editproduct', 'files' => true)) }}
             <div class="wrapInput">
@@ -85,12 +85,14 @@ $(function () {
                 {{ Form::text('percSconto', $prod->percSconto, ['class' => 'input', 'id' => 'percSconto']) }}
                 
             </div>
+                  
 
               <div class="wrapInput">
                 {{ Form::label('descCorta', 'Descrizione Breve', ['class' => 'labelInput']) }}
                 {{ Form::textarea('descCorta', $prod->descCorta, ['class' => 'input', 'id' => 'descCorta']) }}
                 
             </div>
+            
 
             
             <div class="wrapInput">
@@ -98,19 +100,18 @@ $(function () {
                 {{ Form::textarea('descLunga', $prod->descLunga, ['class' => 'input', 'id' => 'descLunga', 'rows' => 20, 'column'=> 250,'style'=>'resize:none' ]) }}
                 
             </div>
-             <div class="wrapInput">
+               
+            <div class="wrapInput">
                 {{ Form::label('image', 'Immagine', ['class' => 'labelInput']) }}
                 {{ Form::file('image', ['class' => 'input', 'id' => 'image']) }}
-             </div>
-             <div>@include('helpers/productImg',['imgFile' => $prod->image])</div>
-             <div class='containerNewImage'>
-                 <img id='newImage'>
-             </div>
+                  <img id='newImage'>
+             </div>  
+            
             <div>                
                 {{ Form::submit('Modifica prodotto', ['class' => 'submit']) }}
             </div>
             
             {{ Form::close() }}
-        </div>
+        
  </div>
 @endsection

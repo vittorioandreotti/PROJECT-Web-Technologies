@@ -2,6 +2,11 @@
 
 @section('title', 'Inserisci prodotto')
 
+@section('link')
+@parent 
+<link rel="stylesheet" type="text/css" href="{{ asset('css/staff.css') }}" >
+@endsection
+
 @section('scripts')
 
 @parent
@@ -25,11 +30,11 @@ $(function () {
 @endsection
 
 @section('content')
-<div class="containerCatalogo">
+<div class="insertProduct">
     <h3>Aggiungi Prodotti</h3>
     <p>Utilizza questa form per inserire un nuovo prodotto nel Catalogo</p>
 
-    <div id="formEditProfile">
+    
         
             {{ Form::open(array('route' => 'newproduct.store', 'id' => 'addproduct', 'files' => true)) }}
             <div class="wrapInput">
@@ -81,9 +86,7 @@ $(function () {
             
             {{ Form::close() }}
         </div>
-    </div>
 
-</div>
 @endsection
 
 

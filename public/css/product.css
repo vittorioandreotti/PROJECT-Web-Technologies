@@ -36,3 +36,6 @@ PAGINA PRODOTTO
 #product #descBreve {
     clear: both;
 }
+#product .staffOp{
+    text-align: center;
+}

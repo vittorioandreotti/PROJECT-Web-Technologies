@@ -351,13 +351,13 @@ MENU USER
 .success li{
     color: #8CAC88;
 }
+
 .submit {
-    display: block;
-    margin: 20px auto;
+    display: inline-block;
     border: 1px solid black;
-    padding: 14px 20px;
-    width: 100px;
-    border-radius: 24px;
+    padding: 0.25em 0;
+    width: 15em;
+    border-radius: 0.5em;
     transition: 0.25s;
     cursor: pointer;
 }
@@ -366,8 +366,26 @@ MENU USER
     background-color: green;
     font-weight: bold;
     color: white;
-
 }
+
+
+.cancel {
+    display: inline-block;
+    margin-left: 0.5em;
+    border: 1px solid black;
+    padding: 0.25em 0;
+    width: 8em;
+    border-radius: 0.5em;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.cancel:hover {
+    background-color: red;
+    font-weight: bold;
+    color: white;
+}
+
 
 
 /*-----------
