@@ -24,7 +24,16 @@ $(function () {
         event.preventDefault();
         doFormValidation(actionUrl, formId);
     });
+     $('#sconto').on('change',function() {
+        if($('#sconto').val()=='0') {
+            $('.wrapInputPerc').hide();
+        }    else {
+            $('.wrapInputPerc').show();
+            $('#percSconto').val('0');
+        }
+    });
 });
+
 </script>
 
 @endsection
@@ -63,17 +72,18 @@ $(function () {
                 {{ Form::label('prezzo', 'Prezzo', ['class' => 'labelInput']) }}
                 {{ Form::text('prezzo', '', ['class' => 'input', 'id' => 'prezzo']) }}
                             </div>
-
-            <div class="wrapInput">
-                {{ Form::label('percSconto', 'Sconto (%)', ['class' => 'labelInput']) }}
-                {{ Form::text('percSconto', '', ['class' => 'input', 'id' => 'percSconto']) }}
-              
-            </div>
-
+            
             <div class="wrapInput">
                 {{ Form::label('sconto', 'In Sconto', ['class' => 'labelInput']) }}
                 {{ Form::select('sconto', ['1' => 'Si', '0' => 'No'], 1, ['class' => 'input','id' => 'sconto']) }}
             </div>
+
+            <div class="wrapInputPerc">
+                {{ Form::label('percSconto', 'Sconto (%)', ['class' => 'labelInput']) }}
+                {{ Form::text('percSconto', '', ['class' => 'input', 'id' => 'percSconto']) }}
+              
+            </div>
+         
 
             <div class="wrapInput">
                 {{ Form::label('descLunga', 'Descrizione Estesa', ['class' => 'labelInput']) }}

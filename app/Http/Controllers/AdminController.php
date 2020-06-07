@@ -51,6 +51,7 @@ class AdminController extends Controller {
     
     public function editStaff ($id){
         $staff = $this->_adminModel->getUserById($id);
+         $i=null;
         if($staff->job!=null){
             Log::info($staff->job);
             $i=0;
@@ -60,7 +61,8 @@ class AdminController extends Controller {
                 }
                  else break;
             }
-        }
+        } 
+       
         return view('staff.editStaff')
             ->with('staff', $staff)
             ->with('jobs', $this->jobs)

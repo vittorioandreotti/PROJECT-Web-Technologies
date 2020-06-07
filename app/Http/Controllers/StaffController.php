@@ -46,7 +46,7 @@ class StaffController extends Controller
         $product->save();
 
         if (!is_null($imageName)) {
-            $destinationPath = public_path() . '/images/products';
+            $destinationPath = public_path() . '/img/products';
             $image->move($destinationPath, $imageName);
         };
         return response()->json(['redirect' => route('staff')]);

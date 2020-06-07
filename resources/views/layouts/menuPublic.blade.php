@@ -19,6 +19,7 @@
         </div>  
       @endguest
         <ul class="headerMenu">
+             <li class="headerMenuItem"><a href="{{asset('Credenziali_grp11.pdf')}}">Relazione</a></li>
           @can('isAdmin')
           <li class="headerMenuItem"><a href="{{ route('admin') }}" title="Home Admin">Home Admin</a></li>
           @endcan

@@ -30,7 +30,7 @@ class prodRequest extends FormRequest {
     public function rules() {
         return [
             'nome' => 'required|max:25',
-            'codCat' => 'required',
+            'codCat' => 'required|not_in:null',
             'descCorta' => 'required|max:30',
             'image' => 'image|max:1024',
             'prezzo' => 'required|numeric|min:0',
