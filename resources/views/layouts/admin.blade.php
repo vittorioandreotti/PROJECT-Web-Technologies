@@ -19,7 +19,7 @@
              <div id="menu">@include('layouts/menuAdmin')</div>
         </header>
 
-        <div style="margin: 0">
+        <div id="container">
             @yield('content')
         </div>
         <footer id="footer">

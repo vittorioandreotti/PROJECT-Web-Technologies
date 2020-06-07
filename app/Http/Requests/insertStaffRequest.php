@@ -32,12 +32,12 @@ class insertStaffRequest extends FormRequest {
         return [
             'name' => 'required|max:30',
             'surname' => 'required|max:30',
-            'email' => 'unique:users',
+            'email' => 'nullable|email|unique:users',
             'username'=>'required|unique:users|max:20',
             'password' => 'required|string|min:8|confirmed',
-            'residence' => 'max:191',
-            'birthday' => '',
-            'job'=>'',
+            'residence' => 'nullable|max:191',
+            'birthday' => 'nullable|date|before:today',
+            'job'=>'nullable',
         ];
     }
     

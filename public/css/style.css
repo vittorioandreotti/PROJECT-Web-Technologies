@@ -3,6 +3,8 @@ html, body{
   padding: 0;
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
+  position:relative;
+  overflow: auto;
 }
 
 input[type="text"],input[type="submit"],input[type="date"],input[type="select"] {
@@ -125,6 +127,7 @@ CONTENT
   margin-top: 0;
   margin-left: 0;
   margin-right: 0;
+  min-height: 100vh
 }
 
 
@@ -143,8 +146,10 @@ CONTENT
 ------------*/
 
 #footer{
-  clear: both;
+    clear: both;
     background: #393e46;
+     margin-top: auto;
+    width:100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -413,7 +418,7 @@ MENU USER
 }
 
 .wrapInput {
-    margin: 1em auto;
+    margin: 1.5em auto;
 }
 
 .wrapInput .labelInput, .wrapInputPerc .labelInput {

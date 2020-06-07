@@ -51,15 +51,26 @@ class AdminController extends Controller {
     
     public function editStaff ($id){
         $staff = $this->_adminModel->getUserById($id);
+        if($staff->job!=null){
+            Log::info($staff->job);
+            $i=0;
+            foreach($this->jobs as $job) {
+                if($job!=$staff->job) {
+                    $i++;
+                }
+                 else break;
+            }
+        }
         return view('staff.editStaff')
             ->with('staff', $staff)
-            ->with('jobs', $this->jobs);
+            ->with('jobs', $this->jobs)
+            ->with('job', $i);
     }
     
     public function storeEditStaff (EditStaffRequest $request, $id){
         $staff = $this->_adminModel->getUserById($id);
         $staff -> update($request->validated());
-        if($request->input('job')!='default') {
+        if($request->input('job')!=null) {
             $staff->job=($this->jobs[$request->input('job')]);
         }
         Log::info($request);

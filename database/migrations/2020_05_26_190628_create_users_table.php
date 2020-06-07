@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('role',10)->default('user');
             $table->string('residence',30)->nullable();
             $table->date('birthday')->nullable();
-            $table->string('job');
+            $table->string('job')->nullable();
             $table->rememberToken(); 
             $table->timestamps();
         });

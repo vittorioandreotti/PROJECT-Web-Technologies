@@ -51,7 +51,7 @@
     </div>
     <div class="wrapInput">   
         {{ Form::label('job', 'Occupazione',['class' => 'labelInput']) }}
-        {{ Form::select('job',['default' => '--Seleziona--']+ $jobs,  ['class' => 'input','id' => 'job']) }}
+        {{ Form::select('job',[null => '--Seleziona--']+ $jobs,  ['class' => 'input','id' => 'job']) }}
     </div>    
     <div class="wrapInput">    
         {{ Form::label('birthday', 'Data di nascita',['class' => 'labelInput']) }}

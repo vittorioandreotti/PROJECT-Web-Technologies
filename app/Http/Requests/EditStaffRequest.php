@@ -31,10 +31,10 @@ class EditStaffRequest extends FormRequest {
         return [
             'name' => 'required|max:30',
             'surname' => 'required|max:30',
-            'email' => '',
-            'residence' => 'max:30',
-            'birthday' => '',
-            'job' => ''
+            'email' => 'nullable|email',
+            'residence' => 'nullable|max:30',
+            'birthday' => 'nullable|before:today|date',
+            'job' => 'nullable'
         ];
     }
      /**

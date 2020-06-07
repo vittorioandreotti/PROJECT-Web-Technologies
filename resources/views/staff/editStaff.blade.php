@@ -46,7 +46,7 @@
         </div>
         <div  class="wrapInput">
             {{ Form::label('job', 'Occupazione', ['class' => 'labelInput']) }}
-            {{ Form::select('job',['default' => '--Seleziona--']+$jobs, $staff->job , ['class' => 'input', 'id' => 'job']) }}
+            {{ Form::select('job',[null => '--Seleziona--']+$jobs, $job , ['class' => 'input', 'id' => 'job']) }}
         </div>
         <div id="containerButton">                
             {{ Form::submit('Salva', ['class' => 'submit']) }}

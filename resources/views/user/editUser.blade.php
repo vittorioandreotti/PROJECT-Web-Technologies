@@ -3,7 +3,7 @@
 
 @section('link')
 @parent 
-<link rel="stylesheet" type="text/css" href="{{ asset('css/editUser.css') }}" > 
+<link rel="stylesheet" type="text/css" href="{{ asset('css/user.css') }}" > 
 @endsection
 @section('scripts')
 
@@ -21,6 +21,11 @@
             event.preventDefault();
             doFormValidation(actionUrl, formId);
         });
+        $(function(){
+            $('.cancel').on('click',function(){
+                window.location.href="{{route('profile')}}";
+            })
+        })
     });
 </script>
 @endsection
@@ -28,6 +33,7 @@
 @section('content')
 <div id="editProfile">
     <h1>Modifica profilo</h1>
+    <p>Utilizza questa form per modificare il tuo profilo</p>
     <hr>
     {{ Form::open(array('route' => 'editProfile.store', 'id' => 'formEditProfile')) }}
                 <div class="wrapInput">
@@ -62,6 +68,7 @@
                
                 <div id="containerButton">                
                     {{ Form::submit('Salva', ['class' => 'submit']) }}
+                    <button class="cancel">Annulla</button>
                 </div>
     {{ Form::close() }}
 </div>

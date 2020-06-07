@@ -31,9 +31,9 @@ class EditProfileRequest extends FormRequest {
         return [
             'name' => 'required|max:30',
             'surname' => 'required|max:30',
-            'email' => 'required|email',
+            'email' => ['required','email',Rule::unique('users')->ignore(auth()->user()->id)],
             'residence' => 'required|max:30',
-            'birthday' => 'required|date',
+            'birthday' => 'required|date|before:today',
             'job' => 'required'
         ];
     }
