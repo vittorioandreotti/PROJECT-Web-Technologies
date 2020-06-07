@@ -4,11 +4,10 @@
 
 @section('link')
 @parent 
-<link rel="stylesheet" type="text/css" href="{{ asset('css/log.css') }}" > 
+<link rel="stylesheet" type="text/css" href="{{ asset('css/registration.css') }}" > 
 @endsection
 
 @section('content')
-<div class="container spazio clearfix">
     <div class="box">
             <h1>Login</h1>
             {{ Form::open(array('route' => 'login', 'class' => 'contact-form')) }}
@@ -43,11 +42,4 @@
                 <p> Se non hai già un account <a  href="{{route('register')}}">Registrati</a></p>             
             {{ Form::close() }}
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-</div>
 @endsection

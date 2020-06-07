@@ -3,7 +3,7 @@
 
 @section('link')
 @parent 
-<link rel="stylesheet" type="text/css" href="{{ asset('css/changePassword.css') }}" > 
+<link rel="stylesheet" type="text/css" href="{{ asset('css/user.css') }}" > 
 @endsection
 
 @section('content')

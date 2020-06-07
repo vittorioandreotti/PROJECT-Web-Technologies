@@ -4,7 +4,6 @@
 @section('link')
 @parent 
 <link rel="stylesheet" type="text/css" href="{{ asset('css/catalog.css') }}" > 
-<link rel="stylesheet" type="text/css" href="{{ asset('css/product.css') }}" > 
 @endsection
 
 @section('scripts')
@@ -39,10 +38,9 @@
     </div>
     <p id="descBreve"><h3>Descrizione breve</h3>{{$selectedProduct->descCorta}}</p>
     <p id="descEstesa"><h3>Descrizione estesa</h3>{{$selectedProduct->descLunga}}</p>
-    @can('isStaff')<div class='staffOp'>
-    <button id='editProduct' class='submit'>Modifica</button>
-    <button id='deleteProduct' class='cancel'>Cancella</button>
-    </div>
+    @can('isStaff')
+    <button id='editProduct'>Modifica</button>
+    <button id='deleteProduct'>Cancella</button>
     @endcan
 </div>
 @endsection

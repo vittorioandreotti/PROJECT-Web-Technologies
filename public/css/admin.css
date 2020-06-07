@@ -1,0 +1,52 @@
+/*---------
+INSERISCI STAFF
+---------*/
+.containerRegistration {
+    margin: 1em 2em;
+    width: 40%;
+}
+
+.submit {
+    margin-left: 2em;
+}
+
+.containerRegistration .wrapInput{
+    margin: 1em auto;
+}
+
+.errors {
+    margin: 0.25em auto;
+}
+/*-----------
+CANCELLA UTENTE
+------------*/
+#deleteUser {
+    margin: 0 2em;
+}
+#deleteUser h3 {
+    text-align: center;
+}
+#deleteUser .table {
+    margin: 1em 0;
+}
+/*----------
+GESTISCI STAFF
+-----------*/
+
+#manageStaff {
+    margin: 0 2em;
+}
+
+#manageStaff h3 {
+    text-align: center;
+}
+
+#manageStaff .table {
+    margin: 1em 0;
+}
+/*---------
+MODIFICA STAFF
+----------*/
+#editProfile {
+    margin: 0 2em;
+}

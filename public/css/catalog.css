@@ -140,3 +140,44 @@ PRODUCT PRICE
     margin-top: 0.5em;
     color: red;
 }
+/*---------
+PAGINA PRODOTTO
+---------*/
+#product {
+    padding-left: 2em;
+    margin-left: 14em;
+}
+
+#product img {
+    display: block;
+    float: left;
+    width: 40%;
+    margin-right: 1em;
+}
+#product .infoWrapper {
+    margin: 1em;
+}
+
+#product .sconto {
+    color: red;
+    font-weight: bold;
+}
+
+#product .price {
+    font-size: 18px;
+}
+
+#product .sconto {
+    font-size: 16px;
+}
+
+#product .realPrice {
+    font-size: 14px;
+}
+
+#product #descBreve {
+    clear: both;
+}
+#product .staffOp{
+    text-align: center;
+}

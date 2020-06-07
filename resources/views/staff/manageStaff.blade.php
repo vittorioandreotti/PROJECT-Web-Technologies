@@ -14,22 +14,26 @@
 @endsection
 
 @section ('content')
-<div>
+<div id="manageStaff">
     <h1>Gestisci Staff</h1>
+    <p>Utilizza questa form per modificare o cancellare uno o più utenti staff.<br>
+       Se invece vuoi aggiungerne uno nuovo clicca qui:</p>
+    <button id="insertStaff" class="button">Aggiungi Staff</button>
+    <hr>
     @if(session()->has('confermDelete'))
         <ul class="success">
             <li>{{ session()->get('confermDelete') }}</li>
         </ul>
     @endif
-    <button id="insertStaff" class="button">Aggiungi Staff</button>
     {{ Form::open(array('route' =>'deleteMultipleUser.store', 'id' => 'deleteMultipleUser')) }}
-    {{ Form::submit('Cancella tutti', ['class' => 'submit','id' => 'multipleDelete']) }}
+    {{ Form::submit('Cancella tutti', ['class' => 'cancel','id' => 'multipleDelete']) }}
     @if(!$staffs->isEmpty())
     <table border class="table"> 
         <tr>
             <th> </th>
             <th>Nome</th>
             <th>Cognome</th>
+            <th>Username</th>
             <th>Modifica</th>
             <th>Cancella</th>
         </tr>
@@ -38,12 +42,13 @@
             <td>{{Form::checkbox('users[]',$staff->id)}}</td>
             <td>{{$staff->name}}</td>
             <td>{{$staff->surname}}</td>
+            <td>{{$staff->username}}</td>
             <td>
                 <button id="staff{{$staff->id}}"><a href="{{route('editStaff', $staff->id)}}">Modifica</a></button>
             </td>
             <td>
                 {{ Form::open(array('route' =>['deleteUser',$staff->id], 'id' => 'deleteUser')) }}
-                {{ Form::submit('Cancella', ['class' => '']) }}
+                {{ Form::submit('Cancella', ['class' => 'delete']) }}
                 {{ Form::close() }}
             </td>
         </tr>

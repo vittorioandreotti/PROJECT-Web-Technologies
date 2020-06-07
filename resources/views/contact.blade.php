@@ -4,7 +4,6 @@
 
 @section('link')
 @parent 
-<link rel="stylesheet" type="text/css" href="{{ asset('css/contact.css') }}" > 
 @endsection
 
 @section('content')

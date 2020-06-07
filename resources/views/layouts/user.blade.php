@@ -21,13 +21,8 @@
         <div id='container'>
             @yield('content')
         </div>
-        <footer id="footer">
-            <a href="{{route('privacyPolicy')}}">
-                 Privacy Policy
-            </a>
-            <a href="{{ route('where') }}">
-                <p>Vieni a trovarci!</p>
-            </a>
+       <footer id="footer">
+            <span class="copyright"><a href="{{route('privacyPolicy')}}">Privacy Policy</a> | &copy; Copyright 2020 iPrice. Tutti i diritti sono riservati.</span>
         </footer>
     </body>
 </html>

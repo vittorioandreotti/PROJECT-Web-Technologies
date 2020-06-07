@@ -2,8 +2,8 @@
         <ul class="headerMenu">
           <li class="headerMenuItem"><a href="{{ route('home') }}" title="Va alla Home">Home</a></li>
           <li class="headerMenuItem"><a href="{{route('catalog1')}}">Catalogo</a></li>
-          <li class="headerMenuItem"><a href="{{route('manageUser')}}">Gestione Utenti</a></li>
-          <li class="headerMenuItem">
+          <li class="headerMenuItemAuth"><a href="{{route('manageUser')}}">Gestione Utenti</a></li>
+          <li class="headerMenuItemAuth">
               <a href="{{route('manageStaff')}}">Gestione Staff</a>
            </li>
           @auth

@@ -16,6 +16,9 @@
             event.preventDefault();
             doFormValidation(actionUrl, formId);
         });
+         $('.cancel').on('click',function(){
+                window.location.href="{{route('manageStaff')}}";
+            })
     });
 </script>
 @endsection
@@ -50,6 +53,7 @@
         </div>
         <div id="containerButton">                
             {{ Form::submit('Salva', ['class' => 'submit']) }}
+            <button class="cancel">Annulla</button>
         </div>       
     {{ Form::close() }}
     <p>I campi contrassegnati con  <b> * </b> sono <b>obbligatori</b> </p>

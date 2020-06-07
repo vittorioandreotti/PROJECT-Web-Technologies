@@ -5,8 +5,6 @@
 @section('link')
 @parent
 <link rel="stylesheet" type="text/css" href="{{ asset('css/registration.css') }}" > 
-<link rel="stylesheet" type="text/css" href="{{ asset('css/insertStaff.css') }}" > 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
 @endsection
 
 

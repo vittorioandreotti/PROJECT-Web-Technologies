@@ -3,7 +3,6 @@
 
 @section('link')
 @parent 
-<link rel="stylesheet" type="text/css" href="{{ asset('css/privacyPolicy.css') }}" > 
 @endsection
 
 @section('content')

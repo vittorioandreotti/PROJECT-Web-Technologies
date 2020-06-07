@@ -1,21 +1,27 @@
 @extends('layouts.admin')
 @section('title', 'Cancella utente')
 
+@section('link')
+@parent
+@endsection
+
 @section('scripts')
 @parent
 <script src="{{asset('js/showHideDeleteAllButton.js')}}"></script>
 @endsection
 
 @section('content')
-<div>
+<div id="deleteUser">
     <h1>Cancella Utente</h1>
+    <p>Utilizza questa form per cancellare uno o più utenti registrati.</p>
+    <hr>
      @if(session()->has('confermDelete'))
         <ul class="success">
             <li>{{ session()->get('confermDelete') }}</li>
         </ul>
     @endif
     {{ Form::open(array('route' =>'deleteMultipleUser.store', 'id' => 'deleteMultipleUser')) }}
-    {{ Form::submit('Cancella tutti', ['class' => 'submit','id' => 'multipleDelete']) }}
+    {{ Form::submit('Cancella tutti', ['class' => 'cancel','id' => 'multipleDelete']) }}
     @if(!$users->isEmpty())
     <table border class="table"> 
         <tr>
@@ -37,7 +43,7 @@
             <td>{{$user->surname}}</td>
             <td>{{$user->email}}</td>
             <td>{{$user->residence}}</td>
-            <td>{{$user->birthday}}</td>
+            @include('helpers/convertDate',['date'=>$user->birthday])
             <td>{{$user->job}}</td>
             <td>{{$user->username}}</td>
             <td>
