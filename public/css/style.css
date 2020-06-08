@@ -12,9 +12,9 @@ a{
   text-decoration: none;
   color: #000;
 }
-/*-----------
-    HEADER
-------------*/
+/*------------------------
+    HEADER + MENU PUBBLICO
+-------------------------*/
 #header{
   background: #393e46;
   height: 9em;
@@ -69,7 +69,6 @@ a{
 }
 
 .headerMenu{
-  float:middle;
   margin: 0;
   padding: 0;
 }
@@ -78,10 +77,7 @@ a{
 }
 .headerMenuItem a{
   display: block;
-  margin-left: 5px;
-  margin-right: 5px;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin: 0 5px;
   color: white;
   text-decoration: none;
   width: 7em;
@@ -125,7 +121,7 @@ CONTENT
   margin-top: 0;
   margin-left: 0;
   margin-right: 0;
-  min-height: 100vh
+  min-height: 100vh;/*altezza pari all'altezza della finestra (1vh=1% finestra)*/ 
 }
 
 
@@ -229,13 +225,6 @@ CONTATTACI
     flex-direction: column;
     justify-content: center;
 }
-
-/*.emailContainer:hover{
-  color:black;
-  font-size: 16.5px;
-  background-color: #fca905;
-  transition: 0.5s;
-}*/
 
 .phoneContainer {
     text-align: center;
