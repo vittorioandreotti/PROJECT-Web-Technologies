@@ -37,3 +37,22 @@ CANCELLA PRODOTTO
     display:block;
     
 }
+
+/*-----------
+GESTISCI PRODOTTI
+------------*/
+#manageproduct #edit {
+    display: block;
+    padding: 0.2em 0.75em;
+    border: solid 1px black;
+    border-radius: 0.5em;
+    background-color: #efefef;
+}
+#manageproduct #edit:hover {
+    transition: 0.5s;
+    color:white;
+    background: green;
+}
+#manageproduct #multipleDelete {
+    margin: 1em 0;
+}

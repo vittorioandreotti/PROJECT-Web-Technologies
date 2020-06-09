@@ -16,6 +16,9 @@
 $(function () {
     var actionUrl = "{{ route('editproduct.store',[$prod->codProd]) }}";
     var formId = 'editproduct';
+    if($('#sconto').val()=='0') {
+        $('.wrapInputPerc').hide();
+    }
     $(":input").on('blur', function (event) {
         var formElementId = $(this).attr('id');
         doElemValidation(formElementId, actionUrl, formId);
@@ -60,8 +63,6 @@ $(function () {
     <h3>Modifica Prodotto</h3>
     <p>Utilizza questa form per modificare un prodotto nel catalogo</p>
 
-    
-        
             {{ Form::open(array('route' =>['editproduct.store',$prod->codProd], 'id' => 'editproduct', 'files' => true)) }}
             <div class="wrapInput">
                 {{ Form::label('nome', 'Nome Prodotto', ['class' => 'labelInput']) }}

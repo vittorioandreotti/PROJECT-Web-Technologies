@@ -2,6 +2,12 @@
 
 @section('title', 'Gestisci prodotti')
 
+@section('link')
+@parent 
+<link rel="stylesheet" type="text/css" href="{{ asset('css/staff.css') }}" >
+@endsection
+
+
 @section('scripts')
 @parent
 <script src="{{asset('js/showHideDeleteAllButton.js')}}"></script>
@@ -18,8 +24,7 @@
 <h1>Gestisci prodotti</h1>
 <button id="newproduct" class="button">Inserisci prodotto</button>
 {{ Form::open(array('route' =>'manageproduct.store', 'id' => 'manageproduct')) }}
-{{ Form::submit('Cancella tutti', ['class' => 'submit','id'=>'multipleDelete']) }}
-
+{{ Form::submit('Cancella tutti', ['class' => 'cancel','id'=>'multipleDelete']) }}
 @isset($products)
     <table border class="table"> 
         <tr>
@@ -45,17 +50,20 @@
             <td>{{$product->descCorta}}</td>
             <td id="descLunga">{{$product->descLunga}}</td>
             <td>
-                <button id='product{{$product->codProd}}'><a href="{{route('editproduct',[$product->codProd])}}">Modifica</a></button>
-                
-            <td>
-                {{ Form::open(array('route' =>['deleteproduct.store',$product->codProd], 'id' => 'deleteproduct')) }}
-                {{ Form::submit('Cancella', ['class' => '']) }}
-                {{ Form::close() }}
+                <a id='edit' href="{{route('editproduct',$product->codProd)}}">Modifica</a>
             </td>
+           
+            <td>
+                 {{ Form::open(array('route' =>['deleteproduct.store',$product->codProd], 'id' => 'deleteproduct')) }}
+                {{ Form::submit('Cancella', ['class' => 'cancel','id'=>'delete']) }}
+                 {{ Form::close() }}
+            </td>
+                          
         </tr>
         @endforeach
     </table>
-     @include('pagination.paginator',['paginator' => $products])
+    @include('pagination.paginator',['paginator' => $products])
 @endisset
 {{ Form::close() }}
+
 @endsection
