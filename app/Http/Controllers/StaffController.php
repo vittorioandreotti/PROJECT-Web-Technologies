@@ -64,7 +64,7 @@ class StaffController extends Controller
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $imageName = $image->getClientOriginalName();
-            $destinationPath = public_path() . '/images/products';
+            $destinationPath = public_path() . '/img/products';
             $image->move($destinationPath, $imageName);
             $product->image = $imageName;
         } 
@@ -105,10 +105,7 @@ class StaffController extends Controller
     }
     
     public function insertCategory(){
-        $prodCats = $this->_staffModel->getTopCategories()->pluck('name', 'codCat');
-        return view('staff.insertCategory')
-               ->with('cats',$prodCats);
-        
+        return view('staff.insertCategory');
     }
     
     public function storeCategory(InsertCategoryRequest $request){
@@ -117,6 +114,12 @@ class StaffController extends Controller
         $category->codPar =0;
         $category->save();
         return response()->json(['redirect' => route('staff')]);
+        
+    }
+    public function insertSubCategory(){
+        $prodCats = $this->_staffModel->getTopCategories()->pluck('name', 'codCat');
+        return view('staff.insertSubCategory')
+               ->with('cats',$prodCats);
         
     }
     public function storeSubCategory(InsertSubCategoryRequest $request){

@@ -18,7 +18,7 @@ class CreateProdottoTable extends Migration
             $table->string('nome',60);
             $table->bigInteger('codCat')->unsigned()->index();
             $table->foreign('codCat')->references('codCat')->on('categoria');
-            $table->string('descCorta',40);
+            $table->string('descCorta',500);
             $table->string('descLunga',5000);
             $table->float('prezzo');
             $table->integer('percSconto');

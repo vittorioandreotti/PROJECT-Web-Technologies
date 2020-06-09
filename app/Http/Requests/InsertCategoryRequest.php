@@ -10,7 +10,6 @@ use Illuminate\Contracts\Validation\Validator;
 use Symfony\Component\HttpFoundation\Response;
 
 
-
 class InsertCategoryRequest extends FormRequest {
     /**
      * Determine if the user is authorized to make this request.

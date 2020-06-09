@@ -9,7 +9,6 @@ use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Contracts\Validation\Validator;
 use Symfony\Component\HttpFoundation\Response;
 
-
 class InsertSubCategoryRequest extends FormRequest {
     /**
      * Determine if the user is authorized to make this request.
@@ -34,12 +33,11 @@ class InsertSubCategoryRequest extends FormRequest {
             'codCat'=>'required'
         ];
     }
-      /**
+    /**
      * Override poichè la risposta è in formato JSON
     */
     protected function failedValidation(Validator $validator)
     {
         throw new HttpResponseException(response($validator->errors(), Response::HTTP_UNPROCESSABLE_ENTITY));
     }
-
 }

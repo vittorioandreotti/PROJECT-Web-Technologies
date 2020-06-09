@@ -11,7 +11,7 @@
 
 @parent
 <script src="{{ asset('js/formValid.js') }}" ></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="{{ asset('js/showPhoto.js') }}" ></script>
 <script>
 $(function () {
     var actionUrl = "{{ route('newproduct.store') }}";
@@ -24,6 +24,9 @@ $(function () {
         event.preventDefault();
         doFormValidation(actionUrl, formId);
     });
+    if($('#sconto').val()=='0') {
+        $('.wrapInputPerc').hide();
+    }
      $('#sconto').on('change',function() {
         if($('#sconto').val()=='0') {
             $('.wrapInputPerc').hide();
@@ -31,6 +34,9 @@ $(function () {
             $('.wrapInputPerc').show();
             $('#percSconto').val('0');
         }
+    });
+    $('#image').change(function () {
+        showPhoto($('#image'),$('#newImage'));
     });
 });
 
@@ -48,7 +54,7 @@ $(function () {
             {{ Form::open(array('route' => 'newproduct.store', 'id' => 'addproduct', 'files' => true)) }}
             <div class="wrapInput">
                 {{ Form::label('nome', 'Nome Prodotto', ['class' => 'labelInput']) }}
-                {{ Form::text('nome', '', ['class' => 'input', 'id' => 'nome']) }}
+                {{ Form::text('nome', '', ['class' => 'input', 'id' => 'nome','size'=>'40']) }}
                 
             </div>
 
@@ -58,24 +64,13 @@ $(function () {
             </div>
 
             <div class="wrapInput">
-                {{ Form::label('image', 'Immagine', ['class' => 'labelInput']) }}
-                {{ Form::file('image', ['class' => 'input', 'id' => 'image']) }}
-                            </div>
-
-            <div class="wrapInput">
-                {{ Form::label('descCorta', 'Descrizione Breve', ['class' => 'labelInput']) }}
-                {{ Form::text('descCorta', '', ['class' => 'input', 'id' => 'descCorta']) }}
-                
-            </div>
-
-            <div class="wrapInput">
                 {{ Form::label('prezzo', 'Prezzo', ['class' => 'labelInput']) }}
                 {{ Form::text('prezzo', '', ['class' => 'input', 'id' => 'prezzo']) }}
-                            </div>
+            </div>
             
             <div class="wrapInput">
                 {{ Form::label('sconto', 'In Sconto', ['class' => 'labelInput']) }}
-                {{ Form::select('sconto', ['1' => 'Si', '0' => 'No'], 1, ['class' => 'input','id' => 'sconto']) }}
+                {{ Form::select('sconto', ['1' => 'Si', '0' => 'No'], 0, ['class' => 'input','id' => 'sconto']) }}
             </div>
 
             <div class="wrapInputPerc">
@@ -83,12 +78,23 @@ $(function () {
                 {{ Form::text('percSconto', '', ['class' => 'input', 'id' => 'percSconto']) }}
               
             </div>
+            
+            <div class="wrapInput">
+                {{ Form::label('descCorta', 'Descrizione Breve', ['class' => 'labelInput']) }}
+                {{ Form::textarea('descCorta', '', ['class' => 'input', 'id' => 'descCorta','rows' => 4, 'column'=> 125,'style'=>'resize:none']) }}
+                
+            </div>
          
-
             <div class="wrapInput">
                 {{ Form::label('descLunga', 'Descrizione Estesa', ['class' => 'labelInput']) }}
-                {{ Form::textarea('descLunga', '', ['class' => 'input', 'id' => 'descLong', 'rows' => 2]) }}
-                            </div>
+                {{ Form::textarea('descLunga', '', ['class' => 'input', 'id' => 'descLong', 'rows' => 20, 'column'=> 250,'style'=>'resize:none']) }}
+            </div>
+            
+             <div class="wrapInput">
+                {{ Form::label('image', 'Immagine', ['class' => 'labelInput']) }}
+                {{ Form::file('image', ['class' => 'input', 'id' => 'image']) }}
+                <img id='newImage'>
+            </div>
             
             <div>                
                 {{ Form::submit('Aggiungi Prodotto', ['class' => 'submit']) }}

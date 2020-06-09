@@ -11,7 +11,8 @@
 @section('scripts')
 @parent
 <script src="{{ asset('js/formValid.js') }}" ></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="{{ asset('js/showPhoto.js') }}" ></script>
+
 <script>
 $(function () {
     var actionUrl = "{{ route('editproduct.store',[$prod->codProd]) }}";
@@ -38,18 +39,7 @@ $(function () {
     });
     
     $('#image').change(function () {
-            console.log($(this));
-            if ($(this)[0].files && $(this)[0].files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    console.log(reader);
-                    $('#newImage')
-                        .attr('src', e.target.result);
-                };
-
-                reader.readAsDataURL($(this)[0].files[0]);
-            }
+            showPhoto($('#image'),$('#newImage'));
         });
 });
 </script>
@@ -66,7 +56,7 @@ $(function () {
             {{ Form::open(array('route' =>['editproduct.store',$prod->codProd], 'id' => 'editproduct', 'files' => true)) }}
             <div class="wrapInput">
                 {{ Form::label('nome', 'Nome Prodotto', ['class' => 'labelInput']) }}
-                {{ Form::text('nome', $prod->nome, ['class' => 'input', 'id' => 'nome']) }}
+                {{ Form::text('nome', $prod->nome, ['class' => 'input', 'id' => 'nome','size'=>'40']) }}
                
             </div>
 
@@ -90,7 +80,7 @@ $(function () {
 
               <div class="wrapInput">
                 {{ Form::label('descCorta', 'Descrizione Breve', ['class' => 'labelInput']) }}
-                {{ Form::textarea('descCorta', $prod->descCorta, ['class' => 'input', 'id' => 'descCorta']) }}
+                {{ Form::textarea('descCorta', $prod->descCorta, ['class' => 'input', 'id' => 'descCorta','rows' => 4, 'column'=> 125,'style'=>'resize:none']) }}
                 
             </div>
             

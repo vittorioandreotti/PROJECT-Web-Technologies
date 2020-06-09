@@ -110,7 +110,10 @@ Route::get('/staff/insertCategory', 'StaffController@insertCategory')
 Route::post('/staff/insertCategory', 'StaffController@storeCategory')
         ->name('insertCategory.store');
 
-Route::post('/staff/insertSubcategory', 'StaffController@storeSubCategory')
+Route::get('/staff/insertSubCategory', 'StaffController@insertSubCategory')
+        ->name('insertSubCategory');
+
+Route::post('/staff/insertSubCategory', 'StaffController@storeSubCategory')
         ->name('insertSubCategory.store');
 
 

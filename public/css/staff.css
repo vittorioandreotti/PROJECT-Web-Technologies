@@ -1,11 +1,16 @@
-
-
+/*-----------
+INSERISCI PRODOTTO
+------------*/
+.insertProduct img {
+    width: 10em;
+    float: left;
+}
 
 /*-----------
 MODIFICA PRODOTTO
 ------------*/
 #formEditProduct {
-    margin-left: 1em;
+    margin: 1em;
 }
 
 #formEditProduct img {
@@ -15,10 +20,13 @@ MODIFICA PRODOTTO
 /*-----------
 CANCELLA PRODOTTO
 ------------*/
-#product img{
+#deleteProductWrapper {
+    margin: 1em;
+}
+#deleteProductWrapper img{
     width: 10em;
 }
-#product .confirmation{
+#deleteProductWrapper .confirmation{
     text-align: center;
 }
 
@@ -41,6 +49,10 @@ CANCELLA PRODOTTO
 /*-----------
 GESTISCI PRODOTTI
 ------------*/
+#manageStaffWrapper {
+    margin: 1em;
+}
+
 #manageproduct #edit {
     display: block;
     padding: 0.2em 0.75em;

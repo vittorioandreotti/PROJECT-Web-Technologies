@@ -8,7 +8,7 @@
 @endsection
 
 @section('content')
-<div id="product">
+<div id="deleteProductWrapper">
     <div class="infoWrapper">
         <div id="nome"><h1>{{$product->nome}}</h1></div>
          @include('helpers/productImg',['imgFile' => $product->image])

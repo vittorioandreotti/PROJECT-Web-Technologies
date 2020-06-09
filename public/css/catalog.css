@@ -180,4 +180,9 @@ PAGINA PRODOTTO
 }
 #product .staffOp{
     text-align: center;
+    margin: 1em 0;
+}
+
+#product .staffOp .submit{
+    width: 8em;
 }

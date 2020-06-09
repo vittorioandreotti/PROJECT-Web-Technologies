@@ -39,8 +39,10 @@
     <p id="descBreve"><h3>Descrizione breve</h3>{{$selectedProduct->descCorta}}</p>
     <p id="descEstesa"><h3>Descrizione estesa</h3>{{$selectedProduct->descLunga}}</p>
     @can('isStaff')
-    <button id='editProduct'>Modifica</button>
-    <button id='deleteProduct'>Cancella</button>
+    <div class='staffOp'>
+        <button class='submit' id='editProduct'>Modifica</button>
+        <button class='cancel' id='deleteProduct'>Cancella</button>
+    </div>
     @endcan
 </div>
 @endsection

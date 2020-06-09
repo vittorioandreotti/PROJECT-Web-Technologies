@@ -10,7 +10,6 @@ function getErrorHtml(elemErrors) {
 }
 
 function doElemValidation(id, actionUrl, formId) {
-
     var formElems;
     function addFormToken() {
         var tokenVal = $("#" + formId + " input[name=_token]").val();
@@ -32,20 +31,12 @@ function doElemValidation(id, actionUrl, formId) {
                             $(this).after(getErrorHtml(errMsgs[$(this).attr('id')]));
                         })
                     } else {
-                            $("#" + formId + " #" + id).parent().find('.errors').remove();
-                            $("#" + formId + " #" + id).after(getErrorHtml(errMsgs[id]));
+                            $("#" + id).parent().find('.errors').remove();
+                            $("#" + id).after(getErrorHtml(errMsgs[id]));
                      }
                     
                 }
             },
-            success: function () {
-                 console.log('successo');
-                    if(elem.attr('type')=='password') {
-                        elem.each(function() {
-                           $(this).find('.errors').remove();
-                       }
-                )}
-             },
             contentType: false,
             processData: false
         });

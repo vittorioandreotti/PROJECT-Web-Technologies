@@ -371,7 +371,6 @@ MENU USER
   margin-bottom: 0px;
   color: white;
   text-decoration: none;
-  width: 10em;
   padding: 1em 0.5em;
   text-align: center;
   border-radius: 0.5em;
@@ -520,8 +519,8 @@ MENU USER
     padding: 15px;
 }
 
-.table #descLunga {
-    max-width: 20em;
+.table #descLunga,.table #descCorta {
+    max-width: 10em;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
