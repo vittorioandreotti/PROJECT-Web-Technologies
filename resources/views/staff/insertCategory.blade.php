@@ -10,7 +10,31 @@
 @section('scripts')
 
 @parent
-
+<script src="{{ asset('js/formValid.js') }}" ></script>
+<script>
+    $(function () {
+        var actionUrl = "{{ route('insertCategory.store') }}";
+        var formId = 'insertCategory';
+        $("#insertCategory :input").on('blur', function (event) {
+            var formElementId = $(this).attr('id');
+            doElemValidation(formElementId, actionUrl, formId);
+        });
+        $("#insertCategory").on('submit', function (event) {
+            event.preventDefault();
+            doFormValidation(actionUrl, formId);
+        });
+         var actionUrl2 = "{{ route('insertSubCategory.store') }}";
+        var formId2 = 'insertSubCategory';
+        $("#insertSubCategory :input").on('blur', function (event) {
+            var formElementId2 = $(this).attr('id');
+            doElemValidation(formElementId2, actionUrl2, formId2);
+        });
+        $("#insertSubCategory").on('submit', function (event) {
+            event.preventDefault();
+            doFormValidation(actionUrl2, formId2);
+        });
+    });
+</script>
 @endsection
 
 @section('content')

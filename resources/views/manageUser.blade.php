@@ -48,7 +48,7 @@
             <td>{{$user->username}}</td>
             <td>
                 {{ Form::open(array('route' =>['deleteUser',$user->id], 'id' => 'deleteUser')) }}
-                {{ Form::submit('Cancella', ['class' => '']) }}
+                {{ Form::submit('Cancella', ['class' => 'cancel']) }}
                 {{ Form::close() }}
             </td>
          </tr>

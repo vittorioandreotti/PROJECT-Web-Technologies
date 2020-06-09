@@ -116,7 +116,7 @@ class StaffController extends Controller
         $category->fill($request->validated());
         $category->codPar =0;
         $category->save();
-        return redirect()->route('staff');
+        return response()->json(['redirect' => route('staff')]);
         
     }
     public function storeSubCategory(InsertSubCategoryRequest $request){
@@ -124,7 +124,7 @@ class StaffController extends Controller
         $category->fill($request->validated());
         $category->codPar = $request->input('codCat');
         $category->save();
-        return redirect()->route('staff');
+        return response()->json(['redirect' => route('staff')]);
     }
 
 }

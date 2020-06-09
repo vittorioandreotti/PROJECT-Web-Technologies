@@ -32,8 +32,8 @@ function doElemValidation(id, actionUrl, formId) {
                             $(this).after(getErrorHtml(errMsgs[$(this).attr('id')]));
                         })
                     } else {
-                            $("#" + id).parent().find('.errors').remove();
-                            $("#" + id).after(getErrorHtml(errMsgs[id]));
+                            $("#" + formId + " #" + id).parent().find('.errors').remove();
+                            $("#" + formId + " #" + id).after(getErrorHtml(errMsgs[id]));
                      }
                     
                 }

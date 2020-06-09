@@ -1,6 +1,11 @@
 @extends('layouts.admin')
 @section('title', 'Gestisci Staff')
 
+@section('link')
+@parent 
+<link rel="stylesheet" type="text/css" href="{{ asset('css/admin.css') }}" >
+@endsection
+
 @section('scripts')
 @parent
 <script src="{{asset('js/showHideDeleteAllButton.js')}}"></script>
@@ -44,11 +49,11 @@
             <td>{{$staff->surname}}</td>
             <td>{{$staff->username}}</td>
             <td>
-                <button id="staff{{$staff->id}}"><a href="{{route('editStaff', $staff->id)}}">Modifica</a></button>
+              <a id="edit" href="{{route('editStaff', $staff->id)}}">Modifica</a>
             </td>
             <td>
                 {{ Form::open(array('route' =>['deleteUser',$staff->id], 'id' => 'deleteUser')) }}
-                {{ Form::submit('Cancella', ['class' => 'delete']) }}
+                {{ Form::submit('Cancella', ['class' => 'cancel']) }}
                 {{ Form::close() }}
             </td>
         </tr>

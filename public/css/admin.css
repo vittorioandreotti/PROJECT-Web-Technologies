@@ -50,3 +50,18 @@ MODIFICA STAFF
 #editProfile {
     margin: 0 2em;
 }
+/*-----------
+GESTISCI STAFF
+------------*/
+#manageStaff #edit {
+    display: block;
+    padding: 0.2em 0.75em;
+    border: solid 1px black;
+    border-radius: 0.5em;
+    background-color: #efefef;
+}
+#manageStaff #edit:hover {
+    transition: 0.5s;
+    color:white;
+    background: green;
+}
