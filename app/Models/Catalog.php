@@ -29,17 +29,25 @@ class Catalog
                 ->orWhereHas('prodCat', function ($query) use ($codCat) {
                         $query->whereIn('codPar', $codCat);
         });
-        /*Metodo per ordinare i prodotti in ordine alfabetico*/
+        /*Ordina i prodotti in ordine alfabetico*/
         if (!is_null($order)) {
             $product = $product->orderBy('nome', $order);
         }
         return $product->paginate($paged);
     }
     
+    /**
+     * 
+     * @param $descLong: descrizione estesa del prodotto
+     * @param $codCat: codice della categoria selezionata
+     * @param $paged: numero di elementi per pagina
+     * @param $order: tipologia di ordinamento ('asc', 'desc')
+     * @return prodotti eventualmente paginati e ordinati che hanno nella descrizione estesa il parametro $descLong
+     */
     public function getProductByDescLong($descLong, $codCat, $paged, $order=null) {
         $product = Product::whereIn('codCat', $codCat)
                             ->where('descLunga', 'LIKE', '%'.$descLong.'%');
-        /*Metodo per ordinare i prodotti in ordine alfabetico*/
+        /*Ordina i prodotti in ordine alfabetico*/
         if (!is_null($order)) {
             $product = $product->orderBy('nome', $order);
         }

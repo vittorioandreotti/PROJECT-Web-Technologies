@@ -5,8 +5,8 @@
 @parent 
 <link rel="stylesheet" type="text/css" href="{{ asset('css/user.css') }}" > 
 @endsection
-@section('scripts')
 
+@section('scripts')
 @parent
 <script src="{{ asset('js/formValid.js') }}" ></script>
 <script>
@@ -40,6 +40,7 @@
                     {{ Form::label('name', 'Nome', ['class' => 'labelInput']) }}
                     {{ Form::text('name',auth()->user()->name, ['class' => 'input', 'id' => 'name']) }}
                 </div>
+    
                 <div class="wrapInput">
                     {{ Form::label('surname', 'Cognome', ['class' => 'labelInput']) }}
                     {{ Form::text('surname', auth()->user()->surname, ['class' => 'input', 'id' => 'surname']) }}
@@ -56,12 +57,12 @@
                 </div>
               
                 <div class="wrapInput">
-                     {{ Form::label('birthday', 'Data di nascita', ['class' => 'labelInput']) }}
+                    {{ Form::label('birthday', 'Data di nascita', ['class' => 'labelInput']) }}
                     {{ Form::date('birthday', auth()->user()->birthday, ['class' => 'input', 'id' => 'birthday']) }}
                 </div>
                   
                 <div class="wrapInput">
-                     {{ Form::label('job', 'Occupazione', ['class' => 'labelInput']) }}
+                    {{ Form::label('job', 'Occupazione', ['class' => 'labelInput']) }}
                     {{ Form::select('job',$jobs, $job , ['class' => 'input', 'id' => 'job']) }}
                 </div>                    
                      

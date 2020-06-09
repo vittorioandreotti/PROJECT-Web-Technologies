@@ -32,6 +32,7 @@ $(function () {
     $('#sconto').on('change',function() {
         if($('#sconto').val()=='0') {
             $('.wrapInputPerc').hide();
+            $('#percSconto').val('0');
         }    else {
             $('.wrapInputPerc').show();
             $('#percSconto').val('0');
