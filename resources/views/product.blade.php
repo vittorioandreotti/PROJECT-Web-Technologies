@@ -36,8 +36,8 @@
         <div id="sottocategoria">Sottocategoria: <b>{{$selectedSubCategory->name}}</b></div>
         <div id="prezzo"> @include('helpers/productPrice')</div>
     </div>
-    <p id="descBreve"><h3>Descrizione breve</h3>{{$selectedProduct->descCorta}}</p>
-    <p id="descEstesa"><h3>Descrizione estesa</h3>{{$selectedProduct->descLunga}}</p>
+    <div id="descBreve"><h3>Descrizione breve</h3>{{$selectedProduct->descCorta}}</div>
+    <div id="descEstesa"><h3>Descrizione estesa</h3>{{$selectedProduct->descLunga}}</div>
     @can('isStaff')
     <div class='staffOp'>
         <button class='submit' id='editProduct'>Modifica</button>

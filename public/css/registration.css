@@ -129,7 +129,4 @@ LOGIN
   color: red;
 }
 
-/* QUESTO EVITA IL RETTANGOLO BLU QUANDO SI SELEZIONA UN CAMPO */
-input:focus, textarea:focus {
-    outline: none;
-}
+

@@ -176,7 +176,13 @@ PAGINA PRODOTTO
 }
 
 #product #descBreve {
+    display:block;
     clear: both;
+    margin-right: 3em;
+}
+#product #descEstesa {
+    display:block;
+    margin-right: 3em;
 }
 #product .staffOp{
     text-align: center;
