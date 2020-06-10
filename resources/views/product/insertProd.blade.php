@@ -16,6 +16,10 @@
 $(function () {
     var actionUrl = "{{ route('newproduct.store') }}";
     var formId = 'addproduct';
+    if($('#sconto').val()=='0') {
+        $('.wrapInputPerc').hide();
+        $('#percSconto').val('0');
+    }
     $(":input").on('blur', function (event) {
         var formElementId = $(this).attr('id');
         doElemValidation(formElementId, actionUrl, formId);
