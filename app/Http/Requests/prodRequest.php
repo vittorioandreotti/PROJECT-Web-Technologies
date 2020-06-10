@@ -29,14 +29,14 @@ class prodRequest extends FormRequest {
      */
     public function rules() {
         return [
-            'nome' => 'required|max:25',
-            'codCat' => 'required|not_in:null',
-            'descCorta' => 'required|max:30',
+            'nome' => 'required|max:60',
+            'codCat' => 'required',
+            'descCorta' => 'required|max:500',
             'image' => 'image|max:1024',
             'prezzo' => 'required|numeric|min:0',
             'percSconto' => 'required|integer|min:0|max:100',
             'sconto' => 'required',
-            'descLunga' => 'required|max:2500'
+            'descLunga' => 'required|max:5000'
         ];
     }
     /**

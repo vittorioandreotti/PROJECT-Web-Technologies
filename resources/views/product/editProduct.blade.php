@@ -51,9 +51,9 @@ $(function () {
 
 @section('content')
 <div id="formEditProduct">
-    <h3>Modifica Prodotto</h3>
+    <h1>Modifica Prodotto</h1>
     <p>Utilizza questa form per modificare un prodotto nel catalogo</p>
-
+    <hr>
             {{ Form::open(array('route' =>['editproduct.store',$prod->codProd], 'id' => 'editproduct', 'files' => true)) }}
             <div class="wrapInput">
                 {{ Form::label('nome', 'Nome Prodotto', ['class' => 'labelInput']) }}

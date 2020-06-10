@@ -87,7 +87,7 @@ $(function () {
          
             <div class="wrapInput">
                 {{ Form::label('descLunga', 'Descrizione Estesa', ['class' => 'labelInput']) }}
-                {{ Form::textarea('descLunga', '', ['class' => 'input', 'id' => 'descLong', 'rows' => 20, 'column'=> 250,'style'=>'resize:none']) }}
+                {{ Form::textarea('descLunga', '', ['class' => 'input', 'id' => 'descLunga', 'rows' => 20, 'column'=> 250,'style'=>'resize:none']) }}
             </div>
             
              <div class="wrapInput">

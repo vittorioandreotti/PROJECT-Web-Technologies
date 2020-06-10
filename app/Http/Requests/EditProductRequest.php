@@ -33,7 +33,7 @@ class EditProductRequest extends FormRequest {
             'prezzo' => 'required|numeric|min:0',
             'sconto' =>'required',
             'percSconto' => 'required|integer|min:0|max:100',
-            'descCorta' => 'required|max:40',
+            'descCorta' => 'required|max:500',
             'descLunga' => 'required|max : 5000'
             
         ];

@@ -1,9 +1,8 @@
 /*-----------
 INSERISCI PRODOTTO
 ------------*/
-.insertProduct img {
+.insertProduct #newImage {
     width: 10em;
-    float: left;
 }
 
 /*-----------
@@ -13,9 +12,8 @@ MODIFICA PRODOTTO
     margin: 1em;
 }
 
-#formEditProduct img {
+#formEditProduct #newImage {
     width: 10em;
-    float: left;
 }
 /*-----------
 CANCELLA PRODOTTO
