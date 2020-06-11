@@ -24,8 +24,9 @@ CANCELLA PRODOTTO
 #deleteProductWrapper img{
     width: 10em;
 }
-#deleteProductWrapper .confirmation{
-    text-align: center;
+
+#deleteProductWrapper .submit{
+    float: left;
 }
 
 /*-----------

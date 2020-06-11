@@ -7,6 +7,19 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('css/staff.css') }}" >
 @endsection
 
+@section('scripts')
+@parent
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script> 
+        $(function () {
+                $('#deleteProductButton').on('click', function () {
+                    window.location.href="{{route('catalog1')}}";
+                })
+    });
+    </script>
+
+@endsection
+
 @section('content')
 <div id="deleteProductWrapper">
     <div class="infoWrapper">
@@ -21,9 +34,10 @@
     <div class='confirmation'>Sei sicuro di voler cancellare il prodotto?
     {{ Form::open(array('route' =>['deleteproduct.store',$product->codProd], 'id' => 'deleteproduct')) }}
     {{ Form::submit('Conferma', ['class' => 'submit']) }}
-     <button id='deleteProduct'class='cancel'>Annulla</button>
-     </div>
     {{ Form::close() }}
+     <button id='deleteProductButton'class='cancel'>Annulla</button>
+     </div>
+    
    
 </div>
 @endsection
