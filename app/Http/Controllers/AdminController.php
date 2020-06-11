@@ -46,7 +46,7 @@ class AdminController extends Controller {
     public function deleteUser($id) {
         $msg="Cancellato: ";
         $user = $this->_adminModel->getUserById($id);
-        $msg=$msg . $user->name . " " . $user->surname . "\n";
+       $msg=$msg . "\n \t" . $user->username . "\n";
         $user->delete();
         return redirect()->back()
                          ->with('confermDelete',$msg);

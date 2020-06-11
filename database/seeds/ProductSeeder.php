@@ -174,7 +174,7 @@ class ProductSeeder extends Seeder
             'image'=>'pioneer_xdj.jpg'],
             ['nome'=> 'PIONEER Console Dj DDJ-RB / SXJ Rekorbox',
             'codCat'=>9,
-            'descCorta'=>'descrizione breve',
+            'descCorta'=>"Il modello base DDJ-RB prende spunto dai nostri controller pro-DJ per rekordbox dj, il DDJ-RZ e il DDJ-RX. Questo console a 2 canali alimentato via USB è tutto quello che ti serve per iniziare a utilizzare il nostro software per DJ rekordbox dj.",
             'descLunga'=>"Il modello DDJ-RB prende spunto dai controller Pioneer pro-DJ per rekordbox dj, il DDJ-RZ e il DDJ-RX. Questo controller a 2 canali alimentato via USB è tutto quello che serve per iniziare a utilizzare il nostro software per le performance rekordbox dj. Perfetto da utilizzare in viaggio, il DDJ-RB è un controller compatto e leggero ricco di funzioni avanzate. E' dotato di un layout intuitivo, jog wheel sensibili e Performance Pad tattili per avviare Hot Cue, Pad FX, Slicer e Sampler, oltre a un pulsante per richiamare le sequenze di sample direttamente dall'apparecchiatura. Per godere della massima flessibilità, puoi scegliere di ascoltare il mix attraverso i diffusori interni del computer, diffusori da tavolo collegati o, ancora, di riprodurre con un diffusore wireless. Nel contempo, puoi utilizzare le cuffie per cue indipendenti dall'uscita Master.",
             'prezzo'=>890.00,
             'percSconto'=>0,
