@@ -55,17 +55,20 @@
                 <td id="descLunga">{{$product->descLunga}}</td>
                 <td>
                     <a id='edit' href="{{route('editproduct',$product->codProd)}}">Modifica</a>
+                    {{ Form::open() }}
+                    {{ Form::close() }}
                 </td>
 
                 <td>
-                     {{ Form::open(array('route' =>['deleteproduct.store',$product->codProd], 'id' => 'deleteproduct')) }}
+                    {{ Form::open(array('route' =>['deleteproduct.store',$product->codProd], 'id' => 'deleteproduct')) }}
                     {{ Form::submit('Cancella', ['class' => 'cancel','id'=>'delete']) }}
-                     {{ Form::close() }}
+                    {{ Form::close() }}
                 </td>
 
             </tr>
             @endforeach
         </table>
+    
         @include('pagination.paginator',['paginator' => $products])
     @endisset
     {{ Form::close() }}

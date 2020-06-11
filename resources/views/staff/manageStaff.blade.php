@@ -50,6 +50,8 @@
             <td>{{$staff->username}}</td>
             <td>
               <a id="edit" href="{{route('editStaff', $staff->id)}}">Modifica</a>
+              {{ Form::open() }}
+              {{ Form::close() }}
             </td>
             <td>
                 {{ Form::open(array('route' =>['deleteUser',$staff->id], 'id' => 'deleteUser')) }}
