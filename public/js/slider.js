@@ -1,3 +1,8 @@
+/**
+ * Funzione per gestire lo slider presente nella home
+ * 
+ */
+
 $(function() {
     var index=-1;
     var images=$('#slideshow-wrapper img');

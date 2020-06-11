@@ -53,19 +53,16 @@ function doElemValidation(id, actionUrl, formId) {
     } else{
         // elemento di input type != file
         inputVal = elem.val();
-        console.log(inputVal);
     }
     formElems = new FormData();
+    //Caso in cui si deve validare un elemento di tipo password
     if(elem.attr('type')=='password') {
         var elem=$("#"+formId + " :input[type=password]");
-        console.log(elem);
         elem.each(function() {
             inputVal=$(this).val();
             inputName=$(this).attr('name');
             formElems.append(inputName,inputVal);
         });
-        /*formElems.append("password_confirmation", $('#password_confirmation').val());
-        formElems.append(id, inputVal);*/
         addFormToken();
         sendAjaxReq();
     } else {
