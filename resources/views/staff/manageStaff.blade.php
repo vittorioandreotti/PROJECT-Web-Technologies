@@ -64,7 +64,6 @@
      {{Form::close()}}
     @else
     <p>Al momento non è registrato nessun utente Staff.</p>
-    <p><a href="{{route('newstaff')}}">Clicca qui</a> per aggiungerne uno</p>
     @endif
 </div>
 @endsection

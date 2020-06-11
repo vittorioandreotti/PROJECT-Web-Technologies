@@ -47,6 +47,8 @@
             <td>{{$user->job}}</td>
             <td>{{$user->username}}</td>
             <td>
+                {{ Form::open() }}
+                {{ Form::close() }}
                 {{ Form::open(array('route' =>['deleteUser',$user->id], 'id' => 'deleteUser')) }}
                 {{ Form::submit('Cancella', ['class' => 'cancel']) }}
                 {{ Form::close() }}

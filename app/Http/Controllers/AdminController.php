@@ -64,7 +64,7 @@ class AdminController extends Controller {
           Log::info($r);
           $user=$this->_adminModel->getUserById($r);
           $user->delete();
-          $msg=$msg . "\n \t" . $user->name . " " . $user->surname . "\n";
+          $msg=$msg . "\n \t" . $user->username . "\n";
         }
         return redirect()->back()
                         ->with('confermDelete',$msg);
