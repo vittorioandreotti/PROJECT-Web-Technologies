@@ -1,78 +1,227 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+# iPrice - E-commerce Platform
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## Descrizione del Progetto
 
-## About Laravel
+iPrice è una piattaforma di e-commerce sviluppata con Laravel 6.2 per la vendita di prodotti tecnologici. Il progetto implementa un sistema completo di gestione prodotti, categorie e utenti con diversi livelli di autorizzazione (Admin, Staff, User).
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Architettura e Pattern Utilizzati
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Pattern Architetturale: MVC (Model-View-Controller)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Il progetto segue rigorosamente il pattern MVC di Laravel:
 
-## Learning Laravel
+- **Model**: Gestione dei dati e logica di business
+- **View**: Interfaccia utente con Blade templating engine
+- **Controller**: Logica di controllo e coordinamento tra Model e View
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Pattern di Design Implementati
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. **Repository Pattern** (tramite Eloquent ORM)
+2. **Service Layer Pattern** (tramite classe Catalog)
+3. **Request/Response Pattern** (Form Requests per validazione)
+4. **Middleware Pattern** (per autenticazione e autorizzazione)
+5. **Observer Pattern** (tramite event system di Laravel)
 
-## Laravel Sponsors
+## Organizzazione del Codice
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### Struttura delle Directory
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
+```
+PROJECT-Web-Technologies/
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/          # Logic Controllers
+│   │   ├── Middleware/           # Middleware per sicurezza e autenticazione
+│   │   ├── Requests/             # Form Request Validation
+│   │   └── Kernel.php            # HTTP Kernel configuration
+│   ├── Models/                   # Business Logic Models
+│   │   ├── Resources/            # Resource Models (Product, Category)
+│   │   ├── Admin.php             # Admin-specific logic
+│   │   ├── Catalog.php           # Catalog service layer
+│   │   └── Staff.php             # Staff-specific logic
+│   ├── Providers/                # Service Providers
+│   └── User.php                  # User Authentication Model
+├── database/
+│   ├── migrations/               # Database Schema Migrations
+│   ├── seeds/                    # Database Seeders
+│   └── factories/                # Model Factories
+├── resources/
+│   ├── views/                    # Blade Templates
+│   │   ├── layouts/              # Layout Templates per ruoli
+│   │   ├── auth/                 # Authentication Views
+│   │   ├── admin/                # Admin Panel Views  
+│   │   ├── staff/                # Staff Management Views
+│   │   └── user/                 # User Interface Views
+│   ├── js/                       # JavaScript Assets
+│   └── sass/                     # SASS/CSS Styling
+├── routes/
+│   └── web.php                   # Web Routes Definition
+├── public/                       # Public Assets
+├── config/                       # Configuration Files
+└── tests/                        # Testing Suite
+```
 
-## Contributing
+## Pacchetti Funzionali
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 1. **Gestione Autenticazione e Autorizzazione**
 
-## Code of Conduct
+**File Coinvolti:**
+- `app/User.php` - Model User con metodi di autorizzazione
+- `app/Http/Controllers/Auth/` - Controllers per login/registrazione
+- `app/Http/Middleware/` - Middleware per controllo accessi
+- `resources/views/auth/` - Views per autenticazione
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+**Funzionalità:**
+- Sistema di login/registrazione utenti
+- Gestione ruoli (Admin, Staff, User)
+- Middleware per protezione delle route
+- Controllo accessi basato sui ruoli
 
-## Security Vulnerabilities
+**Pattern Utilizzati:**
+- Authorization Pattern
+- Middleware Pattern
+- Role-Based Access Control (RBAC)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 2. **Gestione Catalogo Prodotti**
 
-## License
+**File Coinvolti:**
+- `app/Models/Catalog.php` - Service layer per operazioni catalogo
+- `app/Models/Resources/Product.php` - Model Prodotto
+- `app/Models/Resources/Category.php` - Model Categoria
+- `app/Http/Controllers/PublicController.php` - Controller pubblico
+- `database/migrations/2020_05_21_151315_create_prodotto_table.php`
+- `database/migrations/2020_05_21_061856_create_table_categoria.php`
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+**Funzionalità:**
+- Gestione gerarchica delle categorie (Top Categories → Sub Categories)
+- Ricerca e filtro prodotti
+- Paginazione risultati
+- Calcolo prezzi con sconti
+- Relazioni Eloquent tra prodotti e categorie
+
+**Pattern Utilizzati:**
+- Service Layer Pattern
+- Repository Pattern (via Eloquent)
+- Factory Pattern (per calcolo prezzi)
+
+### 3. **Pannello Amministrativo**
+
+**File Coinvolti:**
+- `app/Http/Controllers/AdminController.php` - Logica amministrativa
+- `app/Models/Admin.php` - Model per operazioni admin
+- `resources/views/layouts/admin.blade.php` - Layout admin
+- `resources/views/admin/` - Views panel amministrativo
+
+**Funzionalità:**
+- Gestione utenti (CRUD operations)
+- Gestione staff
+- Eliminazione multipla utenti
+- Dashboard amministrativa
+
+**Pattern Utilizzati:**
+- CRUD Pattern
+- Admin Panel Pattern
+- Bulk Operations Pattern
+
+### 4. **Gestione Staff**
+
+**File Coinvolti:**
+- `app/Http/Controllers/StaffController.php` - Controller staff
+- `app/Models/Staff.php` - Model staff
+- `resources/views/staff/` - Views gestione staff
+- Routes specifiche per staff in `routes/web.php`
+
+**Funzionalità:**
+- Gestione prodotti (inserimento, modifica, eliminazione)
+- Gestione categorie
+- Operazioni CRUD su catalogo
+
+### 5. **Validazione Dati**
+
+**File Coinvolti:**
+- `app/Http/Requests/` - Form Request Classes
+- Validation rules integrate nei Request objects
+
+**Classi di Validazione:**
+- `EditProfileRequest.php`
+- `SearchProductRequest.php`
+- `InsertCategoryRequest.php`
+- `prodRequest.php`
+- E altre...
+
+**Pattern Utilizzati:**
+- Form Request Pattern
+- Validation Pattern
+- Single Responsibility Principle
+
+### 6. **Sistema di Templating e UI**
+
+**File Coinvolti:**
+- `resources/views/layouts/` - Layout base per diversi ruoli
+- `resources/views/` - Views specifiche
+- Blade templating engine
+
+**Caratteristiche:**
+- Layout modulari per Admin, Staff, User, Public
+- Sistema di menu dinamici basati sui ruoli
+- Template inheritance con Blade
+- Componenti riutilizzabili
+
+## Struttura Database
+
+### Tabelle Principali
+
+1. **users** - Gestione utenti con ruoli
+2. **categoria** - Struttura gerarchica categorie  
+3. **prodotto** - Catalogo prodotti con relazioni
+
+### Relazioni
+
+- `Product` → `Category` (One-to-One)
+- `Category` → `Category` (Self-referencing per gerarchia)
+- User roles gestiti via campo `role`
+
+## Flusso dell'Applicazione
+
+### Per Utenti Pubblici
+1. **Homepage** → **Catalogo** → **Categoria** → **Prodotto**
+2. Navigazione gerarchica delle categorie
+3. Ricerca e filtro prodotti
+4. Visualizzazione dettaglio prodotto
+
+### Per Utenti Autenticati
+1. **Login** → **Dashboard basata su ruolo**
+2. **Admin**: Gestione utenti e staff
+3. **Staff**: Gestione prodotti e categorie  
+4. **User**: Profilo personale
+
+## Sicurezza Implementata
+
+- **CSRF Protection** via middleware
+- **SQL Injection Prevention** via Eloquent ORM
+- **XSS Protection** via Blade templating
+- **Authorization** via middleware e Gates
+- **Password Hashing** via Laravel Hash facade
+- **Input Validation** via Form Requests
+
+## Configurazione e Dipendenze
+
+### Dipendenze Principali (composer.json)
+- Laravel Framework 6.2
+- Laravel Collective HTML
+- Laravel Tinker
+- Laravel UI
+
+### Frontend Assets
+- SASS/SCSS per styling
+- Laravel Mix per asset compilation
+- jQuery per interazioni client-side
+
+## Testing
+
+Il progetto include:
+- Struttura di testing con PHPUnit
+- Test cases per Feature e Unit testing
+- Test directory organizzati per tipologia
+
+Questo progetto dimostra l'implementazione di best practices Laravel con una architettura solida, pattern di design appropriati e una struttura del codice ben organizzata per un'applicazione e-commerce scalabile.
